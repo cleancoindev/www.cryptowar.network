@@ -1,0 +1,25 @@
+{
+  "name": "cryptowar.xbn.finance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "vue": "^3.2.8"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.2.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElasticBTC-XBT/cryptowar.xbn.finance.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElasticBTC-XBT/cryptowar.xbn.finance/issues"
+  },
+  "homepage": "https://github.com/ElasticBTC-XBT/cryptowar.xbn.finance#readme"
+}
