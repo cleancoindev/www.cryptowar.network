@@ -5,8 +5,8 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="subscribe-box">
-            <img class="left" src="assets/images/vr.png" alt="">
-            <img class="right" src="assets/images/game%20controler_.png" alt="">
+            <img class="left" src="../assets/images/vr.png" alt="">
+            <img class="right" src="../assets/images/game_controler.png" alt="">
             <div class="row justify-content-center">
               <div class="col-lg-12">
                 <div class="heading-area">
@@ -40,7 +40,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="flogo">
-            <a href="#"><img src="assets/images/footer-ogo.png" alt=""></a>
+            <a href="#"><img src="../assets/images/footer-ogo.png" alt=""></a>
           </div>
           <div class="social-links">
             <ul>
@@ -217,7 +217,7 @@
               </header>
               <ul>
                 <li>
-                  <img src="assets/images/chat_avatar_01.jpg" alt="">
+                  <img src="../assets/images/chat_avatar_01.jpg" alt="">
                   <div>
                     <h2>Prénom Nom</h2>
                     <h3>
@@ -227,7 +227,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="assets/images/chat_avatar_02.jpg" alt="">
+                  <img src="../assets/images/chat_avatar_02.jpg" alt="">
                   <div>
                     <h2>Prénom Nom</h2>
                     <h3>
@@ -237,7 +237,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="assets/images/chat_avatar_03.jpg" alt="">
+                  <img src="../assets/images/chat_avatar_03.jpg" alt="">
                   <div>
                     <h2>Prénom Nom</h2>
                     <h3>
@@ -247,7 +247,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="assets/images/chat_avatar_04.jpg" alt="">
+                  <img src="../assets/images/chat_avatar_04.jpg" alt="">
                   <div>
                     <h2>Prénom Nom</h2>
                     <h3>
@@ -257,7 +257,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="assets/images/chat_avatar_05.jpg" alt="">
+                  <img src="../assets/images/chat_avatar_05.jpg" alt="">
                   <div>
                     <h2>Prénom Nom</h2>
                     <h3>
@@ -267,7 +267,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="assets/images/chat_avatar_06.jpg" alt="">
+                  <img src="../assets/images/chat_avatar_06.jpg" alt="">
                   <div>
                     <h2>Prénom Nom</h2>
                     <h3>
@@ -277,7 +277,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="assets/images/chat_avatar_07.jpg" alt="">
+                  <img src="../assets/images/chat_avatar_07.jpg" alt="">
                   <div>
                     <h2>Prénom Nom</h2>
                     <h3>
@@ -287,7 +287,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="assets/images/chat_avatar_08.jpg" alt="">
+                  <img src="../assets/images/chat_avatar_08.jpg" alt="">
                   <div>
                     <h2>Prénom Nom</h2>
                     <h3>
@@ -297,7 +297,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="assets/images/chat_avatar_09.jpg" alt="">
+                  <img src="../assets/images/chat_avatar_09.jpg" alt="">
                   <div>
                     <h2>Prénom Nom</h2>
                     <h3>
@@ -307,7 +307,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="assets/images/chat_avatar_10.jpg" alt="">
+                  <img src="../assets/images/chat_avatar_10.jpg" alt="">
                   <div>
                     <h2>Prénom Nom</h2>
                     <h3>
@@ -320,7 +320,7 @@
             </aside>
             <main>
               <header>
-                <img src="assets/images/chat_avatar_01.jpg" alt="">
+                <img src="../assets/images/chat_avatar_01.jpg" alt="">
                 <div>
                   <h2>Vincent Porter</h2>
                   <h3>already 1902 messages</h3>
@@ -396,8 +396,8 @@
               </ul>
               <footer>
                 <textarea placeholder="Type your message"></textarea>
-                <img src="assets/images/ico_picture.png" alt="">
-                <img src="assets/images/ico_file.png" alt="">
+                <img src="../assets/images/ico_picture.png" alt="">
+                <img src="../assets/images/ico_file.png" alt="">
                 <a href="#">Send</a>
               </footer>
             </main>
@@ -420,7 +420,7 @@
         <div class="modal-body">
           <div class="single-notification">
             <div class="img">
-              <img src="assets/images/n1.png" alt="">
+              <img src="../assets/images/n1.png" alt="">
             </div>
             <div class="content">
               <div class="top-area">
@@ -439,7 +439,7 @@
           </div>
           <div class="single-notification">
             <div class="img">
-              <img src="assets/images/n1.png" alt="">
+              <img src="../assets/images/n1.png" alt="">
             </div>
             <div class="content">
               <div class="top-area">
@@ -458,7 +458,7 @@
           </div>
           <div class="single-notification">
             <div class="img">
-              <img src="assets/images/n1.png" alt="">
+              <img src="../assets/images/n1.png" alt="">
             </div>
             <div class="content">
               <div class="top-area">
@@ -477,7 +477,7 @@
           </div>
           <div class="single-notification">
             <div class="img">
-              <img src="assets/images/n1.png" alt="">
+              <img src="../assets/images/n1.png" alt="">
             </div>
             <div class="content">
               <div class="top-area">
