@@ -1,25 +1,25 @@
-<script setup>
-</script>
+<script >
+// This starter template is using Vue 3 <script setup> SFCs
+// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+// import HelloWorld from '../components/HelloWorld.vue'
+import Header from '../components/Header.vue'
+import Footer from '../components/Footer.vue'
 
-<!--<script>-->
-<!--// This starter template is using Vue 3 <script setup> SFCs-->
-<!--// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup-->
-<!--import HelloWorld from './components/HelloWorld.vue'-->
-<!--import Header from './components/Header.vue'-->
-<!--import Footer from './components/Footer.vue'-->
-<!--// import Header-->
-<!--export default {-->
-<!--  components:{-->
-<!--    Header,-->
-<!--    Footer-->
-<!--  }-->
-<!--}-->
-<!--</script>-->
+export default {
+  'name': 'home',
+  components: {
+    Header,
+    // HelloWorld,
+    Footer
+  }
+}
+
+</script>
 
 <template>
 
-<!--  <img alt="Vue logo" src="./assets/logo.png" />-->
-<!--  <HelloWorld msg="Hello Vue 3 + Vite" />-->
+  <!--  <img alt="Vue logo" src="./assets/logo.png" />-->
+  <!--  <HelloWorld msg="Hello Vue 3 + Vite" />-->
 
   <!-- preloader area start -->
   <div class="preloader hide" id="preloader">

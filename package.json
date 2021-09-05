@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "vue": "^3.2.6"
+    "vue": "^3.2.6",
+    "vue-router": "^3.5.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.6.0",

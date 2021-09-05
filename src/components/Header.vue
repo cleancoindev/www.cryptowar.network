@@ -123,7 +123,12 @@
                         Pages
                       </a>
                       <ul class="dropdown-menu" >
-                        <li><a class="dropdown-item" href="about.html"> <i class="fa fa-angle-double-right"></i>About</a></li>
+<!--                        <li>-->
+<!--                          <router-link class="dropdown-item" :to="{name: 'about'}">-->
+<!--                            <i class="fa fa-angle-double-right"></i>About-->
+<!--                          </router-link>-->
+<!--                        </li>-->
+<!--                        <li><a class="dropdown-item" href="about.html"> <i class="fa fa-angle-double-right"></i>About</a></li>-->
                         <li><a class="dropdown-item" href="bonuse-page.html"> <i class="fa fa-angle-double-right"></i>Bonuse</a></li>
                         <li><a class="dropdown-item" href="ticket-page.html"> <i class="fa fa-angle-double-right"></i>Ticket Page</a></li>
                         <li><a class="dropdown-item" href="raffles-details.html"> <i class="fa fa-angle-double-right"></i>Raffles Details</a></li>
