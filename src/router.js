@@ -24,7 +24,7 @@ const routes = [
     },
     {
         path: '/',
-        name: 'home',
+        name: 'landing-page',
         component: () => import("./pages/Home.vue")
     }
 ]
