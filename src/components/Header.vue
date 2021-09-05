@@ -123,11 +123,11 @@
                         Pages
                       </a>
                       <ul class="dropdown-menu" >
-<!--                        <li>-->
-<!--                          <router-link class="dropdown-item" :to="{name: 'about'}">-->
-<!--                            <i class="fa fa-angle-double-right"></i>About-->
-<!--                          </router-link>-->
-<!--                        </li>-->
+                        <li>
+                          <router-link class="dropdown-item" :to="{name: 'about'}">
+                            <i class="fa fa-angle-double-right"></i>About
+                          </router-link>
+                        </li>
 <!--                        <li><a class="dropdown-item" href="about.html"> <i class="fa fa-angle-double-right"></i>About</a></li>-->
                         <li><a class="dropdown-item" href="bonuse-page.html"> <i class="fa fa-angle-double-right"></i>Bonuse</a></li>
                         <li><a class="dropdown-item" href="ticket-page.html"> <i class="fa fa-angle-double-right"></i>Ticket Page</a></li>
@@ -136,7 +136,8 @@
                         <li><a class="dropdown-item" href="tournaments2.html"> <i class="fa fa-angle-double-right"></i>Tournaments Details</a></li>
                         <li><a class="dropdown-item" href="gamer-profile1.html"> <i class="fa fa-angle-double-right"></i>Gamer Profile Public</a></li>
                         <li><a class="dropdown-item" href="gamer-profile6.html"> <i class="fa fa-angle-double-right"></i>Gamer Problie Private </a></li>
-                        <li><a class="dropdown-item" href="help1.html"> <i class="fa fa-angle-double-right"></i>Help</a></li>
+                        <li>
+                          <router-link class="dropdown-item" :to="{name: 'help'}"> <i class="fa fa-angle-double-right"></i>Help</router-link></li>
                         <li><a class="dropdown-item" href="404.html"> <i class="fa fa-angle-double-right"></i>404</a></li>
                       </ul>
                     </li>

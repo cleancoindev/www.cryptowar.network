@@ -1,16 +1,9 @@
-<template>
-  <!-- preloader area start -->
-  <div class="preloader" id="preloader">
-    <div class="loader loader-1">
-      <div class="loader-outter"></div>
-      <div class="loader-inner"></div>
-    </div>
-  </div>
-  <!-- preloader area end -->
+<script setup>
 
-  <!-- Header Area Start  -->
-  <Header></Header>
-  <!-- Header Area End  -->
+</script>
+
+
+<template>
 
 
   <!-- Breadcrumb Area Start -->
@@ -296,10 +289,6 @@
     </div>
   </section>
   <!-- join us area  end -->
-
-  <!-- Footer Area Start -->
-  <Footer></Footer>
-  <!-- Footer Area End -->
 
 
 </template>

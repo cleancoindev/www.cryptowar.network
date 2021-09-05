@@ -2,15 +2,15 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 // import HelloWorld from '../components/HelloWorld.vue'
-import Header from '../components/Header.vue'
-import Footer from '../components/Footer.vue'
+// import Header from '../components/Header.vue'
+// import Footer from '../components/Footer.vue'
 
 export default {
   'name': 'home',
   components: {
-    Header,
+    // Header,
     // HelloWorld,
-    Footer
+    // Footer
   }
 }
 
@@ -18,21 +18,6 @@ export default {
 
 <template>
 
-  <!--  <img alt="Vue logo" src="./assets/logo.png" />-->
-  <!--  <HelloWorld msg="Hello Vue 3 + Vite" />-->
-
-  <!-- preloader area start -->
-  <div class="preloader hide" id="preloader">
-    <div class="loader loader-1">
-      <div class="loader-outter"></div>
-      <div class="loader-inner"></div>
-    </div>
-  </div>
-  <!-- preloader area end -->
-
-  <!-- Header Area Start  -->
-  <Header></Header>
-  <!-- Header Area End  -->
 
   <!-- Hero Area Start -->
   <div class="hero-area hero-area2 hero-area4">
@@ -1177,9 +1162,6 @@ export default {
   <!-- join us area  end -->
 
 
-  <!-- Footer Area Start -->
-  <Footer></Footer>
-  <!-- Footer Area End -->
 
 
 </template>
