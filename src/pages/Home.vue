@@ -34,10 +34,10 @@ export default {
                 <img src="../assets/images/text.png" alt="">
               </h1>
               <div class="links">
-                <a href="#" class="mybtn1">Play Now</a>
-                <a href="https://www.youtube.com/watch?v=jssO8-5qmag" class="video_btn play-video mfp-iframe">
+                <a href="https://play.cryptowar.network" class="mybtn1">Play Now</a>
+                <!-- <a href="https://www.youtube.com/watch?v=jssO8-5qmag" class="video_btn play-video mfp-iframe">
                   <i class="fas fa-play"></i>
-                </a>
+                </a> -->
               </div>
             </div>
           </div>
@@ -1150,10 +1150,9 @@ export default {
               Be One of Them
             </h2>
             <h6 class="text">
-              Get started in less than 5 min - no credit card required.Gain
-              early access to Jugaro and experience crypto like never before.
+              Get started in less than 5 min and experience crypto game like never before.
             </h6>
-            <a href="#" class="mybtn1">Join US</a>
+            <a href="https://play.cryptowar.network" class="mybtn1">Play Now</a>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@
               <div class="col-lg-12">
                 <div class="heading-area">
                   <h5 class="sub-title">
-                    Subscribe to Jugaro
+                    Become a part of CryptoWar Community
                   </h5>
                   <h4 class="title">
                     To Get Exclusive Benefits
@@ -19,13 +19,18 @@
                 </div>
               </div>
 
-              <div class="col-lg-6 col-12">
+              <div class="col-lg-12 col-12" style="text-align:center;">
+                <a href="https://discord.gg/tWhbWySwCK" 
+                      class="mybtn1" 
+                      > Join Discord!</a>
 
-                <form action="#" class="form-area">
+              
+
+                <!-- <form action="#" class="form-area">
                   <input type="text" placeholder="Your Email Address">
                   <button class="mybtn1" type="submit">Subscribe
                   </button>
-                </form>
+                </form> -->
               </div>
             </div>
           </div>
@@ -40,61 +45,62 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="flogo">
-            <a href="#"><img src="../assets/images/footer-ogo.png" alt=""></a>
+            <!-- <a href="#"><img src="../assets/images/footer-ogo.png" alt=""></a> -->
+            <a href="#"><img src="../assets/images/cryptowar/xBlade-logo-03.png" alt=""></a>
           </div>
           <div class="social-links">
             <ul>
-              <li>
+              <!-- <li>
                 <a href="#">
                   <i class="fab fa-facebook-f"></i>
                 </a>
-              </li>
+              </li> -->
               <li>
-                <a href="#">
+                <a href="https://twitter.com/elasticbitcoin">
                   <i class="fab fa-twitter"></i>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <i class="fab fa-pinterest-p"></i>
+                <a href="https://discord.gg/tWhbWySwCK">
+                  <i class="fab fa-discord"></i>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
+                <a href="https://t.me/elasticbitcoinxbt">
+                  <i class="fab fa-telegram"></i>
                 </a>
               </li>
-              <li>
+              <!-- <li>
                 <a href="#">
                   <i class="fab fa-instagram"></i>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </div>
           <div class="footer-menu">
             <ul>
               <li>
-                <a href="#">
+                <a href="/about">
                   About
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/faq">
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="mailto:hi@cryptowar.network">
                   Contact
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/terms">
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/privacy">
                   Privacy
                 </a>
               </li>
@@ -107,7 +113,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <p>Copyright © 2021.All Rights Reserved By Jugaro</p>
+            <p>Copyright © 2021.All Rights Reserved</p>
           </div>
         </div>
       </div>

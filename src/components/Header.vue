@@ -8,44 +8,44 @@
           <div class="col-lg-12">
             <div class="content">
               <div class="left-content">
-                <ul class="left-list">
+                <!-- <ul class="left-list">
                   <li>
                     <p>
                       <i class="fas fa-headset"></i>	Support
                     </p>
                   </li>
-                </ul>
+                </ul> -->
                 <ul class="top-social-links">
-                  <li>
+                  <!-- <li>
                     <a href="#">
                       <i class="fab fa-facebook-f"></i>
                     </a>
-                  </li>
+                  </li> -->
                   <li>
-                    <a href="#">
+                    <a href="https://twitter.com/elasticbitcoin">
                       <i class="fab fa-twitter"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <i class="fab fa-pinterest-p"></i>
+                    <a href="https://t.me/elasticbitcoinxbt">
+                      <i class="fab fa-telegram"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <i class="fab fa-linkedin-in"></i>
+                    <a href="https://discord.gg/tWhbWySwCK">
+                      <i class="fab fa-discord"></i>
                     </a>
                   </li>
-                  <li>
+                  <!-- <li>
                     <a href="#">
                       <i class="fab fa-instagram"></i>
                     </a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
               <div class="right-content">
                 <ul class="right-list">
-                  <li>
+                  <!-- <li>
                     <div class="language-selector">
                       <select name="language" class="language">
                         <option value="1" selected="selected">EN</option>
@@ -53,15 +53,21 @@
                         <option value="3">BN</option>
                       </select>
                     </div>
-                  </li>
+                  </li> -->
                   <li>
-                    <div class="notofication"  data-toggle="modal" data-target="#usernotification">
-                      <i class="far fa-bell"></i>
+                    <div class="notofication"  >
+                      <a href="https://twitter.com/search?q=cryptowar" target="_blank">
+                      
+                        <i class="far fa-bell"></i>
+                      </a>
                     </div>
                   </li>
                   <li>
-                    <div class="message"  data-toggle="modal" data-target="#usermessage">
-                      <i class="far fa-envelope"></i>
+                    <div class="message"  >
+                      <a href="mailto:hi@cryptowar.network" target="_blank">
+                        <i class="far fa-envelope"></i>
+                      </a>
+                      
                     </div>
                   </li>
                 </ul>
@@ -89,7 +95,7 @@
               <div class="collapse navbar-collapse fixed-height" id="main_menu">
                 <div class="main-menu-inner">
                   <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                       <a class="nav-link active dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true"
                          aria-expanded="false">
                         Home
@@ -101,15 +107,15 @@
                         <li><a class="dropdown-item" href="index4.html"> <i class="fa fa-angle-double-right"></i> Home 4</a></li>
                         <li><a class="dropdown-item" href="index5.html"> <i class="fa fa-angle-double-right"></i> Home 5</a></li>
                       </ul>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="/">Home</a>
+                    </li> -->
+                    <li class="nav-item">
+                      <a class="nav-link" href="games.html">Buy xBlade</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="raffles.html">Raffles</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="games.html">Games</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="tournaments.html">Tournaments</a>
+                      <a class="nav-link" href="https://wiki.cryptowar.network">Game Wiki</a>
                     </li>
 
                   </ul>
@@ -121,7 +127,7 @@
 
                   <ul class="navbar-nav ml-auto">
 
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true"
                          aria-expanded="false">
                         Pages
@@ -132,7 +138,7 @@
                             <i class="fa fa-angle-double-right"></i>About
                           </router-link>
                         </li>
-<!--                        <li><a class="dropdown-item" href="about.html"> <i class="fa fa-angle-double-right"></i>About</a></li>-->
+
                         <li><a class="dropdown-item" href="bonuse-page.html"> <i class="fa fa-angle-double-right"></i>Bonuse</a></li>
                         <li><a class="dropdown-item" href="ticket-page.html"> <i class="fa fa-angle-double-right"></i>Ticket Page</a></li>
                         <li><a class="dropdown-item" href="raffles-details.html"> <i class="fa fa-angle-double-right"></i>Raffles Details</a></li>
@@ -144,12 +150,17 @@
                           <router-link class="dropdown-item" :to="{name: 'help'}"> <i class="fa fa-angle-double-right"></i>Help</router-link></li>
                         <li><a class="dropdown-item" href="404.html"> <i class="fa fa-angle-double-right"></i>404</a></li>
                       </ul>
+                    </li> -->
+                    <li class="nav-item">
+                      <a class="nav-link" href="/help">Help</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="contact.html">Contact</a>
+                      <a class="nav-link" href="/about">About</a>
                     </li>
                     <li>
-                      <a href="#" class="mybtn1"  data-toggle="modal" data-target="#signin"> Join us</a>
+                      <a href="https://play.cryptowar.network" 
+                      class="mybtn1" 
+                      > Play now!</a>
                     </li>
                   </ul>
                 </div>
