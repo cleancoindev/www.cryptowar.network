@@ -1052,16 +1052,16 @@ export default {
   <!-- Recent Winner Area Start -->
   <section class="recent-winners">
     <div class="container">
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-lg-12">
           <div class="top-section">
             <h3>Recent winners</h3>
             <a href="#">View all</a>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="row">
-        <div class="col-xl-4 col-lg-6 col-md-6">
+        <!-- <div class="col-xl-4 col-lg-6 col-md-6">
           <div class="single-winner">
             <div class="img">
               <img src="../assets/images/r-winner/1.png" alt="">
@@ -1129,7 +1129,7 @@ export default {
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
