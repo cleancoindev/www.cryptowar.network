@@ -22,7 +22,7 @@
               <div class="col-lg-12 col-12" style="text-align:center;">
                 <a href="https://play.cryptowar.network" 
                       class="mybtn1" 
-                      > Play CryptoWar!</a>
+                      > Play CryptoWar</a>
 
               
 

@@ -48,7 +48,7 @@ export default {
   <!-- Hero Area End -->
 
   <!-- Counter Area Start -->
-  <section class="counter-section counter-section2">
+  <!-- <section class="counter-section counter-section2">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-6">
@@ -137,7 +137,7 @@ export default {
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- Counter Area End -->
 
   <!-- Game play area start -->
