@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h2>About US </h2>
-          <ul class="breadcrumb-list">
+          <!-- <ul class="breadcrumb-list">
             <li>
               <a href="#">Home</a>
             </li>
@@ -22,7 +22,7 @@
             <li>
               <a href="#">About Us</a>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
