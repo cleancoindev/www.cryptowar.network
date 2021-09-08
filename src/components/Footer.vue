@@ -85,7 +85,7 @@
                 </a>
               </li>
               <li>
-                <a href="/faq">
+                <a href="https://wiki.cryptowar.network/information/faq">
                   FAQ
                 </a>
               </li>
@@ -95,13 +95,18 @@
                 </a>
               </li>
               <li>
-                <a href="/terms">
+                <a href="https://wiki.cryptowar.network/information/terms-of-use">
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="/privacy">
+                <a href="https://wiki.cryptowar.network/information/privacy-policy">
                   Privacy
+                </a>
+              </li>
+              <li>
+                <a href="https://discord.gg/tWhbWySwCK">
+                  Discord
                 </a>
               </li>
             </ul>
