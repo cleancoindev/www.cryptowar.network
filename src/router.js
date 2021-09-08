@@ -23,6 +23,11 @@ const routes = [
         component: () => import("./pages/Help.vue")
     },
     {
+        path: '/privacy',
+        name: 'privacy',
+        component: () => import("./pages/Privacy.vue")
+    },
+    {
         path: '/',
         name: 'landing-page',
         component: () => import("./pages/Home.vue")

@@ -34,23 +34,25 @@
                 <a href="/help" class="active"><i class="fas fa-chevron-right"></i>User Agreement</a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/information/privacy-policy" ><i class="fas fa-chevron-right"></i>Privacy Policy</a>
+                <a href="/privacy" ><i class="fas fa-chevron-right"></i>Privacy Policy</a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/information/terms-of-use" ><i class="fas fa-chevron-right"></i>Terms</a>
+                <a href="help3.html"><i class="fas fa-chevron-right"></i>FAQ</a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/information/faq"><i class="fas fa-chevron-right"></i>FAQ</a>
+                <a href="help4.html"><i class="fas fa-chevron-right"></i>Cryptocurrency</a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/xblade/what-is-xblade"><i class="fas fa-chevron-right"></i>xBlade Token</a>
+                <a href="help5.html"><i class="fas fa-chevron-right"></i>Fee</a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/getting-started/gas-fees"><i class="fas fa-chevron-right"></i>Fee</a>
+                <a href="help6.html"><i class="fas fa-chevron-right"></i>Forget Password</a>
               </li>
-     
               <li>
-                <a href="https://wiki.cryptowar.network/getting-started/common-issues-and-solutions"><i class="fas fa-chevron-right"></i>Technical issues</a>
+                <a href="help7.html"><i class="fas fa-chevron-right"></i>Registration and Login</a>
+              </li>
+              <li>
+                <a href="help8.html"><i class="fas fa-chevron-right"></i>Technical issues</a>
               </li>
             </ul>
           </aside>
