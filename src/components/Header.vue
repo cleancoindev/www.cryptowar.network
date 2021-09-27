@@ -157,6 +157,9 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/about">About</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://test.cryptowar.network">Testnet</a>
+                    </li>
                     <li>
                       <a href="https://play.cryptowar.network" 
                       class="mybtn1" 
