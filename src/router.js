@@ -31,6 +31,11 @@ const routes = [
         path: '/',
         name: 'landing-page',
         component: () => import("./pages/Home.vue")
+    },
+    {
+        path: '/fair-distribution',
+        name: 'fair-distribution',
+        component: () => import("./pages/FairDistribution.vue")
     }
 ]
 const router = createRouter({ history, routes })

@@ -57,7 +57,7 @@
                   <li>
                     <div class="notofication"  >
                       <a href="https://twitter.com/search?q=cryptowar" target="_blank">
-                      
+
                         <i class="far fa-bell"></i>
                       </a>
                     </div>
@@ -67,7 +67,7 @@
                       <a href="mailto:hi@cryptowar.network" target="_blank">
                         <i class="far fa-envelope"></i>
                       </a>
-                      
+
                     </div>
                   </li>
                 </ul>
@@ -157,12 +157,15 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/about">About</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a class="nav-link" href="https://test.cryptowar.network">Testnet</a>
+                    </li> -->
+                    <li class="nav-item">
+                      <a class="nav-link" href="/fair-distribution">Fair Distribution</a>
                     </li>
                     <li>
-                      <a href="https://play.cryptowar.network" 
-                      class="mybtn1" 
+                      <a href="https://play.cryptowar.network"
+                      class="mybtn1"
                       > Play now!</a>
                     </li>
                   </ul>
