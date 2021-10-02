@@ -1,7 +1,6 @@
 import { createStore } from "vuex";
 import { Contract as Web3EthContract } from "web3-eth-contract";
 import { TokenDistribution } from "./abi-interfaces";
-import {isEqual} from "lodash";
 import { abi as tokenDistributionAbi } from "./contracts/TokenDistribution.json";
 // import Web3 from "web3";
 // @ts-ignore
@@ -129,7 +128,7 @@ export const store = createStore<IState>({
     },
     async pollAccountsAndNetwork({ state, dispatch, commit }) {
       const accounts = await web3.eth.requestAccounts();
-      if (!isEqual(state.defaultAccount, accounts)) {
+      if (state.defaultAccount !==accounts[0]) {
         commit("updateAccount", { account: accounts[0] });
       }
     },
