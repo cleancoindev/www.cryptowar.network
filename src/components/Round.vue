@@ -28,6 +28,18 @@
           Claim will be available at {{ days }} days, {{ hours }} hours,
           {{ minutes }} minutes, {{ seconds }} seconds.
         </VueCountdown>
+        <div class="progress">
+          <div
+            class="progress-bar progress-bar-bg"
+            role="progressbar"
+            v-bind:style="{ width: (totalDeposit * 100) / maxDeposit + '%' }"
+            :aria-valuenow="(totalDeposit * 100) / maxDeposit"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            {{ ((totalDeposit * 100) / maxDeposit).toFixed(0) }}%
+          </div>
+        </div>
         <div>Total Deposit: {{ totalDeposit }} BNB</div>
         <div>Max Deposit: {{ maxDeposit }} BNB</div>
         <div>Max Volume: {{ maxVolume }} BNB</div>
@@ -36,8 +48,7 @@
 
         <div v-show="isOpen">
           <div v-for="order in orders" :key="order.id">
-            <div>Address: {{ order.account }}</div>
-            <div>{{ order.depositValue }}</div>
+            <div>{{ order.account }} | {{ order.depositValue }} BNB</div>
           </div>
         </div>
       </div>
@@ -166,5 +177,9 @@ export default {
   color: #fff;
   font-size: 16px;
   margin: 16px 0;
+}
+
+.progress-bar-bg {
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
 }
 </style>
