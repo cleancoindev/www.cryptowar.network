@@ -7,6 +7,7 @@ import { abi as tokenDistributionAbi } from "./contracts/TokenDistribution.json"
 import Web3 from "web3/dist/web3.min.js";
 import transformResponseToRound from "./utils/transformResponseToRound";
 import transformResponseToOrder from "./utils/transformResponseToOrder";
+// import WalletConnectProvider from "@walletconnect/web3-provider";
 
 interface TypeSafeContract<Abi> {
   methods: Abi;
@@ -41,6 +42,16 @@ type IState = {
   page: number;
 };
 
+// const provider = new WalletConnectProvider({
+//   rpc: {
+//     97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+//     56: "https://bsc-dataseed1.binance.org/",
+//   },
+//   bridge: "https://bridge.myhostedserver.com",
+//   qrcodeModalOptions: {
+//     mobileLinks: ["metamask", "trust"],
+//   },
+// });
 const defaultCallOptions = (state: IState) => ({ from: state.defaultAccount });
 const web3 = new Web3(Web3.givenProvider);
 export const store = createStore<IState>({
@@ -190,5 +201,15 @@ export const store = createStore<IState>({
       commit("updatePage", { page: payload.page });
       this.dispatch("fetchRounds", { page: payload.page });
     },
+    async connect({ state, commit }) {
+      // await Web3.currentProvider.enable();
+      // const accounts = await web3.eth.getAccounts();
+      // if (state.defaultAccount !== accounts[0]) {
+      //   commit("updateAccount", { account: accounts[0] });
+      // }
+    },
+    async disconnect() {
+      // await Web3.currentProvider.disconnect();
+    }
   },
 });

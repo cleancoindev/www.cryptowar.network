@@ -7,6 +7,27 @@
           <h2>Fair Distribution</h2>
         </div>
       </div>
+      <div id="app">
+        <h1>Welcome!</h1>
+        <br />
+        <vs-button
+          size="large"
+          color="primary"
+          type="filled"
+          v-on:click="connect"
+          >Connect Wallet</vs-button
+        >
+        <br /><br />
+        <vs-button
+          size="large"
+          color="primary"
+          type="filled"
+          v-on:click="disconnect"
+          >Disconnect</vs-button
+        >
+        <br />
+        {{ accounts }}
+      </div>
     </div>
   </section>
   <!-- Breadcrumb Area End -->
@@ -60,7 +81,7 @@ export default {
     ...mapState(["defaultAccount", "currentRound", "rounds"]),
   },
   methods: {
-    ...mapActions(["fetchCurrentRound", "initialize", "updatePageAndFetch"]),
+    ...mapActions(["fetchCurrentRound", "initialize", "updatePageAndFetch", "connect", "disconnect"]),
     updateHandler(page: number) {
       // @ts-ignore
       this.$store.dispatch({

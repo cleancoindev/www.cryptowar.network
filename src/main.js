@@ -7,6 +7,4 @@ import { store } from "./store";
 
 // @ts-ignore
 window.Buffer = Buffer;
-// createApp(App).mount('#app')
-// createApp(App, router).mount('#app')
 createApp(App).use(store).use(router).mount("#app");
