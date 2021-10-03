@@ -38,7 +38,7 @@ type IState = {
   defaultAccount: string | null;
   selectedRound: number;
   rounds: Round[];
-
+  page: number;
 };
 
 const defaultCallOptions = (state: IState) => ({ from: state.defaultAccount });
@@ -50,6 +50,7 @@ export const store = createStore<IState>({
     defaultAccount: null,
     selectedRound: 12,
     rounds: [],
+    page: 1,
   },
   getters: {
     currentRound(state: IState) {
@@ -68,6 +69,9 @@ export const store = createStore<IState>({
     },
     updateRounds(state: IState, payload) {
       state.rounds = payload.rounds;
+    },
+    updatePage(state: IState, payload) {
+      state.page = payload.page;
     },
   },
   actions: {
@@ -128,14 +132,20 @@ export const store = createStore<IState>({
     },
     async pollAccountsAndNetwork({ state, dispatch, commit }) {
       const accounts = await web3.eth.requestAccounts();
-      if (state.defaultAccount !==accounts[0]) {
+      if (state.defaultAccount !== accounts[0]) {
         commit("updateAccount", { account: accounts[0] });
       }
     },
-    async fetchRounds({ state, commit }) {
+    async fetchRounds(
+      { state, commit },
+      payload: { type: string; page?: number }
+    ) {
       const contract = state.tokenDistributionContract;
+      const roundPerPage = 20;
+      const page = payload?.page ? payload.page : state.page;
+      const cursor = page - 1 === 0 ? 1 : (page - 1) * roundPerPage;
       const rounds: any[] = await contract.methods
-        .getRounds(20, 1)
+        .getRounds(roundPerPage, cursor)
         .call(defaultCallOptions(state));
       const transformedRound = await Promise.all(
         rounds.map(
@@ -156,20 +166,29 @@ export const store = createStore<IState>({
                 .getOrderByRound(id, 1, 10)
                 .call(defaultCallOptions(state));
 
-              const maxDeposit: number = await contract.methods.getMaxDepositByRound(id).call(defaultCallOptions(state))
+              const maxDeposit: number = await contract.methods
+                .getMaxDepositByRound(id)
+                .call(defaultCallOptions(state));
 
               resolve({
                 ...transformResponseToRound(r),
                 maxVolume: web3.utils.fromWei(maxVol),
                 canClaim,
                 orders: orders.map(transformResponseToOrder),
-                maxDeposit: web3.utils.fromWei(maxDeposit)
+                maxDeposit: web3.utils.fromWei(maxDeposit),
               });
             })
         )
       );
       console.log(transformedRound);
       commit("updateRounds", { rounds: transformedRound });
+    },
+    async updatePageAndFetch(
+      { commit },
+      payload: { type: string; page: number }
+    ) {
+      commit("updatePage", { page: payload.page });
+      this.dispatch("fetchRounds", { page: payload.page });
     },
   },
 });

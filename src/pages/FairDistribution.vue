@@ -28,6 +28,13 @@
                 :maxDeposit="round.maxDeposit"
               />
             </div>
+            <VPagination
+              v-model="page"
+              :pages="5"
+              :range-size="1"
+              active-color="#DCEDFF"
+              @update:modelValue="updateHandler"
+            />
           </div>
         </div>
       </div>
@@ -39,9 +46,11 @@
 <script lang="ts">
 import { mapActions, mapState } from "vuex";
 import Round from "../components/Round.vue";
+import VPagination from "@hennge/vue3-pagination";
+import "@hennge/vue3-pagination/dist/vue3-pagination.css";
 
 export default {
-  components: { Round },
+  components: { Round, VPagination },
   data() {
     return {
       isOpen: false,
@@ -51,7 +60,14 @@ export default {
     ...mapState(["defaultAccount", "currentRound", "rounds"]),
   },
   methods: {
-    ...mapActions(["fetchCurrentRound", "initialize"]),
+    ...mapActions(["fetchCurrentRound", "initialize", "updatePageAndFetch"]),
+    updateHandler(page: number) {
+      // @ts-ignore
+      this.$store.dispatch({
+        type: "updatePageAndFetch",
+        page,
+      });
+    },
   },
   async mounted() {
     await this.initialize();
