@@ -7,7 +7,7 @@
           <h2>Fair Distribution</h2>
         </div>
       </div>
-      <div id="app">
+      <!-- <div id="app">
         <h1>Welcome!</h1>
         <br />
         <vs-button
@@ -27,7 +27,7 @@
         >
         <br />
         {{ accounts }}
-      </div>
+      </div> -->
     </div>
   </section>
   <!-- Breadcrumb Area End -->
@@ -47,6 +47,8 @@
                 :totalDeposit="round.totalDeposit"
                 :orders="round.orders"
                 :maxDeposit="round.maxDeposit"
+                :claimAt="round.claimAt"
+                :yourDeposit="round.yourDeposit"
               />
             </div>
             <VPagination

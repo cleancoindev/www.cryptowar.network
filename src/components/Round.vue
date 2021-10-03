@@ -21,10 +21,17 @@
             <span class="text">Claim</span>
           </button>
         </div>
-
+        <VueCountdown
+          :time="claimAt"
+          v-slot="{ days, hours, minutes, seconds }"
+        >
+          Claim will be available at {{ days }} days, {{ hours }} hours,
+          {{ minutes }} minutes, {{ seconds }} seconds.
+        </VueCountdown>
         <div>Total Deposit: {{ totalDeposit }} BNB</div>
         <div>Max Deposit: {{ maxDeposit }} BNB</div>
         <div>Max Volume: {{ maxVolume }} BNB</div>
+        <div>Your Deposit: {{ yourDeposit }} BNB</div>
         <button class="orders-button" @click="isOpen = !isOpen">Orders</button>
 
         <div v-show="isOpen">
@@ -40,9 +47,20 @@
 
 <script lang="ts">
 import { mapActions } from "vuex";
+import VueCountdown from "@chenfengyuan/vue-countdown";
 
 export default {
-  props: ["round", "canClaim", "totalDeposit", "maxVolume", "orders", "maxDeposit"],
+  components: { VueCountdown },
+  props: [
+    "round",
+    "canClaim",
+    "totalDeposit",
+    "maxVolume",
+    "orders",
+    "maxDeposit",
+    "claimAt",
+    "yourDeposit",
+  ],
   data() {
     return {
       isOpen: false,
@@ -108,6 +126,9 @@ export default {
 .action-button:active,
 .action-button:hover {
   outline: 0;
+}
+.action-button:disabled span {
+  background-color: rgb(139, 139, 139);
 }
 
 .action-button span {

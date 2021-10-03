@@ -24,6 +24,8 @@ export type Round = {
   canClaim?: boolean;
   orders: Order[];
   maxDeposit?: number;
+  claimAt?: number;
+  yourDeposit?: string;
 };
 
 export type Order = {
@@ -181,12 +183,24 @@ export const store = createStore<IState>({
                 .getMaxDepositByRound(id)
                 .call(defaultCallOptions(state));
 
+              const claimAt: number = await contract.methods
+                .withdrawTimeLeft(id)
+                .call(defaultCallOptions(state));
+              let orderDetail: any = {};
+              if (state.defaultAccount) {
+                orderDetail = await contract.methods
+                  .getOrderDetail(id, state.defaultAccount)
+                  .call(defaultCallOptions(state));
+              }
+
               resolve({
                 ...transformResponseToRound(r),
                 maxVolume: web3.utils.fromWei(maxVol),
                 canClaim,
                 orders: orders.map(transformResponseToOrder),
                 maxDeposit: web3.utils.fromWei(maxDeposit),
+                claimAt: Number(claimAt)*1000,
+                yourDeposit: web3.utils.fromWei(orderDetail[2])
               });
             })
         )
@@ -210,6 +224,6 @@ export const store = createStore<IState>({
     },
     async disconnect() {
       // await Web3.currentProvider.disconnect();
-    }
+    },
   },
 });

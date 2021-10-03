@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@chenfengyuan/vue-countdown": "^2.0.0-rc",
     "@hennge/vue3-pagination": "^1.0.17",
     "@walletconnect/web3-provider": "^1.6.5",
     "buffer": "^6.0.3",
