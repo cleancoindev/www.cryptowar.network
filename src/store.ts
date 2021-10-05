@@ -115,8 +115,11 @@ export const store = createStore<IState>({
       }
 
       const contractAddress = state.tokenDistributionContract.options.address;
+      const randHex = web3.utils.randomHex(32);
+      // @ts-ignore
+      const msg = web3.utils.soliditySha3(import.meta.env.VITE_APP_SECRET, randHex);
       const hash = await state.tokenDistributionContract.methods
-        .getMessageHash(contractAddress, "TO_THE_MOON")
+        .getMessageHash(contractAddress, msg)
         .call(defaultCallOptions(state));
 
       // @ts-ignore
@@ -125,7 +128,7 @@ export const store = createStore<IState>({
         state.defaultAccount
       );
       const { round, amount } = payload;
-      state.tokenDistributionContract.methods.deposit(round, signature).send({
+      state.tokenDistributionContract.methods.deposit(round, signature, msg).send({
         from: state.defaultAccount,
         value: web3.utils.toWei(
           web3.utils.toBN((amount * 10 ** 9).toFixed(0)),

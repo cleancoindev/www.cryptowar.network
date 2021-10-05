@@ -149,7 +149,6 @@ export interface TokenDistribution {
   endRoundTime(round: string | number): Web3JsAbiCall<string>;
   withdrawTimeLeft(round: string | number): Web3JsAbiCall<string>;
   canWithdraw(round: string | number, account: string): Web3JsAbiCall<boolean>;
-  calculateWithdrawableAmount(round: string | number, account: string): Web3JsAbiCall<string>;
   getTokenAmountLeftInRound(round: string | number): Web3JsAbiCall<string>;
   canDeposit(round: string | number): Web3JsAbiCall<boolean>;
   getOrderByRound(round: string | number, cursor: string | number, size: string | number): Web3JsAbiCall<undefined>;
@@ -159,7 +158,9 @@ export interface TokenDistribution {
   getRound(round: string | number): Web3JsAbiCall<undefined>;
   getMaxDepositByRound(round: string | number): Web3JsAbiCall<string>;
   getRounds(size: string | number, cursor: string | number): Web3JsAbiCall<undefined>;
-  deposit(round: string | number, _signature: string): Web3JsAbiCall<void>;
+  getClaimAt(round: string | number): Web3JsAbiCall<string>;
+  getBuyableBnb(round: string | number): Web3JsAbiCall<string>;
+  deposit(round: string | number, _signature: string, _message: string): Web3JsAbiCall<void>;
   withdraw(round: string | number): Web3JsAbiCall<void>;
   setSaleStartTime(startTime: string | number): Web3JsAbiCall<void>;
   setFirstRoundPrice(price: string | number): Web3JsAbiCall<void>;
@@ -171,8 +172,7 @@ export interface TokenDistribution {
   emergencyWithdraw(): Web3JsAbiCall<void>;
   initialPriceInRound(round: string | number): Web3JsAbiCall<string>;
   maxVolumeInRound(round: string | number): Web3JsAbiCall<string>;
-  calculateExactTokenAmount(round: string | number, account: string): Web3JsAbiCall<string>;
-  calculateTokenAmountBaseOnDepositPercent(round: string | number, account: string): Web3JsAbiCall<string>;
+  calculateExactTokenAmount(round: string | number, amountBnb: string | number): Web3JsAbiCall<string>;
   getMessageHash(_to: string, _message: string): Web3JsAbiCall<string>;
 }
 
