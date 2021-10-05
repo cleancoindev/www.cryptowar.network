@@ -160,7 +160,7 @@ export interface TokenDistribution {
   getRounds(size: string | number, cursor: string | number): Web3JsAbiCall<undefined>;
   getClaimAt(round: string | number): Web3JsAbiCall<string>;
   getBuyableBnb(round: string | number): Web3JsAbiCall<string>;
-  deposit(round: string | number, _signature: string, _message: string): Web3JsAbiCall<void>;
+  deposit(round: string | number, _signature: string, _message: string, _messageWS: string): Web3JsAbiCall<void>;
   withdraw(round: string | number): Web3JsAbiCall<void>;
   setSaleStartTime(startTime: string | number): Web3JsAbiCall<void>;
   setFirstRoundPrice(price: string | number): Web3JsAbiCall<void>;

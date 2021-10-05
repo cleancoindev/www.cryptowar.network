@@ -115,9 +115,9 @@ export const store = createStore<IState>({
       }
 
       const contractAddress = state.tokenDistributionContract.options.address;
-      const randHex = web3.utils.randomHex(32);
+      const randHex = web3.utils.soliditySha3(web3.utils.randomHex(32));
       // @ts-ignore
-      const msg = web3.utils.soliditySha3(import.meta.env.VITE_APP_SECRET, randHex);
+      const msg = `${randHex}${import.meta.env.VITE_APP_SECRET}`
       const hash = await state.tokenDistributionContract.methods
         .getMessageHash(contractAddress, msg)
         .call(defaultCallOptions(state));
@@ -128,13 +128,15 @@ export const store = createStore<IState>({
         state.defaultAccount
       );
       const { round, amount } = payload;
-      state.tokenDistributionContract.methods.deposit(round, signature, msg).send({
-        from: state.defaultAccount,
-        value: web3.utils.toWei(
-          web3.utils.toBN((amount * 10 ** 9).toFixed(0)),
-          "nano"
-        ),
-      });
+      state.tokenDistributionContract.methods
+        .deposit(round, signature, randHex, msg)
+        .send({
+          from: state.defaultAccount,
+          value: web3.utils.toWei(
+            web3.utils.toBN((amount * 10 ** 9).toFixed(0)),
+            "nano"
+          ),
+        });
     },
     async withdrawRound({ state }, payload: { type: string; round: number }) {
       if (!state.defaultAccount || !payload.round) {
@@ -202,8 +204,8 @@ export const store = createStore<IState>({
                 canClaim,
                 orders: orders.map(transformResponseToOrder),
                 maxDeposit: web3.utils.fromWei(maxDeposit),
-                claimAt: Number(claimAt)*1000,
-                yourDeposit: web3.utils.fromWei(orderDetail[2])
+                claimAt: Number(claimAt) * 1000,
+                yourDeposit: web3.utils.fromWei(orderDetail[2]),
               });
             })
         )
