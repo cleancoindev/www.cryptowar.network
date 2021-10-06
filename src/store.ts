@@ -70,6 +70,7 @@ export const store = createStore<IState>({
       return state.currentRound;
     },
   },
+  // Comment
   mutations: {
     updateCurrentRound(state: IState, payload) {
       state.currentRound = payload.currentRound;
