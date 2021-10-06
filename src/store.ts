@@ -5,14 +5,14 @@ import { abi as tokenDistributionAbi } from "./contracts/TokenDistribution.json"
 import Web3 from "web3";
 import transformResponseToRound from "./utils/transformResponseToRound";
 import transformResponseToOrder from "./utils/transformResponseToOrder";
-// import WalletConnectProvider from "@walletconnect/web3-provider";
+import { getWeb3Client } from "./libs/web3";
 
 interface TypeSafeContract<Abi> {
   methods: Abi;
 }
 
 export type Contract<Abi> = Omit<Web3EthContract, "methods"> &
-TypeSafeContract<Abi>;
+  TypeSafeContract<Abi>;
 
 export interface Round {
   round: number;
@@ -40,6 +40,7 @@ interface IState {
   selectedRound: number;
   rounds: Round[];
   page: number;
+  walletClient: any;
 }
 
 // const provider = new WalletConnectProvider({
@@ -62,6 +63,7 @@ export const store = createStore<IState>({
     selectedRound: 12,
     rounds: [],
     page: 1,
+    walletClient: {},
   },
   getters: {
     currentRound(state: IState) {
@@ -84,6 +86,9 @@ export const store = createStore<IState>({
     updatePage(state: IState, payload) {
       state.page = payload.page;
     },
+    updateWalletClient(state: IState, payload) {
+      state.walletClient = payload.walletClient;
+    },
   },
   actions: {
     async fetchCurrentRound({ state, commit }) {
@@ -95,6 +100,8 @@ export const store = createStore<IState>({
       });
     },
     async initialize({ commit, dispatch }) {
+      const walletClient = await getWeb3Client();
+      commit("updateWalletClient", { walletClient });
       const contract = new web3.eth.Contract(
         tokenDistributionAbi as any[],
         "0x92d3c1c34DDf1589796827962eE769dC58FEFC68"
@@ -148,8 +155,8 @@ export const store = createStore<IState>({
         .send(defaultCallOptions(state));
     },
     async pollAccountsAndNetwork({ state, dispatch, commit }) {
-      const accounts = await web3.eth.requestAccounts();
-      if (state.defaultAccount !== accounts[0]) {
+      const accounts = await state.walletClient.web3Client.eth.getAccounts();
+      if (accounts.length > 0) {
         commit("updateAccount", { account: accounts[0] });
       }
     },

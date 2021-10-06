@@ -57,6 +57,7 @@ export const getWeb3Client = async () => {
     if(web3Provider) bindingProviderEvents(web3Provider);
 
     if(!web3Client) web3Client = new Web3(web3Provider, {
+        // @ts-ignore
         timeout: 20000, // ms
 
         clientConfig: {
