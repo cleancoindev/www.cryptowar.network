@@ -17,7 +17,7 @@ export interface Web3JsTransactionResult {
 
 type BlockNumber = number | string | 'latest' | 'earliest' | 'pending';
 
-export interface Web3JsAbiCall<R> {
+export type Web3JsAbiCall<R> = {
   call(opts: Web3JsCallOptions, defaultBlock?: BlockNumber): Promise<R>;
   send(opts: Web3JsSendOptions): Promise<Web3JsTransactionResult>;
 }

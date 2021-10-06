@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Web3JsAbiCall } from '../abi-common';
 
 export interface AddressUpgradeable {

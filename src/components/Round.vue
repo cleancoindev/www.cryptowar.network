@@ -60,6 +60,11 @@
 import { mapActions } from "vuex";
 import VueCountdown from "@chenfengyuan/vue-countdown";
 
+interface Data {
+  isOpen: boolean;
+  amount: number;
+}
+
 export default {
   components: { VueCountdown },
   props: [
@@ -76,7 +81,7 @@ export default {
     return {
       isOpen: false,
       amount: 0,
-    };
+    } as Data;
   },
   methods: {
     ...mapActions(["depositBnbToRound", "withdrawRound"]),

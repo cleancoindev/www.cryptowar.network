@@ -112,7 +112,7 @@
                       <a class="nav-link" href="/">Home</a>
                     </li> -->
                     <li class="nav-item">
-                      <a class="nav-link" href="games.html">Buy xBlade</a>
+                      <a class="nav-link" href="/buy">Buy xBlade</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="https://wiki.cryptowar.network">Game Wiki</a>
@@ -157,12 +157,10 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/about">About</a>
                     </li>
-                    <!-- <li class="nav-item">
-                      <a class="nav-link" href="https://test.cryptowar.network">Testnet</a>
-                    </li> -->
                     <li class="nav-item">
-                      <a class="nav-link" href="/fair-distribution">Fair Distribution</a>
+                      <a class="nav-link" href="https://test.cryptowar.network">Testnet</a>
                     </li>
+
                     <li>
                       <a href="https://play.cryptowar.network"
                       class="mybtn1"

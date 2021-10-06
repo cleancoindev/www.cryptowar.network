@@ -47,7 +47,7 @@
                 win REAL MONEY!
               </h2>
               <h6 class="text">
-                
+
                 CryptoWar applies a play-to-earn model. This game involves giving players financial incentives to play and progress through the game. This may allow gamers to earn a full time income by playing and trading.</h6>
                 <h6 class="text">
 
@@ -63,7 +63,7 @@
               CryptoWar also have auto-staking , where players can lock away certain tokens in order to earn annual interest.
                 </h6>
 
-              
+
             </div>
             <!-- <div class="content-list">
               <div class="s-list">
@@ -132,7 +132,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-xl-4 col-lg-4 col-md-4">
           <div class="single-feature">
             <div class="img">

@@ -4,7 +4,7 @@ import { Round } from "@/store";
 import Web3 from "web3/dist/web3.min.js";
 
 function transformResponseToRound(response: any): Round {
-  const web3 = new Web3(Web3.givenProvider)
+  const web3 = new Web3(Web3.givenProvider);
   return {
     round: Number(response[0]),
     totalDeposit:  web3.utils.fromWei(response[1]),

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "strict": true,
+    "strict": false,
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
@@ -13,6 +13,7 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "allowJs": true,
     "types": [
       "webpack-env"
     ],
@@ -34,8 +35,9 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx",
-    "babel.config.js"
-, "src/main.js"  ],
+    "babel.config.js",
+    "src/main.ts"
+  ],
   "exclude": [
     "node_modules"
   ]

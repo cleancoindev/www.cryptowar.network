@@ -2,9 +2,7 @@ import { createStore } from "vuex";
 import { Contract as Web3EthContract } from "web3-eth-contract";
 import { TokenDistribution } from "./abi-interfaces";
 import { abi as tokenDistributionAbi } from "./contracts/TokenDistribution.json";
-// import Web3 from "web3";
-// @ts-ignore
-import Web3 from "web3/dist/web3.min.js";
+import Web3 from "web3";
 import transformResponseToRound from "./utils/transformResponseToRound";
 import transformResponseToOrder from "./utils/transformResponseToOrder";
 // import WalletConnectProvider from "@walletconnect/web3-provider";
@@ -14,35 +12,35 @@ interface TypeSafeContract<Abi> {
 }
 
 export type Contract<Abi> = Omit<Web3EthContract, "methods"> &
-  TypeSafeContract<Abi>;
+TypeSafeContract<Abi>;
 
-export type Round = {
+export interface Round {
   round: number;
   totalDeposit: string;
   totalWithdraw: string;
   maxVolume?: string;
   canClaim?: boolean;
-  orders: Order[];
+  orders?: Order[];
   maxDeposit?: number;
   claimAt?: number;
   yourDeposit?: string;
-};
+}
 
-export type Order = {
+export interface Order {
   account: string;
   claimed: boolean;
   depositValue: string;
   id: number;
-};
+}
 
-type IState = {
+interface IState {
   tokenDistributionContract: Contract<TokenDistribution>;
   currentRound: number;
   defaultAccount: string | null;
   selectedRound: number;
   rounds: Round[];
   page: number;
-};
+}
 
 // const provider = new WalletConnectProvider({
 //   rpc: {
@@ -117,7 +115,8 @@ export const store = createStore<IState>({
       const contractAddress = state.tokenDistributionContract.options.address;
       const randHex = web3.utils.soliditySha3(web3.utils.randomHex(32));
       // @ts-ignore
-      const msg = `${randHex}${import.meta.env.VITE_APP_SECRET}`
+      // const msg = `${randHex}${import.meta.env.VITE_APP_SECRET}`;
+      const msg = `${randHex}`;
       const hash = await state.tokenDistributionContract.methods
         .getMessageHash(contractAddress, msg)
         .call(defaultCallOptions(state));
@@ -184,7 +183,7 @@ export const store = createStore<IState>({
                 .getOrderByRound(id, 1, 10)
                 .call(defaultCallOptions(state));
 
-              const maxDeposit: number = await contract.methods
+              const maxDeposit: string = await contract.methods
                 .getMaxDepositByRound(id)
                 .call(defaultCallOptions(state));
 
@@ -220,7 +219,7 @@ export const store = createStore<IState>({
       commit("updatePage", { page: payload.page });
       this.dispatch("fetchRounds", { page: payload.page });
     },
-    async connect({ state, commit }) {
+    async connect() {
       // await Web3.currentProvider.enable();
       // const accounts = await web3.eth.getAccounts();
       // if (state.defaultAccount !== accounts[0]) {

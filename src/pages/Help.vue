@@ -48,7 +48,7 @@
               <li>
                 <a href="https://wiki.cryptowar.network/getting-started/gas-fees"><i class="fas fa-chevron-right"></i>Fee</a>
               </li>
-     
+
               <li>
                 <a href="https://wiki.cryptowar.network/getting-started/common-issues-and-solutions"><i class="fas fa-chevron-right"></i>Technical issues</a>
               </li>

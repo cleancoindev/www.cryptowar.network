@@ -6,13 +6,13 @@
 // import Footer from '../components/Footer.vue'
 
 export default {
-  'name': 'home',
+  name: 'home',
   components: {
     // Header,
     // HelloWorld,
     // Footer
   }
-}
+};
 
 </script>
 
