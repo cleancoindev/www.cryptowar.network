@@ -113,7 +113,7 @@ export const store = createStore<IState>({
       dispatch("fetchRounds");
     },
     async depositBnbToRound(
-      { state },
+      { state, dispatch },
       payload: { type: string; round: number; amount: number }
     ) {
       if (!state.defaultAccount || !payload.round) {
@@ -121,10 +121,10 @@ export const store = createStore<IState>({
       }
 
       const contractAddress = state.tokenDistributionContract.options.address;
-      const randHex = web3.utils.soliditySha3(web3.utils.randomHex(32));
+      const randHex = web3.utils.randomHex(32);
       // @ts-ignore
-      // const msg = `${randHex}${import.meta.env.VITE_APP_SECRET}`;
-      const msg = `${randHex}`;
+      const msg = `${randHex}${process.env.VUE_APP_SECRET}`;
+      // const msg = `${randHex}`;
       const hash = await state.tokenDistributionContract.methods
         .getMessageHash(contractAddress, msg)
         .call(defaultCallOptions(state));
@@ -135,7 +135,7 @@ export const store = createStore<IState>({
         state.defaultAccount
       );
       const { round, amount } = payload;
-      state.tokenDistributionContract.methods
+      await state.tokenDistributionContract.methods
         .deposit(round, signature, randHex, msg)
         .send({
           from: state.defaultAccount,
@@ -144,6 +144,7 @@ export const store = createStore<IState>({
             "nano"
           ),
         });
+      dispatch("fetchRounds");
     },
     async withdrawRound({ state }, payload: { type: string; round: number }) {
       if (!state.defaultAccount || !payload.round) {
