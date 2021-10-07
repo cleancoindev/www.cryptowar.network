@@ -21,14 +21,15 @@
             <span class="text">Claim</span>
           </button>
         </div>
-        <VueCountdown
-          :time="claimAt"
-          v-slot="{ days, hours, minutes, seconds }"
-        >
-          Claim will be available at {{ days }} days, {{ hours }} hours,
-          {{ minutes }} minutes, {{ seconds }} seconds.
-        </VueCountdown>
-        <div class="progress">
+        <div style="margin:15px 0;">
+          <VueCountdown
+            :time="claimAt"
+            v-if="!canClaim"
+            v-slot="{ days, hours, minutes, seconds }" > ⏰ Claim will be available in {{ days }} days, {{ hours }} hours,
+            {{ minutes }} minutes, {{ seconds }} seconds.
+          </VueCountdown>
+        </div>
+        <div class="progress" style="margin-bottom:15px">
           <div
             class="progress-bar progress-bar-bg"
             role="progressbar"
@@ -40,16 +41,41 @@
             {{ ((totalDeposit * 100) / maxDeposit).toFixed(0) }}%
           </div>
         </div>
-        <div>Total Deposit: {{ totalDeposit }} BNB</div>
-        <div>Max Deposit: {{ maxDeposit }} BNB</div>
-        <div>Max Volume: {{ maxVolume }} BNB</div>
-        <div>Your Deposit: {{ yourDeposit }} BNB</div>
-        <button class="orders-button" @click="isOpen = !isOpen">Orders</button>
+
+        <table style="width:100%">
+          <tr>
+            <td style="text-align:left; width:115px;" >Total Deposit:</td>
+            <td style="text-align:left">{{ totalDeposit }} BNB</td>
+          </tr>
+          <tr>
+            <td style="">Max Deposit:</td>
+            <td style="text-align:left">{{ maxDeposit }} BNB </td>
+           </tr>
+          <tr>
+            <td style="">xBlade Price:</td>
+            <td style="text-align:left">{{ maxDeposit }} BNB</td>
+           </tr>
+          <tr>
+            <td style="">Total xBlade:</td>
+            <td style="text-align:left">214 861</td>
+           </tr>
+          <tr>
+            <td style="">Your Deposit:</td>
+            <td style="text-align:left">{{ yourDeposit }} BNB</td>
+           </tr>
+        </table>
+
+        <!-- <div>Max Volume: {{ maxVolume }} BNB</div> -->
+        <button class="orders-button" @click="isOpen = !isOpen">First 50 deposits</button>
 
         <div v-show="isOpen">
-          <div v-for="order in orders" :key="order.id">
-            <div>{{ order.account }} | {{ order.depositValue }} BNB</div>
-          </div>
+          <table>
+            <tr v-for="order in orders" :key="order.id">
+
+              <td> <a :href="'https://bscscan.com/address/' + order.account" target="_blank"> {{ order.account }} </a> </td>
+              <td style="padding-left:15px;"> {{ order.depositValue }} BNB </td>
+              </tr>
+          </table>
         </div>
       </div>
     </div>
@@ -166,6 +192,7 @@ export default {
     min-width: 120px;
   }
 }
+
 
 .round-number {
   font-size: 68px;

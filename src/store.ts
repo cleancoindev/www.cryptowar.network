@@ -189,7 +189,7 @@ export const store = createStore<IState>({
                   .call(defaultCallOptions(state));
               }
               const orders: any[] = await contract.methods
-                .getOrderByRound(id, 1, 10)
+                .getOrderByRound(id, 1, 50)
                 .call(defaultCallOptions(state));
 
               const maxDeposit: string = await contract.methods
