@@ -114,6 +114,7 @@ export default {
   methods: {
     ...mapActions(["fetchCurrentRound", "initialize", "updatePageAndFetch", "connect", "disconnect"]),
     updateHandler(page: number) {
+
       // @ts-ignore
       this.$store.dispatch({
         type: "updatePageAndFetch",

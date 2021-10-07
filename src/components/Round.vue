@@ -29,9 +29,9 @@
         <div style="margin:15px 0;">
           <VueCountdown
             :time="claimAt"
-            v-if="!canClaim"
+            v-if="claimAt > 0"
             v-slot="{ days, hours, minutes, seconds }" > ⏰ Claim will be available in {{ days }} days, {{ hours }} hours,
-            {{ minutes }} minutes, {{ seconds }} seconds.
+            {{ minutes }} minutes, {{ seconds }} seconds. {{ claimAt}}
           </VueCountdown>
         </div>
         <div class="progress" style="margin-bottom:15px">
@@ -48,7 +48,7 @@
         </div>
 
         <table style="width:100%">
-          <tr><td colspan="2"> <h3>Round Information</h3>
+          <tr><td colspan="2"> <h3>ℹ️ Round Information</h3>
             </td>
             </tr>
              <tr>
@@ -75,7 +75,6 @@
             <td style="">Total xBlade:</td>
             <td style="text-align:left">214 861 xBlade</td>
            </tr>
-         
         </table>
 
         <!-- <div>Max Volume: {{ maxVolume }} BNB</div> -->
