@@ -43,6 +43,9 @@
         </div>
 
         <table style="width:100%">
+          <tr><td colspan="2"> <h3>Round Information</h3>
+            </td>
+            </tr>
           <tr>
             <td style="text-align:left; width:115px;" >Total Deposit:</td>
             <td style="text-align:left">{{ totalDeposit }} BNB</td>
@@ -70,7 +73,10 @@
         </table>
 
         <!-- <div>Max Volume: {{ maxVolume }} BNB</div> -->
-        <button class="orders-button" v-if="orders.length>0" @click="isOpen = !isOpen">First 50 deposits</button>
+        <button class="orders-button" v-if="orders.length>0" @click="isOpen = !isOpen">
+          <h3> &raquo;
+          First 50 deposits </h3>
+          </button>
 
         <div v-show="isOpen">
           <table>
