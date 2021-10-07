@@ -4,7 +4,7 @@ module.exports = {
   configureWebpack: () => {
     return {
       optimization: {
-        splitChunks: true
+        chunks: true
       },
       plugins: [
         new webpack.ProvidePlugin({
