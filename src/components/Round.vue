@@ -4,29 +4,42 @@
       <div class="col-lg-2 round-number">{{ round }}</div>
       <div class="col-lg-10">
         <div class="row">
-
           <table>
-            <tr v-if="yourDeposit==0">
-              <td colspan="2"><input
-              class="input-field amount-input"
-              placeholder="Amount BNB"
-              type="number"
-              v-model="amount" style="width:170px;"
-            /> BNB</td>
+            <tr v-if="yourDeposit == 0">
+              <td colspan="2">
+                <input
+                  class="input-field amount-input"
+                  placeholder="Amount BNB"
+                  type="number"
+                  v-model="amount"
+                  style="width: 170px"
+                />
+                BNB
+              </td>
             </tr>
             <tr>
-              <td> <button v-if="yourDeposit==0" class="action-button" @click="this.handleDeposit(round)">
-              <span class="text">Deposit</span>
-            </button></td>
-              <td><button
-              class="action-button"
-              v-bind:disabled="!canClaim"
-              @click="this.handleWithdraw(round)" >
-              <span class="text">Claim</span>
-            </button></td>
-              </tr>
-            </table></div>
-        <div style="margin:15px 0;">
+              <td>
+                <button
+                  v-if="yourDeposit == 0"
+                  class="action-button"
+                  @click="this.handleDeposit(round)"
+                >
+                  <span class="text">Deposit</span>
+                </button>
+              </td>
+              <td>
+                <button
+                  class="action-button"
+                  v-bind:disabled="!canClaim"
+                  @click="this.handleWithdraw(round)"
+                >
+                  <span class="text">Claim</span>
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div style="margin: 15px 0">
           <VueCountdown
             :time="claimAt"
             v-if="claimAt > 0"
@@ -34,7 +47,7 @@
             {{ minutes }} minutes, {{ seconds }} seconds. {{ claimAt}}
           </VueCountdown>
         </div>
-        <div class="progress" style="margin-bottom:15px">
+        <div class="progress" style="margin-bottom: 15px">
           <div
             class="progress-bar progress-bar-bg"
             role="progressbar"
@@ -56,40 +69,53 @@
             <td style="text-align:left">{{ yourDeposit }} BNB</td>
            </tr>
           <tr>
-            <td style="text-align:left; width:115px;" >Total Deposit:</td>
-            <td style="text-align:left">{{ totalDeposit }} BNB</td>
+            <td style="text-align: left; width: 115px">Total Deposit:</td>
+            <td style="text-align: left">{{ totalDeposit }} BNB</td>
           </tr>
           <tr>
             <td style="">Min Deposit:</td>
-            <td style="text-align:left">{{ maxDeposit }} BNB </td>
-           </tr>
+            <td style="text-align: left">{{ minDeposit }} BNB</td>
+          </tr>
           <tr>
             <td style="">Max Deposit:</td>
-            <td style="text-align:left">{{ maxDeposit }} BNB </td>
-           </tr>
+            <td style="text-align: left">{{ maxDeposit }} BNB</td>
+          </tr>
           <tr>
             <td style="">xBlade Price:</td>
-            <td style="text-align:left">{{ maxDeposit }} BNB</td>
-           </tr>
+            <td style="text-align: left">{{ price }} BNB</td>
+          </tr>
           <tr>
             <td style="">Total xBlade:</td>
-            <td style="text-align:left">214 861 xBlade</td>
-           </tr>
+            <td style="text-align: left">{{ amountTokenSale }} xBlade</td>
+          </tr>
+          <tr>
+            <td style="">Your Deposit:</td>
+            <td style="text-align: left">{{ yourDeposit }} BNB</td>
+          </tr>
         </table>
 
         <!-- <div>Max Volume: {{ maxVolume }} BNB</div> -->
-        <button class="orders-button" v-if="orders.length>0" @click="isOpen = !isOpen">
-          <h3> &raquo;
-          First 50 deposits </h3>
-          </button>
+        <button
+          class="orders-button"
+          v-if="orders.length > 0"
+          @click="isOpen = !isOpen"
+        >
+          <h3>&raquo; First 50 deposits</h3>
+        </button>
 
         <div v-show="isOpen">
           <table>
             <tr v-for="order in orders" :key="order.id">
-
-              <td> <a :href="'https://bscscan.com/address/' + order.account" target="_blank"> {{ order.account }} </a> </td>
-              <td style="padding-left:15px;"> {{ order.depositValue }} BNB </td>
-              </tr>
+              <td>
+                <a
+                  :href="'https://bscscan.com/address/' + order.account"
+                  target="_blank"
+                >
+                  {{ order.account }}
+                </a>
+              </td>
+              <td style="padding-left: 15px">{{ order.depositValue }} BNB</td>
+            </tr>
           </table>
         </div>
       </div>
@@ -117,6 +143,9 @@ export default {
     "maxDeposit",
     "claimAt",
     "yourDeposit",
+    "amountTokenSale",
+    "price",
+    "minDeposit"
   ],
   data() {
     return {
@@ -208,7 +237,6 @@ export default {
   }
 }
 
-
 .round-number {
   font-size: 68px;
   font-weight: 900;
@@ -216,7 +244,7 @@ export default {
 .amount-input {
   border-radius: 8px;
   padding: 0 12px;
-  margin:8px 16px;
+  margin: 8px 16px;
 }
 .orders-button {
   border: none;

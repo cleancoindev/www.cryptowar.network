@@ -24,6 +24,9 @@ export interface Round {
   maxDeposit?: number;
   claimAt?: number;
   yourDeposit?: string;
+  amountTokenSale?: string;
+  price?: string;
+  minDeposit?: string;
 }
 
 export interface Order {
@@ -205,7 +208,17 @@ export const store = createStore<IState>({
                   .getOrderDetail(id, state.defaultAccount)
                   .call(defaultCallOptions(state));
               }
+              const amountTokenSale: string = await contract.methods
+                .AMOUNT_TOKEN_SALE_PER_ROUND()
+                .call(defaultCallOptions(state));
 
+              const price: string = await contract.methods
+                .initialPriceInRound(id)
+                .call(defaultCallOptions(state));
+
+              const minDeposit: string = await contract.methods
+                .MIN_BUY()
+                .call(defaultCallOptions(state));
               resolve({
                 ...transformResponseToRound(r),
                 maxVolume: web3.utils.fromWei(maxVol),
@@ -214,6 +227,9 @@ export const store = createStore<IState>({
                 maxDeposit: web3.utils.fromWei(maxDeposit),
                 claimAt: Number(claimAt) * 1000,
                 yourDeposit: web3.utils.fromWei(orderDetail[2]),
+                amountTokenSale: web3.utils.fromWei(amountTokenSale),
+                price: web3.utils.fromWei(price),
+                minDeposit: web3.utils.fromWei(minDeposit),
               });
             })
         )

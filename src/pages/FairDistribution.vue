@@ -78,6 +78,9 @@
                 :maxDeposit="round.maxDeposit"
                 :claimAt="round.claimAt"
                 :yourDeposit="round.yourDeposit"
+                :amountTokenSale="round.amountTokenSale"
+                :price="round.price"
+                :minDeposit="round.minDeposit"
               />
             </div>
             <VPagination
