@@ -6,7 +6,7 @@
         <div class="row">
 
           <table>
-            <tr>
+            <tr v-if="yourDeposit==0">
               <td colspan="2"><input
               class="input-field amount-input"
               placeholder="Amount BNB"
