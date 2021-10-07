@@ -51,6 +51,10 @@
           <tr><td colspan="2"> <h3>Round Information</h3>
             </td>
             </tr>
+             <tr>
+            <td style="">Your Deposit:</td>
+            <td style="text-align:left">{{ yourDeposit }} BNB</td>
+           </tr>
           <tr>
             <td style="text-align:left; width:115px;" >Total Deposit:</td>
             <td style="text-align:left">{{ totalDeposit }} BNB</td>
@@ -71,10 +75,7 @@
             <td style="">Total xBlade:</td>
             <td style="text-align:left">214 861 xBlade</td>
            </tr>
-          <tr>
-            <td style="">Your Deposit:</td>
-            <td style="text-align:left">{{ yourDeposit }} BNB</td>
-           </tr>
+         
         </table>
 
         <!-- <div>Max Volume: {{ maxVolume }} BNB</div> -->
