@@ -58,7 +58,7 @@
                     <li style="list-style: none; font-weight: bold;">📖 Rules</li>
                     <li style="list-style: disc"> You can only deposit once per round. </li>
                     <li style="list-style: disc"> You can only claim xBlade when claim is available for that round </li>
-                    <li style="list-style: disc"> Read more at <a target="_blank" href="https://wiki.cryptowar.network/tokenomics">xBlade Tokenomics</a>, Join
+                    <li style="list-style: disc"> Read more at <a target="_blank" href="https://wiki.cryptowar.network/tokenomics">xBlade Tokenomics</a>, Join 
                       <a target="_blank" href="https://t.me/elasticbitcoinxbt">Telegram</a>,
                       <a target="_blank" href="https://discord.gg/tWhbWySwCK">Discord</a>
                      </li>
@@ -66,6 +66,8 @@
                   </div>
               </div>
             </div>
+
+            <content-loader v-if="rounds.length==0"></content-loader>
             <div v-for="round in rounds" :key="round.round">
               <Round
                 :canClaim="round.canClaim"
@@ -98,9 +100,9 @@ import { mapActions, mapState } from "vuex";
 import Round from "../components/Round.vue";
 import VPagination from "@hennge/vue3-pagination";
 import "../assets/css/vue3-pagination.css";
-
+import { ContentLoader } from 'vue-content-loader;
 export default {
-  components: { Round, VPagination },
+  components: { Round, VPagination,ContentLoader },
   data() {
     return {
       isOpen: false,

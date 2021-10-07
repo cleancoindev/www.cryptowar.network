@@ -7,8 +7,8 @@ module.exports = {
     return {
       optimization: {
         splitChunks: {
-          minSize: 10000,
-          maxSize: 200000,
+          minSize: 100000,
+          maxSize: 500000,
         }
       },    
       plugins: [

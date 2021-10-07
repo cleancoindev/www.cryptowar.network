@@ -12,6 +12,7 @@
     "process": "^0.11.10",
     "rollup-plugin-polyfill-node": "^0.7.0",
     "vue": "^3.2.6",
+    "vue-content-loader": "^2.0.0",
     "vue-router": "^4.0.11",
     "vuex": "^4.0.2",
     "web3": "^1.6.0",
