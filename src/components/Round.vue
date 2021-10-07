@@ -4,22 +4,25 @@
       <div class="col-lg-2 round-number">{{ round }}</div>
       <div class="col-lg-10">
         <div class="row">
-          <input
-            class="input-field amount-input"
-            placeholder="Amount BNB"
-            type="number"
-            v-model="amount"
-          />
-          <button class="action-button" @click="this.handleDeposit(round)">
-            <span class="text">Deposit</span>
-          </button>
-          <button
-            class="action-button"
-            v-bind:disabled="!canClaim"
-            @click="this.handleWithdraw(round)"
-          >
-            <span class="text">Claim</span>
-          </button>
+          <div class="col">
+            <input
+              class="input-field amount-input"
+              placeholder="Amount BNB"
+              type="number"
+              v-model="amount"
+            />
+          </div>
+          <div class="col-6">
+            <button v-if="yourDeposit==0" class="action-button" @click="this.handleDeposit(round)">
+              <span class="text">Deposit</span>
+            </button>
+            <button
+              class="action-button"
+              v-bind:disabled="!canClaim"
+              @click="this.handleWithdraw(round)" >
+              <span class="text">Claim</span>
+            </button>
+          </div>
         </div>
         <div style="margin:15px 0;">
           <VueCountdown
@@ -116,7 +119,7 @@ export default {
   data() {
     return {
       isOpen: false,
-      amount: 0,
+      amount: 0.1,
     } as Data;
   },
   methods: {

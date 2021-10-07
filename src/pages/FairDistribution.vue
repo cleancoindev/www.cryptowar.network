@@ -52,6 +52,19 @@
                   <a style='font-size:12px;' href='https://bscscan.com/token/0x27a339d9b59b21390d7209b78a839868e319301b' target="_blank">0x27a339d9b59b21390d7209b78a839868e319301b</a>
 
                 </div>
+              <div class="row">
+                <div style="margin-left:30px; margin-top:10px;">
+                  <ul>
+                    <li style="list-style: none; font-weight: bold;">📖 Rules</li>
+                    <li style="list-style: disc"> You can only deposit once per round. </li>
+                    <li style="list-style: disc"> You can only claim xBlade when claim is available for that round </li>
+                    <li style="list-style: disc"> Read more at <a target="_blank" href="https://wiki.cryptowar.network/tokenomics">xBlade Tokenomics</a>, Join
+                      <a target="_blank" href="https://t.me/elasticbitcoinxbt">Telegram</a>,
+                      <a target="_blank" href="https://discord.gg/tWhbWySwCK">Discord</a>
+                     </li>
+                    </ul>
+                  </div>
+              </div>
             </div>
             <div v-for="round in rounds" :key="round.round">
               <Round
