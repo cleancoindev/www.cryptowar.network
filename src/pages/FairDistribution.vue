@@ -43,8 +43,8 @@
               <div class="row">
 
                 <h5>
-                 xBlade Contract address
-                 </h5>
+                xBlade Contract address
+                </h5>
 
               </div>
               <div class="row">
@@ -61,7 +61,7 @@
                     <li style="list-style: disc"> Read more at <a target="_blank" href="https://wiki.cryptowar.network/tokenomics">xBlade Tokenomics</a>, Join
                       <a target="_blank" href="https://t.me/elasticbitcoinxbt">Telegram</a>,
                       <a target="_blank" href="https://discord.gg/tWhbWySwCK">Discord</a>
-                     </li>
+                    </li>
                     </ul>
                   </div>
               </div>

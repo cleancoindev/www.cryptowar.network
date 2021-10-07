@@ -6,6 +6,7 @@ import Web3 from "web3";
 import transformResponseToRound from "./utils/transformResponseToRound";
 import transformResponseToOrder from "./utils/transformResponseToOrder";
 import { getWeb3Client } from "./libs/web3";
+import Vue from "vue";
 
 interface TypeSafeContract<Abi> {
   methods: Abi;
@@ -136,6 +137,14 @@ export const store = createStore<IState>({
             web3.utils.toBN((amount * 10 ** 9).toFixed(0)),
             "nano"
           ),
+        })
+        .on("transactionHash", (hash) => {
+          // @ts-ignore
+          this.$app.config.globalProperties.$swal.fire({
+            icon: "success",
+            title: `You've deposited ${amount} BNB`,
+            html: `<a href="${process.env.VUE_APP_EXPLORER_URL}tx/${hash}" target="_blank" style="color: #6f42c1">Transaction</a>`,
+          });
         });
       dispatch("fetchRounds");
     },
