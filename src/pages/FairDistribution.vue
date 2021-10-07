@@ -39,6 +39,20 @@
         <div class="help-content">
           <h2 class="heading-title">Current round {{ this.currentRound }}</h2>
           <div class="h-inner-content">
+            <div class="round-container">
+              <div class="row">
+
+                <h5>
+                 xBlade Contract address
+                 </h5>
+
+              </div>
+              <div class="row">
+
+                  <a style='font-size:12px;' href='https://bscscan.com/token/0x27a339d9b59b21390d7209b78a839868e319301b' target="_blank">0x27a339d9b59b21390d7209b78a839868e319301b</a>
+
+                </div>
+            </div>
             <div v-for="round in rounds" :key="round.round">
               <Round
                 :canClaim="round.canClaim"

@@ -48,6 +48,10 @@
             <td style="text-align:left">{{ totalDeposit }} BNB</td>
           </tr>
           <tr>
+            <td style="">Min Deposit:</td>
+            <td style="text-align:left">{{ maxDeposit }} BNB </td>
+           </tr>
+          <tr>
             <td style="">Max Deposit:</td>
             <td style="text-align:left">{{ maxDeposit }} BNB </td>
            </tr>
@@ -57,7 +61,7 @@
            </tr>
           <tr>
             <td style="">Total xBlade:</td>
-            <td style="text-align:left">214 861</td>
+            <td style="text-align:left">214 861 xBlade</td>
            </tr>
           <tr>
             <td style="">Your Deposit:</td>
