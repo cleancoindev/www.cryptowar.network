@@ -112,7 +112,7 @@
                       <a class="nav-link" href="/">Home</a>
                     </li> -->
                     <li class="nav-item">
-                      <a class="nav-link" href="/buy">Buy xBlade</a>
+                      <router-link class="nav-link" to="/buy">Buy xBlade</router-link>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="https://wiki.cryptowar.network">Game Wiki</a>
@@ -152,10 +152,10 @@
                       </ul>
                     </li> -->
                     <li class="nav-item">
-                      <a class="nav-link" href="/help">Help</a>
+                      <router-link class="nav-link" to="/help">Help</router-link>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/about">About</a>
+                      <router-link class="nav-link" to="/about">About</router-link>
                     </li>
                     <!-- <li class="nav-item">
                       <a class="nav-link" href="https://test.cryptowar.network">Testnet</a>

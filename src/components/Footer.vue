@@ -80,9 +80,9 @@
           <div class="footer-menu">
             <ul>
               <li>
-                <a href="/about">
+                <router-link class="nav-link" to="/about">
                   About
-                </a>
+                </router-link>
               </li>
               <li>
                 <a href="https://wiki.cryptowar.network/information/faq">
