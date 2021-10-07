@@ -1,11 +1,16 @@
 // vue.config.js
 const webpack = require('webpack')
 module.exports = {
+  productionSourceMap: false,
+  
   configureWebpack: () => {
     return {
       optimization: {
-        chunks: true
-      },
+        splitChunks: {
+          minSize: 10000,
+          maxSize: 200000,
+        }
+      },    
       plugins: [
         new webpack.ProvidePlugin({
           Buffer: ["buffer", "Buffer"],
