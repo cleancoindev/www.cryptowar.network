@@ -43,8 +43,10 @@
           <VueCountdown
             :time="claimAt"
             v-if="claimAt > 0"
-            v-slot="{ days, hours, minutes, seconds }" > ⏰ Claim will be available in {{ days }} days, {{ hours }} hours,
-            {{ minutes }} minutes, {{ seconds }} seconds. {{ claimAt}}
+            v-slot="{ days, hours, minutes, seconds }"
+          >
+            ⏰ Claim will be available in {{ days }} days, {{ hours }} hours,
+            {{ minutes }} minutes, {{ seconds }} seconds. {{ claimAt }}
           </VueCountdown>
         </div>
         <div class="progress" style="margin-bottom: 15px">
@@ -60,14 +62,14 @@
           </div>
         </div>
 
-        <table style="width:100%">
-          <tr><td colspan="2"> <h3>ℹ️ Round Information</h3>
-            </td>
-            </tr>
-             <tr>
+        <table style="width: 100%">
+          <tr>
+            <td colspan="2"><h3>ℹ️ Round Information</h3></td>
+          </tr>
+          <tr>
             <td style="">Your Deposit:</td>
-            <td style="text-align:left">{{ yourDeposit }} BNB</td>
-           </tr>
+            <td style="text-align: left">{{ yourDeposit }} BNB</td>
+          </tr>
           <tr>
             <td style="text-align: left; width: 115px">Total Deposit:</td>
             <td style="text-align: left">{{ totalDeposit }} BNB</td>
@@ -145,7 +147,7 @@ export default {
     "yourDeposit",
     "amountTokenSale",
     "price",
-    "minDeposit"
+    "minDeposit",
   ],
   data() {
     return {
