@@ -46,16 +46,6 @@ interface IState {
   walletClient: any;
 }
 
-// const provider = new WalletConnectProvider({
-//   rpc: {
-//     97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-//     56: "https://bsc-dataseed1.binance.org/",
-//   },
-//   bridge: "https://bridge.myhostedserver.com",
-//   qrcodeModalOptions: {
-//     mobileLinks: ["metamask", "trust"],
-//   },
-// });
 const defaultCallOptions = (state: IState) => ({ from: state.defaultAccount });
 const web3 = new Web3(Web3.givenProvider);
 export const store = createStore<IState>({
@@ -228,7 +218,7 @@ export const store = createStore<IState>({
                 claimAt: Number(claimAt) * 1000,
                 yourDeposit: web3.utils.fromWei(orderDetail[2]),
                 amountTokenSale: web3.utils.fromWei(amountTokenSale),
-                price: web3.utils.fromWei(price),
+                price: Number(web3.utils.fromWei(price)).toFixed(6),
                 minDeposit: web3.utils.fromWei(minDeposit),
               });
             })
