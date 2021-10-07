@@ -66,7 +66,7 @@
         </table>
 
         <!-- <div>Max Volume: {{ maxVolume }} BNB</div> -->
-        <button class="orders-button" @click="isOpen = !isOpen">First 50 deposits</button>
+        <button class="orders-button" v-if="orders.length>0" @click="isOpen = !isOpen">First 50 deposits</button>
 
         <div v-show="isOpen">
           <table>
