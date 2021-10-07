@@ -3,6 +3,9 @@ const webpack = require('webpack')
 module.exports = {
   configureWebpack: () => {
     return {
+      optimization: {
+        splitChunks: true
+      },
       plugins: [
         new webpack.ProvidePlugin({
           Buffer: ["buffer", "Buffer"],
