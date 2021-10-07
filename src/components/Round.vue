@@ -4,26 +4,28 @@
       <div class="col-lg-2 round-number">{{ round }}</div>
       <div class="col-lg-10">
         <div class="row">
-          <div class="col">
-            <input
+
+          <table>
+            <tr>
+              <td colspan="2"><input
               class="input-field amount-input"
               placeholder="Amount BNB"
               type="number"
-              v-model="amount"
-            />
-          </div>
-          <div class="col-6">
-            <button v-if="yourDeposit==0" class="action-button" @click="this.handleDeposit(round)">
+              v-model="amount" style="width:170px;"
+            /> BNB</td>
+            </tr>
+            <tr>
+              <td> <button v-if="yourDeposit==0" class="action-button" @click="this.handleDeposit(round)">
               <span class="text">Deposit</span>
-            </button>
-            <button
+            </button></td>
+              <td><button
               class="action-button"
               v-bind:disabled="!canClaim"
               @click="this.handleWithdraw(round)" >
               <span class="text">Claim</span>
-            </button>
-          </div>
-        </div>
+            </button></td>
+              </tr>
+            </table></div>
         <div style="margin:15px 0;">
           <VueCountdown
             :time="claimAt"
@@ -175,7 +177,7 @@ export default {
   touch-action: manipulation;
   white-space: nowrap;
   cursor: pointer;
-  margin: 0 16px;
+  margin: 8px 16px;
 }
 
 .action-button:active,
@@ -214,6 +216,7 @@ export default {
 .amount-input {
   border-radius: 8px;
   padding: 0 12px;
+  margin:8px 16px;
 }
 .orders-button {
   border: none;
