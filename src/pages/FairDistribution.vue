@@ -100,7 +100,7 @@ import { mapActions, mapState } from "vuex";
 import Round from "../components/Round.vue";
 import VPagination from "@hennge/vue3-pagination";
 import "../assets/css/vue3-pagination.css";
-import { ContentLoader } from 'vue-content-loader';
+import { ContentLoader } from "vue-content-loader";
 export default {
   components: { Round, VPagination,ContentLoader },
   data() {
