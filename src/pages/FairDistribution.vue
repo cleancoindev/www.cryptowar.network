@@ -70,7 +70,7 @@
 import { mapActions, mapState } from "vuex";
 import Round from "../components/Round.vue";
 import VPagination from "@hennge/vue3-pagination";
-import "@hennge/vue3-pagination/dist/vue3-pagination.css";
+import "../assets/css/vue3-pagination.css";
 
 export default {
   components: { Round, VPagination },
@@ -99,6 +99,9 @@ export default {
 </script>
 
 <style scoped>
+.Page {
+  font-size:21px !important;
+}
 .round-container {
   background-image: url(/src/assets/images/help-aside.jpg);
   background-position: center;
