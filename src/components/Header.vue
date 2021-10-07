@@ -157,12 +157,12 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/about">About</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a class="nav-link" href="https://test.cryptowar.network">Testnet</a>
-                    </li>
+                    </li> -->
 
                     <li>
-                      <a href="https://play.cryptowar.network"
+                      <a href="https://discord.gg/BdZSHsR9U9"
                       class="mybtn1"
                       > Play now!</a>
                     </li>

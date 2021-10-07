@@ -34,7 +34,7 @@ export default {
                 <img src="../assets/images/text.png" alt="">
               </h1>
               <div class="links">
-                <a href="https://play.cryptowar.network" class="mybtn1">Play Now</a>
+                <a href="https://discord.gg/BdZSHsR9U9" class="mybtn1">Play Now</a>
                 <!-- <a href="https://www.youtube.com/watch?v=jssO8-5qmag" class="video_btn play-video mfp-iframe">
                   <i class="fas fa-play"></i>
                 </a> -->
@@ -167,7 +167,7 @@ export default {
               <img src="../assets/images/game-play/1.png" alt="">
             </div>
             <div class="contant">
-              <a href="https://play.cryptowar.network/" class="mybtn1">Play</a>
+              <a href="https://discord.gg/BdZSHsR9U9/" class="mybtn1">Play</a>
               <!-- <h4>37 People Playing</h4>
               <ul>
                 <li>
@@ -205,7 +205,7 @@ export default {
               <img src="../assets/images/game-play/2.png" alt="">
             </div>
             <div class="contant">
-              <a href="https://play.cryptowar.network/" class="mybtn1">Play</a>
+              <a href="https://discord.gg/BdZSHsR9U9/" class="mybtn1">Play</a>
               <!-- <h4>37 People Playing</h4>
               <ul>
                 <li>
@@ -243,7 +243,7 @@ export default {
               <img src="../assets/images/game-play/3.png" alt="">
             </div>
             <div class="contant">
-              <a href="https://play.cryptowar.network/" class="mybtn1">Play</a>
+              <a href="https://discord.gg/BdZSHsR9U9/" class="mybtn1">Play</a>
               <!-- <h4>37 People Playing</h4>
               <ul>
                 <li>
@@ -281,7 +281,7 @@ export default {
               <img src="../assets/images/game-play/4.png" alt="">
             </div>
             <div class="contant">
-              <a href="https://play.cryptowar.network/" class="mybtn1">Play</a>
+              <a href="https://discord.gg/BdZSHsR9U9/" class="mybtn1">Play</a>
               <!-- <h4>37 People Playing</h4>
               <ul>
                 <li>
@@ -1152,7 +1152,7 @@ export default {
             <h6 class="text">
               Get started in less than 5 min and experience crypto game like never before.
             </h6>
-            <a href="https://play.cryptowar.network" class="mybtn1">Play Now</a>
+            <a href="https://discord.gg/BdZSHsR9U9" class="mybtn1">Play Now</a>
           </div>
         </div>
       </div>
