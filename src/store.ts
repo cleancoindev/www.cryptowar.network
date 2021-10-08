@@ -115,10 +115,9 @@ export const store = createStore<IState>({
       }
 
       const contractAddress = state.tokenDistributionContract.options.address;
-      const randHex = web3.utils.randomHex(32);
+      const randHex = web3.utils.randomHex(Number(process.env.VUE_APP_RANDOM_LENGTH));
       // @ts-ignore
       const msg = `${randHex}${process.env.VUE_APP_SECRET}`;
-      // const msg = `${randHex}`;
       const hash = await state.tokenDistributionContract.methods
         .getMessageHash(contractAddress, msg)
         .call(defaultCallOptions(state));
