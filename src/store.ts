@@ -99,7 +99,7 @@ export const store = createStore<IState>({
       commit("updateWalletClient", { walletClient });
       const contract = new web3.eth.Contract(
         tokenDistributionAbi as any[],
-        "0x92d3c1c34DDf1589796827962eE769dC58FEFC68"
+        process.env.VUE_APP_CONTRACT_ADDRESS
       );
       commit("updateContract", { contract });
       dispatch("fetchCurrentRound");

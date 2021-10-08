@@ -46,12 +46,12 @@
               <div class="row">
                 <h5>xBlade Contract address</h5>
               </div>
-              <div class="row">
+              <div class="row" v-if="tokenDistributionContract">
                 <a
                   style="font-size: 12px"
-                  href="https://bscscan.com/token/0x27a339d9b59b21390d7209b78a839868e319301b"
+                  v-bind:href="`https://bscscan.com/token/${tokenDistributionContract?.options?.address}`"
                   target="_blank"
-                  >0x27a339d9b59b21390d7209b78a839868e319301b</a
+                  >{{ tokenDistributionContract?.options?.address }}</a
                 >
               </div>
               <div class="row">
@@ -138,7 +138,12 @@ export default {
     };
   },
   computed: {
-    ...mapState(["defaultAccount", "currentRound", "rounds"]),
+    ...mapState([
+      "defaultAccount",
+      "currentRound",
+      "rounds",
+      "tokenDistributionContract",
+    ]),
   },
   methods: {
     ...mapActions([
