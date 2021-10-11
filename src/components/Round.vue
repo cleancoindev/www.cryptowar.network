@@ -90,10 +90,7 @@
             <td style="">Total xBlade:</td>
             <td style="text-align: left">{{ amountTokenSale }} xBlade</td>
           </tr>
-         
         </table>
-
-        <!-- <div>Max Volume: {{ maxVolume }} BNB</div> -->
         <button
           class="orders-button"
           v-if="orders.length > 0"
