@@ -90,10 +90,7 @@
             <td style="">Total xBlade:</td>
             <td style="text-align: left">{{ amountTokenSale }} xBlade</td>
           </tr>
-          <tr>
-            <td style="">Your Deposit:</td>
-            <td style="text-align: left">{{ yourDeposit }} BNB</td>
-          </tr>
+         
         </table>
 
         <!-- <div>Max Volume: {{ maxVolume }} BNB</div> -->
