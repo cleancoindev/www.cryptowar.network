@@ -4,7 +4,10 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h2>xBlade Token <br> Fair Distribution</h2>
+          <h2>
+            xBlade Token <br />
+            Fair Distribution
+          </h2>
         </div>
       </div>
       <!-- <div id="app">
@@ -41,33 +44,55 @@
           <div class="h-inner-content">
             <div class="round-container">
               <div class="row">
-
-                <h5>
-                 xBlade Contract address
-                 </h5>
-
+                <h5>xBlade Contract address</h5>
+              </div>
+              <div class="row" v-if="tokenDistributionContract">
+                <a
+                  style="font-size: 12px"
+                  v-bind:href="`https://bscscan.com/token/${tokenDistributionContract?.options?.address}`"
+                  target="_blank"
+                  >{{ tokenDistributionContract?.options?.address }}</a
+                >
               </div>
               <div class="row">
-
-                  <a style='font-size:12px;' href='https://bscscan.com/token/0x27a339d9b59b21390d7209b78a839868e319301b' target="_blank">0x27a339d9b59b21390d7209b78a839868e319301b</a>
-
-                </div>
-              <div class="row">
-                <div style="margin-left:30px; margin-top:10px;">
+                <div style="margin-left: 30px; margin-top: 10px">
                   <ul>
-                    <li style="list-style: none; font-weight: bold;">📖 Rules</li>
-                    <li style="list-style: disc"> You can only deposit once per round. </li>
-                    <li style="list-style: disc"> You can only claim xBlade when claim is available for that round </li>
-                    <li style="list-style: disc"> Read more at <a target="_blank" href="https://wiki.cryptowar.network/tokenomics">xBlade Tokenomics</a>, Join
-                      <a target="_blank" href="https://t.me/elasticbitcoinxbt">Telegram</a>,
-                      <a target="_blank" href="https://discord.gg/tWhbWySwCK">Discord</a>
-                     </li>
-                    </ul>
-                  </div>
+                    <li style="list-style: none; font-weight: bold">
+                      📖 Rules
+                    </li>
+                    <li style="list-style: disc">
+                      You can only deposit once per round.
+                    </li>
+                    <li style="list-style: disc">
+                      You can only claim xBlade when claim is available for that
+                      round
+                    </li>
+                    <li style="list-style: disc">
+                      Read more at
+                      <a
+                        target="_blank"
+                        href="https://wiki.cryptowar.network/tokenomics"
+                        >xBlade Tokenomics</a
+                      >, Join
+                      <a target="_blank" href="https://t.me/elasticbitcoinxbt"
+                        >Telegram</a
+                      >,
+                      <a target="_blank" href="https://discord.gg/tWhbWySwCK"
+                        >Discord</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div v-if="!defaultAccount">
+                <wallet-not-connect @connect-wallet="connectWallet" />
               </div>
             </div>
 
-            <content-loader v-if="rounds.length==0" style="margin-bottom:20px;"></content-loader>
+            <content-loader
+              v-if="rounds.length == 0"
+              style="margin-bottom: 20px"
+            ></content-loader>
             <div v-for="round in rounds" :key="round.round">
               <Round
                 :canClaim="round.canClaim"
@@ -78,6 +103,9 @@
                 :maxDeposit="round.maxDeposit"
                 :claimAt="round.claimAt"
                 :yourDeposit="round.yourDeposit"
+                :amountTokenSale="round.amountTokenSale"
+                :price="round.price"
+                :minDeposit="round.minDeposit"
               />
             </div>
             <VPagination
@@ -101,25 +129,39 @@ import Round from "../components/Round.vue";
 import VPagination from "@hennge/vue3-pagination";
 import "../assets/css/vue3-pagination.css";
 import { ContentLoader } from "vue-content-loader";
+import WalletNotConnect from "../components/WalletNotConnect.vue";
 export default {
-  components: { Round, VPagination,ContentLoader },
+  components: { Round, VPagination, ContentLoader, WalletNotConnect },
   data() {
     return {
       isOpen: false,
     };
   },
   computed: {
-    ...mapState(["defaultAccount", "currentRound", "rounds"]),
+    ...mapState([
+      "defaultAccount",
+      "currentRound",
+      "rounds",
+      "tokenDistributionContract",
+    ]),
   },
   methods: {
-    ...mapActions(["fetchCurrentRound", "initialize", "updatePageAndFetch", "connect", "disconnect"]),
+    ...mapActions([
+      "fetchCurrentRound",
+      "initialize",
+      "updatePageAndFetch",
+      "connect",
+      "disconnect",
+    ]),
     updateHandler(page: number) {
-
       // @ts-ignore
       this.$store.dispatch({
         type: "updatePageAndFetch",
         page,
       });
+    },
+    connectWallet() {
+      this.initialize();
     },
   },
   async mounted() {
@@ -130,7 +172,7 @@ export default {
 
 <style scoped>
 .Page {
-  font-size:21px !important;
+  font-size: 21px !important;
 }
 .round-container {
   background-image: url(/src/assets/images/help-aside.jpg);
@@ -140,7 +182,6 @@ export default {
   border-radius: 20px;
   margin: 32px 0;
 }
-
 
 .round-number {
   font-size: 68px;

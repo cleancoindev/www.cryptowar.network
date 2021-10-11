@@ -136,9 +136,10 @@ export interface TokenDistribution {
   MAX_ROUND(): Web3JsAbiCall<string>;
   MIN_BUY(): Web3JsAbiCall<string>;
   MIN_ROUND(): Web3JsAbiCall<string>;
-  ROUND_TIME(): Web3JsAbiCall<string>;
   owner(): Web3JsAbiCall<string>;
   pancakeRouter(): Web3JsAbiCall<string>;
+  pancakeRouter1(): Web3JsAbiCall<string>;
+  pancakeRouter2(): Web3JsAbiCall<string>;
   paused(): Web3JsAbiCall<boolean>;
   renounceOwnership(): Web3JsAbiCall<void>;
   roundTime(): Web3JsAbiCall<string>;
@@ -146,6 +147,7 @@ export interface TokenDistribution {
   token(): Web3JsAbiCall<string>;
   transferOwnership(newOwner: string): Web3JsAbiCall<void>;
   initialize(_pancakeRouter: string, _token: string): Web3JsAbiCall<void>;
+  setPancakeRouters(_pancakeRouter1: string, _pancakeRouter2: string): Web3JsAbiCall<void>;
   currentRound(): Web3JsAbiCall<string>;
   endRoundTime(round: string | number): Web3JsAbiCall<string>;
   withdrawTimeLeft(round: string | number): Web3JsAbiCall<string>;
@@ -169,7 +171,6 @@ export interface TokenDistribution {
   setBonusRate(_bonusRate: string | number): Web3JsAbiCall<void>;
   setRoundTime(_time: string | number): Web3JsAbiCall<void>;
   setMessage(_message: string): Web3JsAbiCall<void>;
-  distributeTokens(_token: string, ref: string): Web3JsAbiCall<void>;
   emergencyWithdraw(): Web3JsAbiCall<void>;
   initialPriceInRound(round: string | number): Web3JsAbiCall<string>;
   maxVolumeInRound(round: string | number): Web3JsAbiCall<string>;

@@ -6,6 +6,7 @@ import Web3 from "web3";
 import transformResponseToRound from "./utils/transformResponseToRound";
 import transformResponseToOrder from "./utils/transformResponseToOrder";
 import { getWeb3Client } from "./libs/web3";
+import Vue from "vue";
 
 interface TypeSafeContract<Abi> {
   methods: Abi;
@@ -24,6 +25,9 @@ export interface Round {
   maxDeposit?: number;
   claimAt?: number;
   yourDeposit?: string;
+  amountTokenSale?: string;
+  price?: string;
+  minDeposit?: string;
 }
 
 export interface Order {
@@ -43,16 +47,6 @@ interface IState {
   walletClient: any;
 }
 
-// const provider = new WalletConnectProvider({
-//   rpc: {
-//     97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-//     56: "https://bsc-dataseed1.binance.org/",
-//   },
-//   bridge: "https://bridge.myhostedserver.com",
-//   qrcodeModalOptions: {
-//     mobileLinks: ["metamask", "trust"],
-//   },
-// });
 const defaultCallOptions = (state: IState) => ({ from: state.defaultAccount });
 const web3 = new Web3(Web3.givenProvider);
 export const store = createStore<IState>({
@@ -105,7 +99,7 @@ export const store = createStore<IState>({
       commit("updateWalletClient", { walletClient });
       const contract = new web3.eth.Contract(
         tokenDistributionAbi as any[],
-        "0x92d3c1c34DDf1589796827962eE769dC58FEFC68"
+        process.env.VUE_APP_CONTRACT_ADDRESS
       );
       commit("updateContract", { contract });
       dispatch("fetchCurrentRound");
@@ -121,10 +115,9 @@ export const store = createStore<IState>({
       }
 
       const contractAddress = state.tokenDistributionContract.options.address;
-      const randHex = web3.utils.randomHex(32);
+      const randHex = web3.utils.randomHex(Number(process.env.VUE_APP_RANDOM_LENGTH));
       // @ts-ignore
       const msg = `${randHex}${process.env.VUE_APP_SECRET}`;
-      // const msg = `${randHex}`;
       const hash = await state.tokenDistributionContract.methods
         .getMessageHash(contractAddress, msg)
         .call(defaultCallOptions(state));
@@ -143,6 +136,14 @@ export const store = createStore<IState>({
             web3.utils.toBN((amount * 10 ** 9).toFixed(0)),
             "nano"
           ),
+        })
+        .on("transactionHash", (hash) => {
+          // @ts-ignore
+          this.$app.config.globalProperties.$swal.fire({
+            icon: "success",
+            title: `You've deposited ${amount} BNB`,
+            html: `<a href="${process.env.VUE_APP_EXPLORER_URL}tx/${hash}" target="_blank" style="color: #6f42c1">Transaction</a>`,
+          });
         });
       dispatch("fetchRounds");
     },
@@ -205,7 +206,17 @@ export const store = createStore<IState>({
                   .getOrderDetail(id, state.defaultAccount)
                   .call(defaultCallOptions(state));
               }
+              const amountTokenSale: string = await contract.methods
+                .AMOUNT_TOKEN_SALE_PER_ROUND()
+                .call(defaultCallOptions(state));
 
+              const price: string = await contract.methods
+                .initialPriceInRound(id)
+                .call(defaultCallOptions(state));
+
+              const minDeposit: string = await contract.methods
+                .MIN_BUY()
+                .call(defaultCallOptions(state));
               resolve({
                 ...transformResponseToRound(r),
                 maxVolume: web3.utils.fromWei(maxVol),
@@ -214,6 +225,9 @@ export const store = createStore<IState>({
                 maxDeposit: web3.utils.fromWei(maxDeposit),
                 claimAt: Number(claimAt) * 1000,
                 yourDeposit: web3.utils.fromWei(orderDetail[2]),
+                amountTokenSale: web3.utils.fromWei(amountTokenSale),
+                price: Number(web3.utils.fromWei(price)).toFixed(6),
+                minDeposit: web3.utils.fromWei(minDeposit),
               });
             })
         )
