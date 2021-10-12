@@ -136,8 +136,8 @@
         <div class="col-xl-4 col-lg-4 col-md-4">
           <div class="single-feature">
             <div class="img">
-              <img loading="lazy" class="shape" src="../assets/images/feature/circle.png" alt="">
-              <img loading="lazy" class="icon" src="../assets/images/feature/icon3.png" alt="">
+              <img loading="lazy" class="shape" src="../assets/images/feature/circle.webp" alt="">
+              <img loading="lazy" class="icon" src="../assets/images/feature/icon3.webp" alt="">
             </div>
             <div class="content">
               <h4>
@@ -192,7 +192,7 @@
       <div class="row">
         <div class="col-lg-4 col-md-6">
           <div class="scounter2">
-            <img  loading="lazy" v-lazysizes :data-src="'../assets/images/counter/i3.png'" alt="">
+            <img  loading="lazy" v-lazysizes :data-src="'../assets/images/counter/i3.webp'" alt="">
             <div class="content">
               <h4>$25k</h4>
               <h6>Daily Prized out</h6>
@@ -201,7 +201,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="scounter2">
-            <img  loading="lazy" v-lazysizes :data-src="'../assets/images/counter/i2.png'" alt="">
+            <img  loading="lazy" v-lazysizes :data-src="'../assets/images/counter/i2.webp'" alt="">
             <div class="content">
               <h4>10k</h4>
               <h6>Daily Prized out</h6>
@@ -222,63 +222,6 @@
   </div>
   <!-- Counter Area End -->
 
-  <!-- Team  area start -->
-  <!-- <section class="team-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-heading">
-            <h5 class="subtitle">
-              Meet us
-            </h5>
-            <h2 class="title ">
-              Founders
-            </h2>
-            <h6 class="text">
-              Our team of creative programmers,marketing experts, and
-              members. we are to be doing what we love.
-            </h6>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="single-team">
-            <div class="image">
-              <img loading="lazy" class="shape" src="../assets/images/team/bg.png" alt="">
-              <img loading="lazy" class="member" src="../assets/images/team/team1.png" alt="">
-              <a href="#" class="link"><i class="fab fa-instagram"></i></a>
-              <h4>Genghis Spirit</h4>
-            </div>
-
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-team">
-            <div class="image">
-              <img loading="lazy" class="shape" src="../assets/images/team/bg.png" alt="">
-              <img loading="lazy" class="member" src="../assets/images/team/team2.png" alt="">
-              <a href="#" class="link"><i class="fab fa-instagram"></i></a>
-              <h4>Gail Wynand</h4>
-            </div>
-
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-team">
-            <div class="image">
-              <img loading="lazy" class="shape" src="../assets/images/team/bg.png" alt="">
-              <img loading="lazy" class="member" src="../assets/images/team/team3.png" alt="">
-              <a href="#" class="link"><i class="fab fa-instagram"></i></a>
-              <h4>Nicostratus Coeus</h4>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!-- Team area End -->
 
   <!-- join us area start -->
   <section class="join_us_new">

@@ -46,7 +46,7 @@
         <div class="col-lg-12">
           <div class="flogo">
             <!-- <a href="#"><img  loading="lazy" v-lazysizes :data-src="../assets/images/footer-ogo.png" alt=""></a> -->
-            <a href="#"><img  loading="lazy" v-lazysizes :data-src="'../assets/images/cryptowar/xBlade-logo-03.png'" alt=""></a>
+            <a href="#"><img  loading="lazy" v-lazysizes :data-src="'../assets/images/cryptowar/xBlade-logo-03.webp'" alt=""></a>
           </div>
           <div class="social-links">
             <ul>

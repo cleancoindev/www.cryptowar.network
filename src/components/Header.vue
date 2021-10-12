@@ -85,7 +85,7 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg navbar-light">
               <router-link class="navbar-brand d-lg-none" :to="{name: 'landing-page'}">
-                <img loading="lazy" class="l2" src="../assets/images/cryptowar/xBlade-logo-03.png" alt="" style="">
+                <img loading="lazy" class="l2" src="../assets/images/cryptowar/xBlade-logo-03.webp" alt="" style="">
 
               </router-link>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu"
@@ -120,7 +120,7 @@
 
                   </ul>
                   <router-link class="navbar-brand  d-none d-lg-block" :to="{name: 'landing-page'}">
-                    <img loading="lazy" class="l2" src="../assets/images/cryptowar/xBlade-logo-02.png" alt="" style="">
+                    <img loading="lazy" class="l2" src="../assets/images/cryptowar/xBlade-logo-02.webp" alt="" style="">
 
                   </router-link>
 
