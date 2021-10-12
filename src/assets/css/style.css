@@ -388,7 +388,7 @@ select:focus {
   padding: 290px 0px 142px;
 }
 .breadcrumb-area.about {
-  background: url(../images/bc/about-bc.jpg);
+  background: url(../images/bc/about-bc.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -402,7 +402,7 @@ select:focus {
   padding: 0px;
 }
 .breadcrumb-area.turnaments2 {
-  background: url(../images/bc/tournament2.jpg);
+  background: url(../images/bc/tournament2.webp);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -424,7 +424,7 @@ select:focus {
   background-size: cover;
 }
 .breadcrumb-area.raffles {
-  background: url(../images/bc/raffles.jpg);
+  background: url(../images/bc/raffles.webp);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -459,7 +459,7 @@ select:focus {
   padding: 0px;
 }
 .breadcrumb-area.reffer {
-  background: url(../images/bc/reffer.jpg);
+  background: url(../images/bc/reffer.webp);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -2463,7 +2463,7 @@ select:focus {
 }
 
 .game-play-section.game-play-section2 {
-  background: url(../images/game-play-bg-2.jpg);
+  background: url(../images/game-play-bg-2.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2719,7 +2719,7 @@ select:focus {
 /* Games Details Top Bar End */
 /* Games Details Start */
 .games-details {
-  background: url(../images/games-details-bg.jpg);
+  background: url(../images/games-details-bg.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3076,7 +3076,7 @@ select:focus {
 
 /* Play Games Area Start */
 .play-games {
-  background: url(../images/play/playgame-bg.jpg);
+  background: url(../images/play/playgame-bg.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

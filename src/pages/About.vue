@@ -31,9 +31,9 @@
 
   <!-- About Area Start -->
   <section class="about-section">
-    <img loading="lazy" class="ar" src="../assets/images/about/right-image.png" alt="">
-    <img loading="lazy" class="s1" src="../assets/images/about/s1.png" alt="">
-    <img loading="lazy" class="s2" src="../assets/images/about/s2.png" alt="">
+    <img loading="lazy" class="ar" src="../assets/images/about/right-image.webp" alt="">
+    <img loading="lazy" class="s1" src="../assets/images/about/s1.webp" alt="">
+    <img loading="lazy" class="s2" src="../assets/images/about/s2.webp" alt="">
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
