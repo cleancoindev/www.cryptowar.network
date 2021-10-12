@@ -1026,7 +1026,7 @@ select:focus {
 }
 
 .subscribe-box {
-  background: url(../images/newsletter.jpg);
+  background: url(../images/newsletter.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

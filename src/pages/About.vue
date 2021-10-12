@@ -67,7 +67,7 @@
             </div>
             <!-- <div class="content-list">
               <div class="s-list">
-                <img loading="lazy" src="../assets/images/about/i1.png" alt="">
+                <img  loading="lazy" v-lazysizes :data-src="../assets/images/about/i1.png" alt="">
                 <div class="content">
                   <p>
                     Verified by
@@ -77,7 +77,7 @@
                 </div>
               </div>
               <div class="s-list">
-                <img loading="lazy" src="../assets/images/about/i2.png" alt="">
+                <img  loading="lazy" v-lazysizes :data-src="../assets/images/about/i2.png" alt="">
                 <div class="content">
                   <p>
                     Instant deposits
@@ -192,7 +192,7 @@
       <div class="row">
         <div class="col-lg-4 col-md-6">
           <div class="scounter2">
-            <img loading="lazy" src="../assets/images/counter/i3.png" alt="">
+            <img  loading="lazy" v-lazysizes :data-src="'../assets/images/counter/i3.png'" alt="">
             <div class="content">
               <h4>$25k</h4>
               <h6>Daily Prized out</h6>
@@ -201,7 +201,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="scounter2">
-            <img loading="lazy" src="../assets/images/counter/i2.png" alt="">
+            <img  loading="lazy" v-lazysizes :data-src="'../assets/images/counter/i2.png'" alt="">
             <div class="content">
               <h4>10k</h4>
               <h6>Daily Prized out</h6>
@@ -210,7 +210,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="scounter2">
-            <img loading="lazy" src="../assets/images/counter/i1.png" alt="">
+            <img  loading="lazy" v-lazysizes :data-src="'../assets/images/counter/i1.png'" alt="">
             <div class="content">
               <h4>24%7</h4>
               <h6>Daily Prized out</h6>
@@ -286,7 +286,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="left-image">
-            <img loading="lazy" src="../assets/images/joinus_left_img2.png" alt="">
+            <img  loading="lazy" v-lazysizes :data-src="'../assets/images/joinus_left_img2.png'" alt="">
           </div>
         </div>
         <div class="col-lg-6">
