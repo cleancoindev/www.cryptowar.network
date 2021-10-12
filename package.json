@@ -53,7 +53,7 @@
     "serve": "vue-cli-service serve",
     "dev": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
-    "build": "vue-cli-service build  --mode production",
+    "build": "vue-cli-service build",
     "start": "npm run serve"
   },
   "eslintConfig": {
