@@ -394,7 +394,7 @@ select:focus {
   background-size: cover;
 }
 .breadcrumb-area.turnaments {
-  background: url(../images/bc/turnament.png);
+  background: url(../images/bc/turnament.webp);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -410,7 +410,7 @@ select:focus {
   padding: 0px;
 }
 .breadcrumb-area.games {
-  background: url(../images/bc/games.png);
+  background: url(../images/bc/games.webp);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -418,7 +418,7 @@ select:focus {
   padding: 0px;
 }
 .breadcrumb-area.games2 {
-  background: url(../images/bc/games2.png);
+  background: url(../images/bc/games2.webp);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -598,7 +598,7 @@ select:focus {
 
 /* Popup Video CSS */
 .f-z-f {
-  background-image: url(../images/404.png);
+  background-image: url(../images/404.webp);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -1198,7 +1198,7 @@ select:focus {
   position: relative;
   background: #070b28;
   overflow: hidden;
-  background: url(../images/home/h1.jpg);
+  background: url(../images/home/h1.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1268,7 +1268,7 @@ select:focus {
   margin-bottom: 25px;
 }
 .hero-area.hero-area2 {
-  background: url(../images/home/h2.jpg);
+  background: url(../images/home/h2.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1283,7 +1283,7 @@ select:focus {
   text-align: left;
 }
 .hero-area.hero-area2.hero-area3 {
-  background: url(../images/home/h3.jpg);
+  background: url(../images/home/h3.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1293,7 +1293,7 @@ select:focus {
   text-align: center;
 }
 .hero-area.hero-area2.hero-area4 {
-  background: url(../images/home/h4.jpg);
+  background: url(../images/home/h4.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1303,7 +1303,7 @@ select:focus {
   text-align: center;
 }
 .hero-area.hero-area2.hero-area5 {
-  background: url(../images/home/h5.jpg);
+  background: url(../images/home/h5.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1730,7 +1730,7 @@ select:focus {
 
 .latest-arcive2 {
   background-color: #1f0644;
-  background-image: url(../images/latest-activitis.png);
+  background-image: url(../images/latest-activitis.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1880,7 +1880,7 @@ select:focus {
 .join_us {
   padding: 120px 0px 120px;
   background-color: #1f0644;
-  background-image: url(../images/joinus-bg.png);
+  background-image: url(../images/joinus-bg.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1956,7 +1956,7 @@ select:focus {
 /* Game play Area Start */
 .game-play-section {
   padding: 120px 0px 120px;
-  background: url(../images/game-play/section-bg.jpg);
+  background: url(../images/game-play/section-bg.webp);
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2157,7 +2157,7 @@ select:focus {
   display: none;
 }
 .index2 .hero-area {
-  background: url(../images/herobg2.jpg);
+  background: url(../images/herobg2.webp);
   padding: 372px 0px 424px;
 }
 .index2 .hero-area .left-content .content {
@@ -2267,7 +2267,7 @@ select:focus {
 /* Features Area Start */
 .features-section {
   padding: 120px 0px 120px;
-  background: url(../images/featurebg.png);
+  background: url(../images/featurebg.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2336,7 +2336,7 @@ select:focus {
 /* Counter Area End */
 /* Team Area Start */
 .team-section {
-  background: url(../images/team-section-bg.jpg);
+  background: url(../images/team-section-bg.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -2384,7 +2384,7 @@ select:focus {
 .join_us_new {
   padding: 40px 0px 0px;
   background-color: #1f0644;
-  background-image: url(../images/joinus-bg3.png);
+  background-image: url(../images/joinus-bg3.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2916,7 +2916,7 @@ select:focus {
 .modal#rankModal .modal-body .top-area {
   text-align: center;
   padding-top: 60px;
-  background-image: url(../images/modal-shadow.png);
+  background-image: url(../images/modal-shadow.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -3528,7 +3528,7 @@ select:focus {
   margin-top: -245px;
 }
 .lottery-video .video-box {
-  background: url(../images/lottery-video.png);
+  background: url(../images/lottery-video.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -4668,7 +4668,7 @@ select:focus {
 .contact_section {
   padding: 120px 0px 0px;
   background-color: #1f0644;
-  background-image: url(../images/cs-bg.png);
+  background-image: url(../images/cs-bg.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -4848,7 +4848,7 @@ select:focus {
 /* Turnaments Area End */
 /* Bonuse Section  Start */
 .bonuse-section {
-  background-image: url(../images/bg-s3.png);
+  background-image: url(../images/bg-s3.webp);
   background-repeat: repeat;
   padding-bottom: 90px;
 }
@@ -4858,7 +4858,7 @@ select:focus {
   margin-top: -280px;
   border-radius: 6px;
   padding-bottom: 70px;
-  background-image: url(../images/bg-s3.png);
+  background-image: url(../images/bg-s3.webp);
   background-repeat: repeat;
 }
 .bonuse-section .header-area h1 {
@@ -5673,7 +5673,7 @@ select:focus {
 .contact-section {
   padding: 0px 0px 0px;
   background-color: #1f0644;
-  background-image: url(../images/contact-bg.png);
+  background-image: url(../images/contact-bg.webp);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -7278,7 +7278,7 @@ select:focus {
   border: none;
   border-radius: 3px;
   color: #fff;
-  background-image: url(../images/ico_search.png);
+  background-image: url(../images/ico_search.webp);
   background-repeat: no-repeat;
   background-position: right;
   background-size: 40px;

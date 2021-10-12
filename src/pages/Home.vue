@@ -1138,7 +1138,7 @@ export default {
   <!-- join us area start -->
   <section class="join_us join_us2 join_us3">
     <img loading="lazy" class="l-image" src="../assets/images/joinus_left_img.png" alt="">
-    <img loading="lazy" class="r-image" src="../assets/images/joinus-bg2.png" alt="">
+    <img loading="lazy" class="r-image" src="../assets/images/joinus-bg2.webp" alt="">
     <div class="container">
       <div class="row justify-content-end">
         <div class="col-xl-7">
