@@ -1,7 +1,5 @@
-import { Round } from "@/store";
-// import Web3 from "web3";
-// @ts-ignore
-import Web3 from "web3/dist/web3.min.js";
+import { Round } from "@/types";
+import Web3 from "web3";
 
 function transformResponseToRound(response: any): Round {
   const web3 = new Web3(Web3.givenProvider);
