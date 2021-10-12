@@ -15,7 +15,7 @@ module.exports = {
         mergeDuplicateChunks: true,
       },    
       plugins: [
-        new BundleAnalyzerPlugin(),
+        // new BundleAnalyzerPlugin(),
         new webpack.ProvidePlugin({
           Buffer: ["buffer", "Buffer"],
         }),
