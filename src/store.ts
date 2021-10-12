@@ -43,8 +43,9 @@ export const store = createStore<IState>({
       });
 
       if (activeRounds.length > 0) {
-        state.currentRound = activeRounds[0];
-        state.activeRounds = activeRounds;
+        const [currentRound, ...restActiveRounds] = activeRounds
+        state.currentRound = currentRound;
+        state.activeRounds = restActiveRounds;
       }
 
       const finishedRounds = rounds.filter((round) => {
