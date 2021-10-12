@@ -79,11 +79,11 @@
                       📖 Rules
                     </li>
                     <li style="list-style: disc">
-                      You can only deposit once per round.
+                      You can only deposit once per round, you can deposit future rounds.
                     </li>
                     <li style="list-style: disc">
                       You can only claim xBlade when claim is available for that
-                      round
+                      round in below finished tab. If the pool > round max volume, you will get back BNB.
                     </li>
                     <li style="list-style: disc">
                       Read more at
