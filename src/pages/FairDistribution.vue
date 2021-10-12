@@ -175,7 +175,7 @@ export default {
   font-size: 21px !important;
 }
 .round-container {
-  background-image: url(/src/assets/images/help-aside.jpg);
+  background-image: url(/src/assets/images/help-aside.webp);
   background-position: center;
   background-size: cover;
   padding: 20px 30px 30px;

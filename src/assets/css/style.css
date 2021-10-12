@@ -437,13 +437,13 @@ select:focus {
   padding: 210px 0px 10px;
 }
 .breadcrumb-area.help {
-  background: url(../images/bc/help.jpg);
+  background: url(../images/bc/help.webp);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
 }
 .breadcrumb-area.contact {
-  background: url(../images/bc/contact.png);
+  background: url(../images/bc/contact.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -451,7 +451,7 @@ select:focus {
   padding: 0px;
 }
 .breadcrumb-area.bonus {
-  background: url(../images/bc/bonus.jpg);
+  background: url(../images/bc/bonus.webp);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -1106,7 +1106,7 @@ select:focus {
   overflow: hidden;
   position: relative;
   background-color: #070b28;
-  background-image: url(../images/footerbg.jpg);
+  background-image: url(../images/footerbg.webp);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -5834,7 +5834,7 @@ select:focus {
 /* 404 Area End */
 /* Help Section  Start */
 .help-section aside {
-  background-image: url("../images/help-aside.jpg");
+  background-image: url("../images/help-aside.webp");
   background-position: center;
   background-size: cover;
   padding: 20px 30px 30px;
