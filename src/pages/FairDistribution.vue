@@ -41,7 +41,7 @@
       <div class="col-lg-12">
         <div class="help-content">
           <h2 class="heading-title" v-if="this.currentRound">
-            Current round {{ this.currentRound?.round }} / 96
+            Round {{ this.currentRound?.round }} / 96
           </h2>
           <div v-if="this.currentRound">
             <Round
