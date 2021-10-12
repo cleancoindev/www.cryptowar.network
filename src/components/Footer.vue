@@ -5,8 +5,8 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="subscribe-box">
-            <img loading="lazy" class="left" src="../assets/images/vr.png" alt="">
-            <img loading="lazy" class="right" src="../assets/images/game_controler.png" alt="">
+            <img loading="lazy" class="left" src="../assets/images/vr.webp" alt="">
+            <img loading="lazy" class="right" src="../assets/images/game_controler.webp" alt="">
             <div class="row justify-content-center">
               <div class="col-lg-12">
                 <div class="heading-area">
