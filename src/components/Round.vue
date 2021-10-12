@@ -5,7 +5,7 @@
       <div class="col-lg-10">
         <div class="row">
           <table>
-            <tr v-if="yourDeposit == 0">
+            <tr v-if="yourDeposit == 0 && !isFinished">
               <td colspan="2">
                 <input
                   class="input-field amount-input"
@@ -20,7 +20,7 @@
             <tr>
               <td>
                 <button
-                  v-if="yourDeposit == 0"
+                  v-if="yourDeposit == 0 && !isFinished"
                   class="action-button"
                   @click="this.handleDeposit(round)"
                 >
@@ -29,6 +29,7 @@
               </td>
               <td>
                 <button
+                  v-if="canClaim"
                   class="action-button"
                   v-bind:disabled="!canClaim"
                   @click="this.handleWithdraw(round)"
@@ -53,12 +54,12 @@
           <div
             class="progress-bar progress-bar-bg"
             role="progressbar"
-            v-bind:style="{ width: (totalDeposit * 100) / maxDeposit + '%' }"
-            :aria-valuenow="(totalDeposit * 100) / maxDeposit"
+            v-bind:style="{ width: (totalDeposit * 100) / maxVolume + '%' }"
+            :aria-valuenow="(totalDeposit * 100) / maxVolume"
             aria-valuemin="0"
             aria-valuemax="100"
           >
-            {{ ((totalDeposit * 100) / maxDeposit).toFixed(0) }}%
+            {{ ((totalDeposit * 100) / maxVolume).toFixed(0) }}%
           </div>
         </div>
 
@@ -142,6 +143,7 @@ export default {
     "amountTokenSale",
     "price",
     "minDeposit",
+    "isFinished"
   ],
   data() {
     return {

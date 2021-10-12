@@ -1,7 +1,5 @@
-import { Order } from "@/store";
-// import Web3 from "web3";
-// @ts-ignore
-import Web3 from "web3/dist/web3.min.js";
+import { Order } from "@/types";
+import Web3 from "web3";
 
 function transformResponseToOrder(response: any): Order {
   const web3 = new Web3(Web3.givenProvider);

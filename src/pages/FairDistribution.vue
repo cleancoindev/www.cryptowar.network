@@ -40,7 +40,25 @@
     <div class="container">
       <div class="col-lg-12">
         <div class="help-content">
-          <h2 class="heading-title">Current round {{ this.currentRound }}</h2>
+          <h2 class="heading-title" v-if="this.currentRound">
+            Current round {{ this.currentRound?.round }} / 96
+          </h2>
+          <div v-if="this.currentRound">
+            <Round
+              :canClaim="this.currentRound.canClaim"
+              :maxVolume="this.currentRound.maxVolume"
+              :round="this.currentRound.round"
+              :totalDeposit="this.currentRound.totalDeposit"
+              :orders="this.currentRound.orders"
+              :maxDeposit="this.currentRound.maxDeposit"
+              :claimAt="this.currentRound.claimAt"
+              :yourDeposit="this.currentRound.yourDeposit"
+              :amountTokenSale="this.currentRound.amountTokenSale"
+              :price="this.currentRound.price"
+              :minDeposit="this.currentRound.minDeposit"
+            />
+          </div>
+
           <div class="h-inner-content">
             <div class="round-container">
               <div class="row">
@@ -93,21 +111,59 @@
               v-if="rounds.length == 0"
               style="margin-bottom: 20px"
             ></content-loader>
-            <div v-for="round in rounds" :key="round.round">
-              <Round
-                :canClaim="round.canClaim"
-                :maxVolume="round.maxVolume"
-                :round="round.round"
-                :totalDeposit="round.totalDeposit"
-                :orders="round.orders"
-                :maxDeposit="round.maxDeposit"
-                :claimAt="round.claimAt"
-                :yourDeposit="round.yourDeposit"
-                :amountTokenSale="round.amountTokenSale"
-                :price="round.price"
-                :minDeposit="round.minDeposit"
-              />
+            <ul class="nav nav-pills nav-fill">
+              <li class="nav-item" @click="currentTab = 'active'">
+                <a
+                  :class="`nav-link ${currentTab === 'active' ? 'active' : ''}`"
+                  >Active</a
+                >
+              </li>
+              <li class="nav-item" @click="currentTab = 'finished'">
+                <a
+                  :class="`nav-link ${
+                    currentTab === 'finished' ? 'active' : ''
+                  }`"
+                  >Finished</a
+                >
+              </li>
+            </ul>
+            <div v-if="currentTab === 'active'">
+              <div v-for="round in activeRounds" :key="round.round">
+                <Round
+                  :canClaim="round.canClaim"
+                  :maxVolume="round.maxVolume"
+                  :round="round.round"
+                  :totalDeposit="round.totalDeposit"
+                  :orders="round.orders"
+                  :maxDeposit="round.maxDeposit"
+                  :claimAt="round.claimAt"
+                  :yourDeposit="round.yourDeposit"
+                  :amountTokenSale="round.amountTokenSale"
+                  :price="round.price"
+                  :minDeposit="round.minDeposit"
+                  :isFinished="false"
+                />
+              </div>
             </div>
+            <div v-if="currentTab === 'finished'">
+              <div v-for="round in finishedRounds" :key="round.round">
+                <Round
+                  :canClaim="round.canClaim"
+                  :maxVolume="round.maxVolume"
+                  :round="round.round"
+                  :totalDeposit="round.totalDeposit"
+                  :orders="round.orders"
+                  :maxDeposit="round.maxDeposit"
+                  :claimAt="round.claimAt"
+                  :yourDeposit="round.yourDeposit"
+                  :amountTokenSale="round.amountTokenSale"
+                  :price="round.price"
+                  :minDeposit="round.minDeposit"
+                  :isFinished="true"
+                />
+              </div>
+            </div>
+
             <VPagination
               v-model="page"
               :pages="5"
@@ -135,6 +191,7 @@ export default {
   data() {
     return {
       isOpen: false,
+      currentTab: "active",
     };
   },
   computed: {
@@ -143,6 +200,8 @@ export default {
       "currentRound",
       "rounds",
       "tokenDistributionContract",
+      "activeRounds",
+      "finishedRounds",
     ]),
   },
   methods: {

@@ -1,6 +1,4 @@
 import { createStore } from "vuex";
-import { Contract as Web3EthContract } from "web3-eth-contract";
-import { TokenDistribution } from "./abi-interfaces";
 import { abi as tokenDistributionAbi } from "./contracts/TokenDistribution.json";
 
 // const tokenDistributionJson = () => import("./contracts/TokenDistribution.json");
@@ -9,58 +7,22 @@ import Web3 from "web3";
 import transformResponseToRound from "./utils/transformResponseToRound";
 import transformResponseToOrder from "./utils/transformResponseToOrder";
 import { getWeb3Client } from "./libs/web3";
-import Vue from "vue";
-
-interface TypeSafeContract<Abi> {
-  methods: Abi;
-}
-
-export type Contract<Abi> = Omit<Web3EthContract, "methods"> &
-  TypeSafeContract<Abi>;
-
-export interface Round {
-  round: number;
-  totalDeposit: string;
-  totalWithdraw: string;
-  maxVolume?: string;
-  canClaim?: boolean;
-  orders?: Order[];
-  maxDeposit?: number;
-  claimAt?: number;
-  yourDeposit?: string;
-  amountTokenSale?: string;
-  price?: string;
-  minDeposit?: string;
-}
-
-export interface Order {
-  account: string;
-  claimed: boolean;
-  depositValue: string;
-  id: number;
-}
-
-interface IState {
-  tokenDistributionContract: Contract<TokenDistribution>;
-  currentRound: number;
-  defaultAccount: string | null;
-  selectedRound: number;
-  rounds: Round[];
-  page: number;
-  walletClient: any;
-}
+import { IState, Round } from "./types";
+import { getUnixTime } from "date-fns";
 
 const defaultCallOptions = (state: IState) => ({ from: state.defaultAccount });
 const web3 = new Web3(Web3.givenProvider);
 export const store = createStore<IState>({
   state: {
     tokenDistributionContract: null!,
-    currentRound: 0,
+    currentRound: null!,
     defaultAccount: null,
     selectedRound: 12,
     rounds: [],
     page: 1,
     walletClient: {},
+    activeRounds: [],
+    finishedRounds: [],
   },
   getters: {
     currentRound(state: IState) {
@@ -70,7 +32,29 @@ export const store = createStore<IState>({
 
   mutations: {
     updateCurrentRound(state: IState, payload) {
-      state.currentRound = payload.currentRound;
+      // state.currentRound = payload.currentRound;
+      const rounds: Round[] = payload.rounds;
+      const activeRounds = rounds.filter((round) => {
+        const maxVolume = Number(round.maxVolume);
+        const totalDeposit = Number(round.totalDeposit);
+        const { endAt } = round;
+        const now = getUnixTime(new Date());
+        return totalDeposit < maxVolume && now > endAt;
+      });
+
+      if (activeRounds.length > 0) {
+        state.currentRound = activeRounds[0];
+        state.activeRounds = activeRounds;
+      }
+
+      const finishedRounds = rounds.filter((round) => {
+        const maxVolume = Number(round.maxVolume);
+        const totalDeposit = Number(round.totalDeposit);
+        const { endAt } = round;
+        const now = getUnixTime(new Date());
+        return totalDeposit >= maxVolume && now > endAt;
+      });
+      state.finishedRounds = finishedRounds;
     },
     updateContract(state: IState, payload) {
       state.tokenDistributionContract = payload.contract;
@@ -105,7 +89,6 @@ export const store = createStore<IState>({
         process.env.VUE_APP_CONTRACT_ADDRESS
       );
       commit("updateContract", { contract });
-      dispatch("fetchCurrentRound");
       dispatch("pollAccountsAndNetwork");
       dispatch("fetchRounds");
     },
@@ -118,7 +101,9 @@ export const store = createStore<IState>({
       }
 
       const contractAddress = state.tokenDistributionContract.options.address;
-      const randHex = web3.utils.randomHex(Number(process.env.VUE_APP_RANDOM_LENGTH));
+      const randHex = web3.utils.randomHex(
+        Number(process.env.VUE_APP_RANDOM_LENGTH)
+      );
       // @ts-ignore
       const msg = `${randHex}${process.env.VUE_APP_SECRET}`;
       const hash = await state.tokenDistributionContract.methods
@@ -150,7 +135,10 @@ export const store = createStore<IState>({
         });
       dispatch("fetchRounds");
     },
-    async withdrawRound({ state }, payload: { type: string; round: number }) {
+    async withdrawRound(
+      { state, dispatch },
+      payload: { type: string; round: number }
+    ) {
       if (!state.defaultAccount || !payload.round) {
         return;
       }
@@ -158,7 +146,16 @@ export const store = createStore<IState>({
       const { round } = payload;
       await state.tokenDistributionContract.methods
         .withdraw(round)
-        .send(defaultCallOptions(state));
+        .send(defaultCallOptions(state))
+        .on("transactionHash", (hash) => {
+          // @ts-ignore
+          this.$app.config.globalProperties.$swal.fire({
+            icon: "success",
+            title: `You've claimed xBlade successfully`,
+            html: `<a href="${process.env.VUE_APP_EXPLORER_URL}tx/${hash}" target="_blank" style="color: #6f42c1">Transaction</a>`,
+          });
+        });
+      dispatch("fetchRounds");
     },
     async pollAccountsAndNetwork({ state, dispatch, commit }) {
       const accounts = await state.walletClient.web3Client.eth.getAccounts();
@@ -173,7 +170,7 @@ export const store = createStore<IState>({
       const contract = state.tokenDistributionContract;
       const roundPerPage = 20;
       const page = payload?.page ? payload.page : state.page;
-      const cursor = page - 1 === 0 ? 1 : (page - 1) * roundPerPage;
+      const cursor = page - 1 === 0 ? 1 : (page + 1) * roundPerPage;
       const rounds: any[] = await contract.methods
         .getRounds(roundPerPage, cursor)
         .call(defaultCallOptions(state));
@@ -220,6 +217,11 @@ export const store = createStore<IState>({
               const minDeposit: string = await contract.methods
                 .MIN_BUY()
                 .call(defaultCallOptions(state));
+
+              const endAt: string = await contract.methods
+                .endRoundTime(id)
+                .call(defaultCallOptions(state));
+
               resolve({
                 ...transformResponseToRound(r),
                 maxVolume: web3.utils.fromWei(maxVol),
@@ -231,12 +233,15 @@ export const store = createStore<IState>({
                 amountTokenSale: web3.utils.fromWei(amountTokenSale),
                 price: Number(web3.utils.fromWei(price)).toFixed(6),
                 minDeposit: web3.utils.fromWei(minDeposit),
+                endAt: Number(endAt),
+                claimed: orderDetail[3],
               });
             })
         )
       );
       console.log(transformedRound);
       commit("updateRounds", { rounds: transformedRound });
+      commit("updateCurrentRound", { rounds: transformedRound });
     },
     async updatePageAndFetch(
       { commit },
