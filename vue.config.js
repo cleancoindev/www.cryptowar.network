@@ -11,7 +11,8 @@ module.exports = {
         splitChunks: {
           minSize: 100000,
           maxSize: 500000,
-        }
+        },
+        mergeDuplicateChunks: true,
       },    
       plugins: [
         new BundleAnalyzerPlugin(),
