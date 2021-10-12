@@ -2,6 +2,9 @@ import { createStore } from "vuex";
 import { Contract as Web3EthContract } from "web3-eth-contract";
 import { TokenDistribution } from "./abi-interfaces";
 import { abi as tokenDistributionAbi } from "./contracts/TokenDistribution.json";
+
+// const tokenDistributionJson = () => import("./contracts/TokenDistribution.json");
+// const tokenDistributionAbi = tokenDistributionJson['abi'];
 import Web3 from "web3";
 import transformResponseToRound from "./utils/transformResponseToRound";
 import transformResponseToOrder from "./utils/transformResponseToOrder";

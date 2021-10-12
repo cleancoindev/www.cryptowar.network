@@ -21,7 +21,7 @@ export default {
 
   <!-- Hero Area Start -->
   <div class="hero-area hero-area2 hero-area4">
-    <img class="shape parallax5" src="../assets/images/home/h2-shape.png" alt="">
+    <img loading="lazy" class="shape parallax5" src="../assets/images/home/h2-shape.png" alt="">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -31,7 +31,7 @@ export default {
                 PLAY GAMES WIN
               </h5>
               <h1 class="title">
-                <img src="../assets/images/text.png" alt="">
+                <img loading="lazy" src="../assets/images/text.png" alt="">
               </h1>
               <div class="links">
                 <a href="https://discord.gg/BdZSHsR9U9" class="mybtn1">Play Now</a>
@@ -68,7 +68,7 @@ export default {
               <div data-countdown="2021/12/15"><span>105:</span><span>14:</span><span>00:</span><span>18</span></div>
             </div>
 
-            <img src="../assets/images/s-box.png" alt="">
+            <img loading="lazy" src="../assets/images/s-box.png" alt="">
           </div>
         </div>
         <div class="col-lg-4 col-md-12">
@@ -84,52 +84,52 @@ export default {
               <div class="owl-stage-outer">
                 <div class="owl-stage" style="transform: translate3d(-380.001px, 0px, 0px); transition: all 0s ease 0s; width: 1266.67px;"><div class="owl-item cloned" style="width: 96.667px; margin-right: 30px;"><div class="s-item">
                   <div class="img">
-                    <img src="../assets/images/l-winner/2.png" alt="">
+                    <img loading="lazy" src="../assets/images/l-winner/2.png" alt="">
                     <span>$800</span>
                   </div>
                 </div></div><div class="owl-item cloned" style="width: 96.667px; margin-right: 30px;"><div class="s-item">
                   <div class="img">
-                    <img src="../assets/images/l-winner/3.png" alt="">
+                    <img loading="lazy" src="../assets/images/l-winner/3.png" alt="">
                     <span>$800</span>
                   </div>
                 </div></div><div class="owl-item cloned" style="width: 96.667px; margin-right: 30px;"><div class="s-item">
                   <div class="img">
-                    <img src="../assets/images/l-winner/3.png" alt="">
+                    <img loading="lazy" src="../assets/images/l-winner/3.png" alt="">
                     <span>$800</span>
                   </div>
                 </div></div><div class="owl-item active" style="width: 96.667px; margin-right: 30px;"><div class="s-item">
                   <div class="img">
-                    <img src="../assets/images/l-winner/1.png" alt="">
+                    <img loading="lazy" src="../assets/images/l-winner/1.png" alt="">
                     <span>$800</span>
                   </div>
                 </div></div><div class="owl-item active" style="width: 96.667px; margin-right: 30px;"><div class="s-item">
                   <div class="img">
-                    <img src="../assets/images/l-winner/2.png" alt="">
+                    <img loading="lazy" src="../assets/images/l-winner/2.png" alt="">
                     <span>$800</span>
                   </div>
                 </div></div><div class="owl-item active" style="width: 96.667px; margin-right: 30px;"><div class="s-item">
                   <div class="img">
-                    <img src="../assets/images/l-winner/3.png" alt="">
+                    <img loading="lazy" src="../assets/images/l-winner/3.png" alt="">
                     <span>$800</span>
                   </div>
                 </div></div><div class="owl-item" style="width: 96.667px; margin-right: 30px;"><div class="s-item">
                   <div class="img">
-                    <img src="../assets/images/l-winner/3.png" alt="">
+                    <img loading="lazy" src="../assets/images/l-winner/3.png" alt="">
                     <span>$800</span>
                   </div>
                 </div></div><div class="owl-item cloned" style="width: 96.667px; margin-right: 30px;"><div class="s-item">
                   <div class="img">
-                    <img src="../assets/images/l-winner/1.png" alt="">
+                    <img loading="lazy" src="../assets/images/l-winner/1.png" alt="">
                     <span>$800</span>
                   </div>
                 </div></div><div class="owl-item cloned" style="width: 96.667px; margin-right: 30px;"><div class="s-item">
                   <div class="img">
-                    <img src="../assets/images/l-winner/2.png" alt="">
+                    <img loading="lazy" src="../assets/images/l-winner/2.png" alt="">
                     <span>$800</span>
                   </div>
                 </div></div><div class="owl-item cloned" style="width: 96.667px; margin-right: 30px;"><div class="s-item">
                   <div class="img">
-                    <img src="../assets/images/l-winner/3.png" alt="">
+                    <img loading="lazy" src="../assets/images/l-winner/3.png" alt="">
                     <span>$800</span>
                   </div>
                 </div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style=""><i class="fa fa-angle-left"></i></div><div class="owl-next" style=""><i class="fa fa-angle-right"></i></div></div><div style="display: none;" class="owl-dots"></div></div></div>
@@ -142,8 +142,8 @@ export default {
 
   <!-- Game play area start -->
   <section class="game-play-section">
-    <!-- <img class="left-img" src="../assets/images/game-play/left-img.png" alt=""> -->
-    <!-- <img class="right-img" src="../assets/images/game-play/right-img.png" alt=""> -->
+    <!-- <img loading="lazy" class="left-img" src="../assets/images/game-play/left-img.png" alt=""> -->
+    <!-- <img loading="lazy" class="right-img" src="../assets/images/game-play/right-img.png" alt=""> -->
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -164,7 +164,7 @@ export default {
         <div class="col-xl-3 col-lg-4 col-md-6">
           <div class="single-play">
             <div class="image">
-              <img src="../assets/images/game-play/1.png" alt="">
+              <img loading="lazy" src="../assets/images/game-play/1.png" alt="">
             </div>
             <div class="contant">
               <a href="https://discord.gg/BdZSHsR9U9/" class="mybtn1">Play</a>
@@ -172,22 +172,22 @@ export default {
               <ul>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm1.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm1.png" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm2.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm2.png" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm3.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm3.png" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm4.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm4.png" alt="">
                   </a>
                 </li>
                 <li>
@@ -202,7 +202,7 @@ export default {
         <div class="col-xl-3 col-lg-4 col-md-6">
           <div class="single-play">
             <div class="image">
-              <img src="../assets/images/game-play/2.png" alt="">
+              <img loading="lazy" src="../assets/images/game-play/2.png" alt="">
             </div>
             <div class="contant">
               <a href="https://discord.gg/BdZSHsR9U9/" class="mybtn1">Play</a>
@@ -210,22 +210,22 @@ export default {
               <ul>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm1.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm1.png" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm2.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm2.png" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm3.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm3.png" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm4.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm4.png" alt="">
                   </a>
                 </li>
                 <li>
@@ -240,7 +240,7 @@ export default {
         <div class="col-xl-3 col-lg-4 col-md-6">
           <div class="single-play">
             <div class="image">
-              <img src="../assets/images/game-play/3.png" alt="">
+              <img loading="lazy" src="../assets/images/game-play/3.png" alt="">
             </div>
             <div class="contant">
               <a href="https://discord.gg/BdZSHsR9U9/" class="mybtn1">Play</a>
@@ -248,22 +248,22 @@ export default {
               <ul>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm1.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm1.png" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm2.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm2.png" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm3.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm3.png" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm4.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm4.png" alt="">
                   </a>
                 </li>
                 <li>
@@ -278,7 +278,7 @@ export default {
         <div class="col-xl-3 col-lg-4 col-md-6">
           <div class="single-play">
             <div class="image">
-              <img src="../assets/images/game-play/4.png" alt="">
+              <img loading="lazy" src="../assets/images/game-play/4.png" alt="">
             </div>
             <div class="contant">
               <a href="https://discord.gg/BdZSHsR9U9/" class="mybtn1">Play</a>
@@ -286,22 +286,22 @@ export default {
               <ul>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm1.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm1.png" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm2.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm2.png" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm3.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm3.png" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../assets/images/player/sm4.png" alt="">
+                    <img loading="lazy" src="../assets/images/player/sm4.png" alt="">
                   </a>
                 </li>
                 <li>
@@ -316,7 +316,7 @@ export default {
       </div>
       <!-- <div class="row">
         <div class="col-lg-12 text-center">
-          <a href="#" class="b-all-btn">Browser All <img src="../assets/images/arrow.png" alt=""></a>
+          <a href="#" class="b-all-btn">Browser All <img loading="lazy" src="../assets/images/arrow.png" alt=""></a>
         </div>
       </div> -->
     </div>
@@ -357,14 +357,14 @@ export default {
                 <div class="col-lg-5">
                   <div class="left-content">
                     <div class="heading-area">
-                      <img src="../assets/images/arcive/i2.png" alt="">
+                      <img loading="lazy" src="../assets/images/arcive/i2.png" alt="">
                       <h6>Latest Changellenge</h6>
                       <h3>Top Players</h3>
                     </div>
                     <ul>
                       <li>
                         <div class="info-box">
-                          <img src="../assets/images/arcive/i3.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/i3.png" alt="">
                           <div class="content">
                             <h4>Levels &amp; Rewards</h4>
                             <p>Join a grand adventure of 7 levels and unlimited milestone rewards
@@ -375,7 +375,7 @@ export default {
                       </li>
                       <li>
                         <div class="info-box">
-                          <img src="../assets/images/arcive/i4.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/i4.png" alt="">
                           <div class="content">
                             <h4>Fast</h4>
                             <p>Join a grand adventure of 7 levels and unlimited milestone rewards
@@ -386,7 +386,7 @@ export default {
                       </li>
                       <li>
                         <div class="info-box">
-                          <img src="../assets/images/arcive/i5.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/i5.png" alt="">
                           <div class="content">
                             <h4>Fair</h4>
                             <p>Join a grand adventure of 7 levels and unlimited milestone rewards
@@ -403,10 +403,10 @@ export default {
                     <div class="l-arcive-box2">
                       <div class="s-a-b">
                         <div class="left">
-                          <img src="../assets/images/arcive/sa4.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/sa4.png" alt="">
                           <div class="content">
                             <div class="left2">
-                              <img src="../assets/images/arcive/m1.png" alt="">
+                              <img loading="lazy" src="../assets/images/arcive/m1.png" alt="">
                             </div>
                             <div class="right2">
                               <h4>Lee Miller</h4>
@@ -421,16 +421,16 @@ export default {
                           </div>
                         </div>
                         <div class="right">
-                          <img src="../assets/images/arcive/mony.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/mony.png" alt="">
                           <h6>_ 25.8772200 BTC</h6>
                         </div>
                       </div>
                       <div class="s-a-b">
                         <div class="left">
-                          <img src="../assets/images/arcive/sa5.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/sa5.png" alt="">
                           <div class="content">
                             <div class="left2">
-                              <img src="../assets/images/arcive/m2.png" alt="">
+                              <img loading="lazy" src="../assets/images/arcive/m2.png" alt="">
                             </div>
                             <div class="right2">
                               <h4>John Ray</h4>
@@ -445,16 +445,16 @@ export default {
                           </div>
                         </div>
                         <div class="right">
-                          <img src="../assets/images/arcive/mony.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/mony.png" alt="">
                           <h6>+ 25.8772200 BTC</h6>
                         </div>
                       </div>
                       <div class="s-a-b">
                         <div class="left">
-                          <img src="../assets/images/arcive/sa6.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/sa6.png" alt="">
                           <div class="content">
                             <div class="left2">
-                              <img src="../assets/images/arcive/m3.png" alt="">
+                              <img loading="lazy" src="../assets/images/arcive/m3.png" alt="">
                             </div>
                             <div class="right2">
                               <h4>Gilbert Ruiz</h4>
@@ -469,16 +469,16 @@ export default {
                           </div>
                         </div>
                         <div class="right">
-                          <img src="../assets/images/arcive/mony.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/mony.png" alt="">
                           <h6>25.8772200 BTC</h6>
                         </div>
                       </div>
                       <div class="s-a-b">
                         <div class="left">
-                          <img src="../assets/images/arcive/sa7.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/sa7.png" alt="">
                           <div class="content">
                             <div class="left2">
-                              <img src="../assets/images/arcive/m4.png" alt="">
+                              <img loading="lazy" src="../assets/images/arcive/m4.png" alt="">
                             </div>
                             <div class="right2">
                               <h4>Lee Miller</h4>
@@ -493,16 +493,16 @@ export default {
                           </div>
                         </div>
                         <div class="right">
-                          <img src="../assets/images/arcive/mony.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/mony.png" alt="">
                           <h6>_ 25.8772200 BTC</h6>
                         </div>
                       </div>
                       <div class="s-a-b">
                         <div class="left">
-                          <img src="../assets/images/arcive/sa8.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/sa8.png" alt="">
                           <div class="content">
                             <div class="left2">
-                              <img src="../assets/images/arcive/m5.png" alt="">
+                              <img loading="lazy" src="../assets/images/arcive/m5.png" alt="">
                             </div>
                             <div class="right2">
                               <h4>Erik Adams</h4>
@@ -517,16 +517,16 @@ export default {
                           </div>
                         </div>
                         <div class="right">
-                          <img src="../assets/images/arcive/mony.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/mony.png" alt="">
                           <h6>25.8772200 BTC</h6>
                         </div>
                       </div>
                       <div class="s-a-b">
                         <div class="left">
-                          <img src="../assets/images/arcive/sa9.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/sa9.png" alt="">
                           <div class="content">
                             <div class="left2">
-                              <img src="../assets/images/arcive/m6.png" alt="">
+                              <img loading="lazy" src="../assets/images/arcive/m6.png" alt="">
                             </div>
                             <div class="right2">
                               <h4>Gina Mills</h4>
@@ -541,7 +541,7 @@ export default {
                           </div>
                         </div>
                         <div class="right">
-                          <img src="../assets/images/arcive/mony.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/mony.png" alt="">
                           <h6>+ 25.8772200 BTC</h6>
                         </div>
                       </div>
@@ -556,14 +556,14 @@ export default {
                 <div class="col-lg-5">
                   <div class="left-content">
                     <div class="heading-area">
-                      <img src="../assets/images/arcive/i2.png" alt="">
+                      <img loading="lazy" src="../assets/images/arcive/i2.png" alt="">
                       <h6>Latest Changellenge</h6>
                       <h3>Top Players</h3>
                     </div>
                     <ul>
                       <li>
                         <div class="info-box">
-                          <img src="../assets/images/arcive/i3.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/i3.png" alt="">
                           <div class="content">
                             <h4>Levels & Rewards</h4>
                             <p>Join a grand adventure of 7 levels and unlimited milestone rewards
@@ -574,7 +574,7 @@ export default {
                       </li>
                       <li>
                         <div class="info-box">
-                          <img src="../assets/images/arcive/i4.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/i4.png" alt="">
                           <div class="content">
                             <h4>Fast</h4>
                             <p>Join a grand adventure of 7 levels and unlimited milestone rewards
@@ -585,7 +585,7 @@ export default {
                       </li>
                       <li>
                         <div class="info-box">
-                          <img src="../assets/images/arcive/i5.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/i5.png" alt="">
                           <div class="content">
                             <h4>Fair</h4>
                             <p>Join a grand adventure of 7 levels and unlimited milestone rewards
@@ -602,10 +602,10 @@ export default {
                     <div class="l-arcive-box2">
                       <div class="s-a-b">
                         <div class="left">
-                          <img src="../assets/images/arcive/sa4.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/sa4.png" alt="">
                           <div class="content">
                             <div class="left2">
-                              <img src="../assets/images/arcive/m1.png" alt="">
+                              <img loading="lazy" src="../assets/images/arcive/m1.png" alt="">
                             </div>
                             <div class="right2">
                               <h4>Lee Miller</h4>
@@ -620,16 +620,16 @@ export default {
                           </div>
                         </div>
                         <div class="right">
-                          <img src="../assets/images/arcive/mony.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/mony.png" alt="">
                           <h6>_ 25.8772200 BTC</h6>
                         </div>
                       </div>
                       <div class="s-a-b">
                         <div class="left">
-                          <img src="../assets/images/arcive/sa5.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/sa5.png" alt="">
                           <div class="content">
                             <div class="left2">
-                              <img src="../assets/images/arcive/m2.png" alt="">
+                              <img loading="lazy" src="../assets/images/arcive/m2.png" alt="">
                             </div>
                             <div class="right2">
                               <h4>John Ray</h4>
@@ -644,16 +644,16 @@ export default {
                           </div>
                         </div>
                         <div class="right">
-                          <img src="../assets/images/arcive/mony.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/mony.png" alt="">
                           <h6>+ 25.8772200 BTC</h6>
                         </div>
                       </div>
                       <div class="s-a-b">
                         <div class="left">
-                          <img src="../assets/images/arcive/sa6.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/sa6.png" alt="">
                           <div class="content">
                             <div class="left2">
-                              <img src="../assets/images/arcive/m3.png" alt="">
+                              <img loading="lazy" src="../assets/images/arcive/m3.png" alt="">
                             </div>
                             <div class="right2">
                               <h4>Gilbert Ruiz</h4>
@@ -668,16 +668,16 @@ export default {
                           </div>
                         </div>
                         <div class="right">
-                          <img src="../assets/images/arcive/mony.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/mony.png" alt="">
                           <h6>25.8772200 BTC</h6>
                         </div>
                       </div>
                       <div class="s-a-b">
                         <div class="left">
-                          <img src="../assets/images/arcive/sa7.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/sa7.png" alt="">
                           <div class="content">
                             <div class="left2">
-                              <img src="../assets/images/arcive/m4.png" alt="">
+                              <img loading="lazy" src="../assets/images/arcive/m4.png" alt="">
                             </div>
                             <div class="right2">
                               <h4>Lee Miller</h4>
@@ -692,16 +692,16 @@ export default {
                           </div>
                         </div>
                         <div class="right">
-                          <img src="../assets/images/arcive/mony.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/mony.png" alt="">
                           <h6>_ 25.8772200 BTC</h6>
                         </div>
                       </div>
                       <div class="s-a-b">
                         <div class="left">
-                          <img src="../assets/images/arcive/sa8.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/sa8.png" alt="">
                           <div class="content">
                             <div class="left2">
-                              <img src="../assets/images/arcive/m5.png" alt="">
+                              <img loading="lazy" src="../assets/images/arcive/m5.png" alt="">
                             </div>
                             <div class="right2">
                               <h4>Erik Adams</h4>
@@ -716,16 +716,16 @@ export default {
                           </div>
                         </div>
                         <div class="right">
-                          <img src="../assets/images/arcive/mony.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/mony.png" alt="">
                           <h6>25.8772200 BTC</h6>
                         </div>
                       </div>
                       <div class="s-a-b">
                         <div class="left">
-                          <img src="../assets/images/arcive/sa9.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/sa9.png" alt="">
                           <div class="content">
                             <div class="left2">
-                              <img src="../assets/images/arcive/m6.png" alt="">
+                              <img loading="lazy" src="../assets/images/arcive/m6.png" alt="">
                             </div>
                             <div class="right2">
                               <h4>Gina Mills</h4>
@@ -740,7 +740,7 @@ export default {
                           </div>
                         </div>
                         <div class="right">
-                          <img src="../assets/images/arcive/mony.png" alt="">
+                          <img loading="lazy" src="../assets/images/arcive/mony.png" alt="">
                           <h6>+ 25.8772200 BTC</h6>
                         </div>
                       </div>
@@ -786,7 +786,7 @@ export default {
               <div class="single-tikit">
                 <div class="image">
                   <span class="tag">Ending Soon</span>
-                  <img src="../assets/images/product/2.png" alt="">
+                  <img loading="lazy" src="../assets/images/product/2.png" alt="">
                 </div>
                 <div class="content">
                   <div class="top-area">
@@ -812,7 +812,7 @@ export default {
               <div class="single-tikit">
                 <div class="image">
                   <span class="tag">Ending Soon</span>
-                  <img src="../assets/images/product/3.png" alt="">
+                  <img loading="lazy" src="../assets/images/product/3.png" alt="">
                 </div>
                 <div class="content">
                   <div class="top-area">
@@ -838,7 +838,7 @@ export default {
               <div class="single-tikit">
                 <div class="image">
                   <span class="tag">Ending Soon</span>
-                  <img src="../assets/images/product/1.png" alt="">
+                  <img loading="lazy" src="../assets/images/product/1.png" alt="">
                 </div>
                 <div class="content">
                   <div class="top-area">
@@ -864,7 +864,7 @@ export default {
               <div class="single-tikit">
                 <div class="image">
                   <span class="tag">Ending Soon</span>
-                  <img src="../assets/images/product/1.png" alt="">
+                  <img loading="lazy" src="../assets/images/product/1.png" alt="">
                 </div>
                 <div class="content">
                   <div class="top-area">
@@ -890,7 +890,7 @@ export default {
               <div class="single-tikit">
                 <div class="image">
                   <span class="tag">Ending Soon</span>
-                  <img src="../assets/images/product/2.png" alt="">
+                  <img loading="lazy" src="../assets/images/product/2.png" alt="">
                 </div>
                 <div class="content">
                   <div class="top-area">
@@ -916,7 +916,7 @@ export default {
               <div class="single-tikit">
                 <div class="image">
                   <span class="tag">Ending Soon</span>
-                  <img src="../assets/images/product/3.png" alt="">
+                  <img loading="lazy" src="../assets/images/product/3.png" alt="">
                 </div>
                 <div class="content">
                   <div class="top-area">
@@ -942,7 +942,7 @@ export default {
               <div class="single-tikit">
                 <div class="image">
                   <span class="tag">Ending Soon</span>
-                  <img src="../assets/images/product/1.png" alt="">
+                  <img loading="lazy" src="../assets/images/product/1.png" alt="">
                 </div>
                 <div class="content">
                   <div class="top-area">
@@ -968,7 +968,7 @@ export default {
               <div class="single-tikit">
                 <div class="image">
                   <span class="tag">Ending Soon</span>
-                  <img src="../assets/images/product/1.png" alt="">
+                  <img loading="lazy" src="../assets/images/product/1.png" alt="">
                 </div>
                 <div class="content">
                   <div class="top-area">
@@ -994,7 +994,7 @@ export default {
               <div class="single-tikit">
                 <div class="image">
                   <span class="tag">Ending Soon</span>
-                  <img src="../assets/images/product/2.png" alt="">
+                  <img loading="lazy" src="../assets/images/product/2.png" alt="">
                 </div>
                 <div class="content">
                   <div class="top-area">
@@ -1020,7 +1020,7 @@ export default {
               <div class="single-tikit">
                 <div class="image">
                   <span class="tag">Ending Soon</span>
-                  <img src="../assets/images/product/3.png" alt="">
+                  <img loading="lazy" src="../assets/images/product/3.png" alt="">
                 </div>
                 <div class="content">
                   <div class="top-area">
@@ -1064,11 +1064,11 @@ export default {
         <!-- <div class="col-xl-4 col-lg-6 col-md-6">
           <div class="single-winner">
             <div class="img">
-              <img src="../assets/images/r-winner/1.png" alt="">
+              <img loading="lazy" src="../assets/images/r-winner/1.png" alt="">
             </div>
             <div class="content">
               <div class="top-content">
-                <img src="../assets/images/r-winner/p1.png" alt="">
+                <img loading="lazy" src="../assets/images/r-winner/p1.png" alt="">
                 <div class="lc">
                   <h6>Vicky Hart</h6>
                   <span>3 days ago</span>
@@ -1087,11 +1087,11 @@ export default {
         <div class="col-xl-4 col-lg-6 col-md-6">
           <div class="single-winner">
             <div class="img">
-              <img src="../assets/images/r-winner/2.png" alt="">
+              <img loading="lazy" src="../assets/images/r-winner/2.png" alt="">
             </div>
             <div class="content">
               <div class="top-content">
-                <img src="../assets/images/r-winner/p2.png" alt="">
+                <img loading="lazy" src="../assets/images/r-winner/p2.png" alt="">
                 <div class="lc">
                   <h6>Vicky Hart</h6>
                   <span>3 days ago</span>
@@ -1110,11 +1110,11 @@ export default {
         <div class="col-xl-4 col-lg-6 col-md-6">
           <div class="single-winner">
             <div class="img">
-              <img src="../assets/images/r-winner/3.png" alt="">
+              <img loading="lazy" src="../assets/images/r-winner/3.png" alt="">
             </div>
             <div class="content">
               <div class="top-content">
-                <img src="../assets/images/r-winner/p3.png" alt="">
+                <img loading="lazy" src="../assets/images/r-winner/p3.png" alt="">
                 <div class="lc">
                   <h6>Vicky Hart</h6>
                   <span>3 days ago</span>
@@ -1137,8 +1137,8 @@ export default {
 
   <!-- join us area start -->
   <section class="join_us join_us2 join_us3">
-    <img class="l-image" src="../assets/images/joinus_left_img.png" alt="">
-    <img class="r-image" src="../assets/images/joinus-bg2.png" alt="">
+    <img loading="lazy" class="l-image" src="../assets/images/joinus_left_img.png" alt="">
+    <img loading="lazy" class="r-image" src="../assets/images/joinus-bg2.png" alt="">
     <div class="container">
       <div class="row justify-content-end">
         <div class="col-xl-7">

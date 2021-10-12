@@ -31,9 +31,9 @@
 
   <!-- About Area Start -->
   <section class="about-section">
-    <img class="ar" src="../assets/images/about/right-image.png" alt="">
-    <img class="s1" src="../assets/images/about/s1.png" alt="">
-    <img class="s2" src="../assets/images/about/s2.png" alt="">
+    <img loading="lazy" class="ar" src="../assets/images/about/right-image.png" alt="">
+    <img loading="lazy" class="s1" src="../assets/images/about/s1.png" alt="">
+    <img loading="lazy" class="s2" src="../assets/images/about/s2.png" alt="">
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
@@ -67,7 +67,7 @@
             </div>
             <!-- <div class="content-list">
               <div class="s-list">
-                <img src="../assets/images/about/i1.png" alt="">
+                <img loading="lazy" src="../assets/images/about/i1.png" alt="">
                 <div class="content">
                   <p>
                     Verified by
@@ -77,7 +77,7 @@
                 </div>
               </div>
               <div class="s-list">
-                <img src="../assets/images/about/i2.png" alt="">
+                <img loading="lazy" src="../assets/images/about/i2.png" alt="">
                 <div class="content">
                   <p>
                     Instant deposits
@@ -96,8 +96,8 @@
 
   <!-- Features Area Start -->
   <section class="features-section">
-    <img class="s1" src="../assets/images/feature/s1.png" alt="">
-    <img class="s2" src="../assets/images/feature/s2.png" alt="">
+    <img loading="lazy" class="s1" src="../assets/images/feature/s1.png" alt="">
+    <img loading="lazy" class="s2" src="../assets/images/feature/s2.png" alt="">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -118,8 +118,8 @@
         <div class="col-xl-4 col-lg-4 col-md-4">
           <div class="single-feature">
             <div class="img">
-              <img class="shape" src="../assets/images/feature/circle.png" alt="">
-              <img class="icon" src="../assets/images/feature/icon1.png" alt="">
+              <img loading="lazy" class="shape" src="../assets/images/feature/circle.png" alt="">
+              <img loading="lazy" class="icon" src="../assets/images/feature/icon1.png" alt="">
             </div>
             <div class="content">
               <h4>
@@ -136,8 +136,8 @@
         <div class="col-xl-4 col-lg-4 col-md-4">
           <div class="single-feature">
             <div class="img">
-              <img class="shape" src="../assets/images/feature/circle.png" alt="">
-              <img class="icon" src="../assets/images/feature/icon3.png" alt="">
+              <img loading="lazy" class="shape" src="../assets/images/feature/circle.png" alt="">
+              <img loading="lazy" class="icon" src="../assets/images/feature/icon3.png" alt="">
             </div>
             <div class="content">
               <h4>
@@ -152,8 +152,8 @@
         <div class="col-xl-4 col-lg-4 col-md-4">
           <div class="single-feature">
             <div class="img">
-              <img class="shape" src="../assets/images/feature/circle.png" alt="">
-              <img class="icon" src="../assets/images/feature/icon2.png" alt="">
+              <img loading="lazy" class="shape" src="../assets/images/feature/circle.png" alt="">
+              <img loading="lazy" class="icon" src="../assets/images/feature/icon2.png" alt="">
             </div>
             <div class="content">
               <h4>
@@ -168,8 +168,8 @@
         <!-- <div class="col-xl-3 col-lg-4 col-md-6">
           <div class="single-feature">
             <div class="img">
-              <img class="shape" src="../assets/images/feature/circle.png" alt="">
-              <img class="icon" src="../assets/images/feature/icon4.png" alt="">
+              <img loading="lazy" class="shape" src="../assets/images/feature/circle.png" alt="">
+              <img loading="lazy" class="icon" src="../assets/images/feature/icon4.png" alt="">
             </div>
             <div class="content">
               <h4>
@@ -192,7 +192,7 @@
       <div class="row">
         <div class="col-lg-4 col-md-6">
           <div class="scounter2">
-            <img src="../assets/images/counter/i3.png" alt="">
+            <img loading="lazy" src="../assets/images/counter/i3.png" alt="">
             <div class="content">
               <h4>$25k</h4>
               <h6>Daily Prized out</h6>
@@ -201,7 +201,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="scounter2">
-            <img src="../assets/images/counter/i2.png" alt="">
+            <img loading="lazy" src="../assets/images/counter/i2.png" alt="">
             <div class="content">
               <h4>10k</h4>
               <h6>Daily Prized out</h6>
@@ -210,7 +210,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="scounter2">
-            <img src="../assets/images/counter/i1.png" alt="">
+            <img loading="lazy" src="../assets/images/counter/i1.png" alt="">
             <div class="content">
               <h4>24%7</h4>
               <h6>Daily Prized out</h6>
@@ -245,8 +245,8 @@
         <div class="col-lg-4 col-md-6">
           <div class="single-team">
             <div class="image">
-              <img class="shape" src="../assets/images/team/bg.png" alt="">
-              <img class="member" src="../assets/images/team/team1.png" alt="">
+              <img loading="lazy" class="shape" src="../assets/images/team/bg.png" alt="">
+              <img loading="lazy" class="member" src="../assets/images/team/team1.png" alt="">
               <a href="#" class="link"><i class="fab fa-instagram"></i></a>
               <h4>Genghis Spirit</h4>
             </div>
@@ -256,8 +256,8 @@
         <div class="col-lg-4 col-md-6">
           <div class="single-team">
             <div class="image">
-              <img class="shape" src="../assets/images/team/bg.png" alt="">
-              <img class="member" src="../assets/images/team/team2.png" alt="">
+              <img loading="lazy" class="shape" src="../assets/images/team/bg.png" alt="">
+              <img loading="lazy" class="member" src="../assets/images/team/team2.png" alt="">
               <a href="#" class="link"><i class="fab fa-instagram"></i></a>
               <h4>Gail Wynand</h4>
             </div>
@@ -267,8 +267,8 @@
         <div class="col-lg-4 col-md-6">
           <div class="single-team">
             <div class="image">
-              <img class="shape" src="../assets/images/team/bg.png" alt="">
-              <img class="member" src="../assets/images/team/team3.png" alt="">
+              <img loading="lazy" class="shape" src="../assets/images/team/bg.png" alt="">
+              <img loading="lazy" class="member" src="../assets/images/team/team3.png" alt="">
               <a href="#" class="link"><i class="fab fa-instagram"></i></a>
               <h4>Nicostratus Coeus</h4>
             </div>
@@ -286,7 +286,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="left-image">
-            <img src="../assets/images/joinus_left_img2.png" alt="">
+            <img loading="lazy" src="../assets/images/joinus_left_img2.png" alt="">
           </div>
         </div>
         <div class="col-lg-6">

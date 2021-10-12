@@ -7,7 +7,7 @@ import Footer from './components/Footer.vue';
 
 <template>
 
-<!--  <img alt="Vue logo" src="./assets/logo.png" />-->
+<!--  <img loading="lazy" alt="Vue logo" src="./assets/logo.png" />-->
 <!--  <HelloWorld msg="Hello Vue 3 + Vite" />-->
 
   <!-- preloader area start -->
