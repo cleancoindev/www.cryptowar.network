@@ -1,5 +1,6 @@
 import { TokenDistribution } from "./abi-interfaces";
 import { Contract as Web3EthContract } from "web3-eth-contract";
+import Web3 from "web3";
 export interface TypeSafeContract<Abi> {
   methods: Abi;
 }
@@ -41,4 +42,5 @@ export interface IState {
   walletClient: any;
   activeRounds: Round[];
   finishedRounds: Round[];
+  web3: Web3;
 }

@@ -4,11 +4,10 @@ import { abi as tokenDistributionAbi } from "./contracts/TokenDistribution.json"
 // const tokenDistributionJson = () => import("./contracts/TokenDistribution.json");
 // const tokenDistributionAbi = tokenDistributionJson['abi'];
 import Web3 from "web3";
-import transformResponseToRound from "./utils/transformResponseToRound";
-import transformResponseToOrder from "./utils/transformResponseToOrder";
 import { getWeb3Client } from "./libs/web3";
 import { IState, Round } from "./types";
 import { getUnixTime } from "date-fns";
+import fetchRoundDetail from "./utils/fetchRoundDetail";
 
 const defaultCallOptions = (state: IState) => ({ from: state.defaultAccount });
 const web3 = new Web3(Web3.givenProvider);
@@ -23,6 +22,7 @@ export const store = createStore<IState>({
     walletClient: {},
     activeRounds: [],
     finishedRounds: [],
+    web3: null!
   },
   getters: {
     currentRound(state: IState) {
@@ -32,30 +32,7 @@ export const store = createStore<IState>({
 
   mutations: {
     updateCurrentRound(state: IState, payload) {
-      // state.currentRound = payload.currentRound;
-      const rounds: Round[] = payload.rounds;
-      const activeRounds = rounds.filter((round) => {
-        const maxVolume = Number(round.maxVolume);
-        const totalDeposit = Number(round.totalDeposit);
-        const { endAt } = round;
-        const now = getUnixTime(new Date());
-        return totalDeposit < maxVolume && now > endAt;
-      });
-
-      if (activeRounds.length > 0) {
-        const [currentRound, ...restActiveRounds] = activeRounds
-        state.currentRound = currentRound;
-        state.activeRounds = restActiveRounds;
-      }
-
-      const finishedRounds = rounds.filter((round) => {
-        const maxVolume = Number(round.maxVolume);
-        const totalDeposit = Number(round.totalDeposit);
-        const { endAt } = round;
-        const now = getUnixTime(new Date());
-        return totalDeposit >= maxVolume && now > endAt;
-      });
-      state.finishedRounds = finishedRounds;
+      state.currentRound = payload.round;
     },
     updateContract(state: IState, payload) {
       state.tokenDistributionContract = payload.contract;
@@ -66,22 +43,23 @@ export const store = createStore<IState>({
     updateRounds(state: IState, payload) {
       state.rounds = payload.rounds;
     },
+    updateActiveRounds(state: IState, payload) {
+      state.activeRounds = payload.rounds;
+    },
+    updateFinishedRounds(state: IState, payload) {
+      state.finishedRounds = payload.rounds;
+    },
     updatePage(state: IState, payload) {
       state.page = payload.page;
     },
     updateWalletClient(state: IState, payload) {
       state.walletClient = payload.walletClient;
     },
+    updateWeb3(state: IState) {
+      state.web3 = web3;
+    }
   },
   actions: {
-    async fetchCurrentRound({ state, commit }) {
-      const currentRound = await state.tokenDistributionContract.methods
-        .currentRound()
-        .call(defaultCallOptions(state));
-      commit("updateCurrentRound", {
-        currentRound,
-      });
-    },
     async initialize({ commit, dispatch }) {
       const walletClient = await getWeb3Client();
       commit("updateWalletClient", { walletClient });
@@ -90,8 +68,9 @@ export const store = createStore<IState>({
         process.env.VUE_APP_CONTRACT_ADDRESS
       );
       commit("updateContract", { contract });
+      commit("updateWeb3");
       dispatch("pollAccountsAndNetwork");
-      dispatch("fetchRounds");
+      dispatch("fetchCurrentRound");
     },
     async depositBnbToRound(
       { state, dispatch },
@@ -168,81 +147,66 @@ export const store = createStore<IState>({
       { state, commit },
       payload: { type: string; page?: number }
     ) {
+      const currentRound = state.currentRound;
       const contract = state.tokenDistributionContract;
       const roundPerPage = 20;
       const page = payload?.page ? payload.page : state.page;
-      const cursor = page - 1 === 0 ? 1 : (page + 1) * roundPerPage;
+
+      const activeCursor =
+        (page === 1 ? 1 : (page - 1) * roundPerPage) + currentRound.round;
+      console.log({ activeCursor });
+      const activeRounds: any[] = await contract.methods
+        .getRounds(roundPerPage, activeCursor)
+        .call(defaultCallOptions(state));
+      const transformedActiveRound = await Promise.all(
+        activeRounds.map((r) =>
+          fetchRoundDetail({ r, defaultCallOptions, contract, state, web3 })
+        )
+      );
+
+      commit("updateActiveRounds", {
+        rounds: transformedActiveRound.filter((r) => r.round <= 96),
+      });
+
+      const rounds: any[] = await contract.methods
+        .getRounds(currentRound.round > 1 ? currentRound.round - 1 : 0, 1)
+        .call(defaultCallOptions(state));
+      const transformedRound = await Promise.all(
+        rounds.map((r) =>
+          fetchRoundDetail({ r, defaultCallOptions, contract, state, web3 })
+        )
+      );
+      console.log(transformedRound);
+      commit("updateFinishedRounds", { rounds: transformedRound });
+    },
+    async fetchCurrentRound(
+      { state, commit, dispatch },
+      payload: { type: string; cursor?: number }
+    ) {
+      const contract = state.tokenDistributionContract;
+      const roundPerPage = 5;
+      const cursor = payload?.cursor || 1;
       const rounds: any[] = await contract.methods
         .getRounds(roundPerPage, cursor)
         .call(defaultCallOptions(state));
       const transformedRound = await Promise.all(
-        rounds.map(
-          (r) =>
-            new Promise(async (resolve) => {
-              const id = r.round;
-              const maxVol = await contract.methods
-                .maxVolumeInRound(id)
-                .call(defaultCallOptions(state));
-
-              let canClaim = false;
-              if (state.defaultAccount) {
-                canClaim = await contract.methods
-                  .canWithdraw(id, state.defaultAccount)
-                  .call(defaultCallOptions(state));
-              }
-              const orders: any[] = await contract.methods
-                .getOrderByRound(id, 1, 50)
-                .call(defaultCallOptions(state));
-
-              const maxDeposit: string = await contract.methods
-                .getMaxDepositByRound(id)
-                .call(defaultCallOptions(state));
-
-              const claimAt: number = await contract.methods
-                .withdrawTimeLeft(id)
-                .call(defaultCallOptions(state));
-              let orderDetail: any = {};
-              if (state.defaultAccount) {
-                orderDetail = await contract.methods
-                  .getOrderDetail(id, state.defaultAccount)
-                  .call(defaultCallOptions(state));
-              }
-              const amountTokenSale: string = await contract.methods
-                .AMOUNT_TOKEN_SALE_PER_ROUND()
-                .call(defaultCallOptions(state));
-
-              const price: string = await contract.methods
-                .initialPriceInRound(id)
-                .call(defaultCallOptions(state));
-
-              const minDeposit: string = await contract.methods
-                .MIN_BUY()
-                .call(defaultCallOptions(state));
-
-              const endAt: string = await contract.methods
-                .endRoundTime(id)
-                .call(defaultCallOptions(state));
-
-              resolve({
-                ...transformResponseToRound(r),
-                maxVolume: web3.utils.fromWei(maxVol),
-                canClaim,
-                orders: orders.map(transformResponseToOrder),
-                maxDeposit: web3.utils.fromWei(maxDeposit),
-                claimAt: Number(claimAt) * 1000,
-                yourDeposit: web3.utils.fromWei(orderDetail[2]),
-                amountTokenSale: web3.utils.fromWei(amountTokenSale),
-                price: Number(web3.utils.fromWei(price)).toFixed(6),
-                minDeposit: web3.utils.fromWei(minDeposit),
-                endAt: Number(endAt),
-                claimed: orderDetail[3],
-              });
-            })
+        rounds.map((r) =>
+          fetchRoundDetail({ r, defaultCallOptions, contract, state, web3 })
         )
       );
-      console.log(transformedRound);
-      commit("updateRounds", { rounds: transformedRound });
-      commit("updateCurrentRound", { rounds: transformedRound });
+      const activeRounds = transformedRound.filter((round) => {
+        const maxVolume = Number(round.maxVolume);
+        const totalDeposit = Number(round.totalDeposit);
+        const { endAt } = round;
+        const now = getUnixTime(new Date());
+        return totalDeposit < maxVolume && now > endAt;
+      });
+      if (activeRounds?.length === 0) {
+        dispatch("fetchCurrentRound", { cursor: cursor + 1 });
+        return;
+      }
+      commit("updateCurrentRound", { round: activeRounds[0] });
+      dispatch("fetchRounds");
     },
     async updatePageAndFetch(
       { commit },
