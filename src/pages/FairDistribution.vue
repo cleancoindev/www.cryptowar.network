@@ -108,7 +108,7 @@
             </div>
 
             <content-loader
-              v-if="rounds.length == 0"
+              v-if="activeRounds.length == 0"
               style="margin-bottom: 20px"
             ></content-loader>
             <ul class="nav nav-pills nav-fill">

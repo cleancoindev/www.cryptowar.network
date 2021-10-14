@@ -7,14 +7,24 @@
           <table>
             <tr v-if="yourDeposit == 0 && !isFinished">
               <td colspan="2">
-                <input
-                  class="input-field amount-input"
-                  placeholder="Amount BNB"
-                  type="number"
-                  v-model="amount"
-                  style="width: 170px"
-                />
-                BNB
+                <div class="input-group mb-3">
+                  <input
+                    class="form-control"
+                    placeholder="Amount BNB"
+                    type="number"
+                    v-model="amount"
+                    style="width: 170px"
+                  />
+                  <div class="input-group-append">
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      @click="handleDepositMax()"
+                    >
+                      Max
+                    </button>
+                  </div>
+                </div>
               </td>
             </tr>
             <tr>
@@ -121,7 +131,7 @@
 </template>
 
 <script lang="ts">
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 import VueCountdown from "@chenfengyuan/vue-countdown";
 
 interface Data {
@@ -143,8 +153,11 @@ export default {
     "amountTokenSale",
     "price",
     "minDeposit",
-    "isFinished"
+    "isFinished",
   ],
+  computed: {
+    ...mapState(["web3", "defaultAccount"]),
+  },
   data() {
     return {
       isOpen: false,
@@ -167,6 +180,18 @@ export default {
         type: "withdrawRound",
         round,
       });
+    },
+    async handleDepositMax() {
+      const balance = Number(
+        this.web3.utils.fromWei(
+          await this.web3.eth.getBalance(this.defaultAccount)
+        )
+      );
+      if (balance > this.maxDeposit) {
+        this.amount = this.maxDeposit;
+      } else {
+        this.amount = balance;
+      }
     },
   },
 };
