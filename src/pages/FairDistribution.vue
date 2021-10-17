@@ -4,22 +4,18 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 banner-box">
-          <!-- <h2>
-            xBlade Token <br />
-            Fair Distribution
-          </h2> -->
           <img src="../assets/images/buy_banner.png" class="banner" />
         </div>
       </div>
       <div class="current-round">
-        <div class="">
-          <h2 class="heading-title" v-if="this.currentRound">
-            Round {{ this.currentRound?.round }} / 96
-          </h2>
-        </div>
         <div class="row current-box">
           <div class="col-lg-8">
-            <div v-if="this.currentRound">
+            <div class="">
+              <h2 class="heading-title" v-if="this.currentRound">
+                Round {{ this.currentRound?.round }} / 96
+              </h2>
+            </div>
+            <div v-if="this.currentRound" class="current-buy">
               <Round
                 :canClaim="this.currentRound.canClaim"
                 :maxVolume="this.currentRound.maxVolume"
@@ -34,13 +30,98 @@
                 :minDeposit="this.currentRound.minDeposit"
               />
             </div>
+
+            <div class="help-content">
+              <div style="margin: 15px 0" v-if="timeLeftToStart > 0">
+                <VueCountdown
+                  :time="timeLeftToStart"
+                  v-slot="{ days, hours, minutes, seconds }"
+                >
+                  ⏰ Fair distribution will be available in {{ days }} days
+                  {{ hours }} hours, {{ minutes }} minutes,
+                  {{ seconds }} seconds.
+                </VueCountdown>
+              </div>
+              <div class="h-inner-content" v-if="timeLeftToStart < 0">
+                <content-loader
+                  v-if="activeRounds.length == 0 && timeLeftToStart < 0"
+                  style="margin-bottom: 20px"
+                ></content-loader>
+                <ul class="nav nav-pills nav-fill">
+                  <li class="nav-item tab-item" @click="currentTab = 'active'">
+                    <a
+                      :class="`nav-link ${
+                        currentTab === 'active' ? 'active' : ''
+                      }`"
+                      >Active</a
+                    >
+                  </li>
+                  <li
+                    class="nav-item tab-item"
+                    @click="currentTab = 'finished'"
+                  >
+                    <a
+                      :class="`nav-link ${
+                        currentTab === 'finished' ? 'active' : ''
+                      }`"
+                      >Finished</a
+                    >
+                  </li>
+                </ul>
+                <div v-if="currentTab === 'active'">
+                  <div v-for="round in activeRounds" :key="round.round">
+                    <Round
+                      :canClaim="round.canClaim"
+                      :maxVolume="round.maxVolume"
+                      :round="round.round"
+                      :totalDeposit="round.totalDeposit"
+                      :orders="round.orders"
+                      :maxDeposit="round.maxDeposit"
+                      :claimAt="round.claimAt"
+                      :yourDeposit="round.yourDeposit"
+                      :amountTokenSale="round.amountTokenSale"
+                      :price="round.price"
+                      :minDeposit="round.minDeposit"
+                      :isFinished="false"
+                    />
+                  </div>
+                </div>
+                <div v-if="currentTab === 'finished'">
+                  <div v-for="round in finishedRounds" :key="round.round">
+                    <Round
+                      :canClaim="round.canClaim"
+                      :maxVolume="round.maxVolume"
+                      :round="round.round"
+                      :totalDeposit="round.totalDeposit"
+                      :orders="round.orders"
+                      :maxDeposit="round.maxDeposit"
+                      :claimAt="round.claimAt"
+                      :yourDeposit="round.yourDeposit"
+                      :amountTokenSale="round.amountTokenSale"
+                      :price="round.price"
+                      :minDeposit="round.minDeposit"
+                      :isFinished="true"
+                    />
+                  </div>
+                </div>
+                <div class="pagging-box">
+                  <VPagination
+                    v-model="page"
+                    :pages="5"
+                    :range-size="1"
+                    active-color="#DCEDFF"
+                    @update:modelValue="updateHandler"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-4">
-            <div class="note-box">
+          <div :class="[defaultAccount ? 'col-lg-4' : 'col-lg-12']" class="">
+            <div class="note-box sticky-top">
               <div class="">
                 <h5>xBlade Contract address</h5>
               </div>
-              <div class="note-address" v-if="tokenDistributionContract">
+              <div class="note-address">
                 <a
                   style="font-size: 12px; color: #febc2c"
                   v-bind:href="`https://bscscan.com/token/0x27a339d9b59b21390d7209b78a839868e319301b`"
@@ -167,128 +248,16 @@
                   </ul>
                 </div>
               </div>
-              <div v-if="!defaultAccount">
+              <div class="connect-wallet" v-if="!defaultAccount">
                 <wallet-not-connect @connect-wallet="connectWallet" />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- <div id="app">
-        <h1>Welcome!</h1>
-        <br />
-        <vs-button
-          size="large"
-          color="primary"
-          type="filled"
-          v-on:click="connect"
-          >Connect Wallet</vs-button
-        >
-        <br /><br />
-        <vs-button
-          size="large"
-          color="primary"
-          type="filled"
-          v-on:click="disconnect"
-          >Disconnect</vs-button
-        >
-        <br />
-        {{ accounts }}
-      </div> -->
     </div>
   </section>
   <!-- Breadcrumb Area End -->
-
-  <!-- Help Section Start -->
-  <section class="help-section buy">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="help-content">
-            <div style="margin: 15px 0" v-if="timeLeftToStart > 0">
-              <VueCountdown
-                :time="timeLeftToStart"
-                v-slot="{ days, hours, minutes, seconds }"
-              >
-                ⏰ Fair distribution will be available in {{ days }} days
-                {{ hours }} hours, {{ minutes }} minutes, {{ seconds }} seconds.
-              </VueCountdown>
-            </div>
-            <div class="h-inner-content" v-if="timeLeftToStart < 0">
-              <content-loader
-                v-if="activeRounds.length == 0 && timeLeftToStart < 0"
-                style="margin-bottom: 20px"
-              ></content-loader>
-              <ul class="nav nav-pills nav-fill">
-                <li class="nav-item tab-item" @click="currentTab = 'active'">
-                  <a
-                    :class="`nav-link ${
-                      currentTab === 'active' ? 'active' : ''
-                    }`"
-                    >Active</a
-                  >
-                </li>
-                <li class="nav-item tab-item" @click="currentTab = 'finished'">
-                  <a
-                    :class="`nav-link ${
-                      currentTab === 'finished' ? 'active' : ''
-                    }`"
-                    >Finished</a
-                  >
-                </li>
-              </ul>
-              <div v-if="currentTab === 'active'">
-                <div v-for="round in activeRounds" :key="round.round">
-                  <Round
-                    :canClaim="round.canClaim"
-                    :maxVolume="round.maxVolume"
-                    :round="round.round"
-                    :totalDeposit="round.totalDeposit"
-                    :orders="round.orders"
-                    :maxDeposit="round.maxDeposit"
-                    :claimAt="round.claimAt"
-                    :yourDeposit="round.yourDeposit"
-                    :amountTokenSale="round.amountTokenSale"
-                    :price="round.price"
-                    :minDeposit="round.minDeposit"
-                    :isFinished="false"
-                  />
-                </div>
-              </div>
-              <div v-if="currentTab === 'finished'">
-                <div v-for="round in finishedRounds" :key="round.round">
-                  <Round
-                    :canClaim="round.canClaim"
-                    :maxVolume="round.maxVolume"
-                    :round="round.round"
-                    :totalDeposit="round.totalDeposit"
-                    :orders="round.orders"
-                    :maxDeposit="round.maxDeposit"
-                    :claimAt="round.claimAt"
-                    :yourDeposit="round.yourDeposit"
-                    :amountTokenSale="round.amountTokenSale"
-                    :price="round.price"
-                    :minDeposit="round.minDeposit"
-                    :isFinished="true"
-                  />
-                </div>
-              </div>
-              <div class="pagging-box">
-                <VPagination
-                  v-model="page"
-                  :pages="5"
-                  :range-size="1"
-                  active-color="#DCEDFF"
-                  @update:modelValue="updateHandler"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Help Section End -->
 </template>
 
 <script lang="ts">
@@ -326,9 +295,6 @@ export default {
       "saleStartTime",
     ]),
     timeLeftToStart() {
-      // var a = fromUnixTime(this.saleStartTime) - new Date();
-      // @ts-ignore
-      console.log("abccc", (fromUnixTime(this.saleStartTime) - new Date()));
       // @ts-ignore
       return fromUnixTime(this.saleStartTime) - new Date();
     },
@@ -377,7 +343,7 @@ export default {
   margin: 0px 0 2rem;
 }
 
-.current-round .round-container {
+.current-round .current-buy .round-container {
   background-image: none;
   background-color: #2b1567;
   box-shadow: 0 0 25px #ea9040;
