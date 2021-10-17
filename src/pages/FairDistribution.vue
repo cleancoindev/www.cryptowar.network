@@ -123,7 +123,7 @@
                 style="margin-bottom: 20px"
               ></content-loader>
               <ul class="nav nav-pills nav-fill">
-                <li class="nav-item" @click="currentTab = 'active'">
+                <li class="nav-item tab-item" @click="currentTab = 'active'">
                   <a
                     :class="`nav-link ${
                       currentTab === 'active' ? 'active' : ''
@@ -131,7 +131,7 @@
                     >Active</a
                   >
                 </li>
-                <li class="nav-item" @click="currentTab = 'finished'">
+                <li class="nav-item tab-item" @click="currentTab = 'finished'">
                   <a
                     :class="`nav-link ${
                       currentTab === 'finished' ? 'active' : ''
@@ -286,5 +286,11 @@ export default {
   color: #fff;
   font-size: 16px;
   margin: 16px 0;
+}
+.tab-item {
+  cursor: pointer;
+}
+.active{
+  background-color: #5b42f3!important;
 }
 </style>

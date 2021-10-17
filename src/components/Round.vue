@@ -15,6 +15,7 @@
                     v-model="amount"
                     style="width: 170px"
                   />
+
                   <div class="input-group-append">
                     <button
                       class="btn btn-primary"
@@ -25,6 +26,9 @@
                     </button>
                   </div>
                 </div>
+                <small class="form-text error-text" v-if="!!error">
+                  {{ error }}
+                </small>
               </td>
             </tr>
             <tr>
@@ -137,6 +141,7 @@ import VueCountdown from "@chenfengyuan/vue-countdown";
 interface Data {
   isOpen: boolean;
   amount: number;
+  error: string;
 }
 
 export default {
@@ -162,11 +167,22 @@ export default {
     return {
       isOpen: false,
       amount: 0.1,
+      error: "",
     } as Data;
   },
   methods: {
     ...mapActions(["depositBnbToRound", "withdrawRound"]),
     handleDeposit(round: number) {
+      this.error = "";
+      if (this.amount > this.maxDeposit) {
+        this.error = `You can only deposit max ${this.maxDeposit} BNB`;
+        return;
+      }
+
+      if (this.amount < this.minDeposit) {
+        this.error = `You must deposit minimum ${this.minDeposit} BNB`;
+        return;
+      }
       // @ts-ignore
       this.$store.dispatch({
         type: "depositBnbToRound",
@@ -280,5 +296,12 @@ export default {
 
 .progress-bar-bg {
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+}
+.error-text {
+  color: red;
+}
+.btn-primary {
+  background-color: #5b42f3 !important;
+  border-color: #5b42f3 !important;
 }
 </style>
