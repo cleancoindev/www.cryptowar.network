@@ -1,129 +1,146 @@
 <template>
   <div class="round-container">
-    <div class="row">
-      <div class="col-lg-2 round-number">{{ round }}</div>
-      <div class="col-lg-10">
-        <div class="row">
-          <table>
-            <tr v-if="yourDeposit == 0 && !isFinished">
-              <td colspan="2">
-                <div class="input-group mb-3">
-                  <input
-                    class="form-control"
-                    placeholder="Amount BNB"
-                    type="number"
-                    v-model="amount"
-                    style="width: 170px"
-                  />
-                  <div class="input-group-append">
-                    <button
-                      class="btn btn-primary"
-                      type="button"
-                      @click="handleDepositMax()"
-                    >
-                      Max
-                    </button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
+    <div class="head-box">
+      <div class="row">
+        <div class="col-lg-1 round-number">{{ round }}</div>
+        <div class="col-lg-11 input-box">
+          <div class="col-lg-7 col-md-8">
+            <div class="input-group" v-if="yourDeposit == 0 && !isFinished">
+              <input
+                class="form-control"
+                placeholder="Amount BNB"
+                type="number"
+                v-model="amount"
+                style="width: 170px"
+              />
+              <div class="input-group-append">
                 <button
-                  v-if="yourDeposit == 0 && !isFinished"
-                  class="action-button"
-                  @click="this.handleDeposit(round)"
+                  class="btn btn-primary"
+                  type="button"
+                  @click="handleDepositMax()"
                 >
-                  <span class="text">Deposit</span>
+                  Max
                 </button>
-              </td>
-              <td>
-                <button
-                  v-if="canClaim"
-                  class="action-button"
-                  v-bind:disabled="!canClaim"
-                  @click="this.handleWithdraw(round)"
-                >
-                  <span class="text">Claim</span>
-                </button>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div style="margin: 15px 0">
-          <VueCountdown
-            :time="claimAt"
-            v-if="claimAt > 0"
-            v-slot="{ days, hours, minutes, seconds }"
-          >
-            ⏰ Claim will be available in {{ days }} days, {{ hours }} hours,
-            {{ minutes }} minutes, {{ seconds }} seconds. {{ claimAt }}
-          </VueCountdown>
-        </div>
-        <div class="progress" style="margin-bottom: 15px">
-          <div
-            class="progress-bar progress-bar-bg"
-            role="progressbar"
-            v-bind:style="{ width: (totalDeposit * 100) / maxVolume + '%' }"
-            :aria-valuenow="(totalDeposit * 100) / maxVolume"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            {{ ((totalDeposit * 100) / maxVolume).toFixed(0) }}%
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-4">
+            <a
+              v-if="yourDeposit == 0 && !isFinished"
+              class="mybtn1"
+              @click="this.handleDeposit(round)"
+            >
+              <span class="text">Deposit</span>
+            </a>
+            <a
+              v-if="canClaim"
+              class="action-button"
+              v-bind:disabled="!canClaim"
+              @click="this.handleWithdraw(round)"
+            >
+              <span class="text">Claim</span>
+            </a>
           </div>
         </div>
+      </div>
+    </div>
 
-        <table style="width: 100%">
-          <tr>
-            <td colspan="2"><h3>ℹ️ Round Information</h3></td>
-          </tr>
-          <tr>
-            <td style="">Your Deposit:</td>
-            <td style="text-align: left">{{ yourDeposit }} BNB</td>
-          </tr>
-          <tr>
-            <td style="text-align: left; width: 115px">Total Deposit:</td>
-            <td style="text-align: left">{{ totalDeposit }} BNB</td>
-          </tr>
-          <tr>
-            <td style="">Min Deposit:</td>
-            <td style="text-align: left">{{ minDeposit }} BNB</td>
-          </tr>
-          <tr>
-            <td style="">Max Deposit:</td>
-            <td style="text-align: left">{{ maxDeposit }} BNB</td>
-          </tr>
-          <tr>
-            <td style="">xBlade Price:</td>
-            <td style="text-align: left">{{ price }} BNB</td>
-          </tr>
-          <tr>
-            <td style="">Total xBlade:</td>
-            <td style="text-align: left">{{ amountTokenSale }} xBlade</td>
-          </tr>
-        </table>
-        <button
-          class="orders-button"
-          v-if="orders.length > 0"
-          @click="isOpen = !isOpen"
+    <div style="margin: 15px 0">
+      <VueCountdown
+        :time="claimAt"
+        v-if="claimAt > 0"
+        v-slot="{ days, hours, minutes, seconds }"
+      >
+        ⏰ Claim will be available in {{ days }} days, {{ hours }} hours,
+        {{ minutes }} minutes, {{ seconds }} seconds. {{ claimAt }}
+      </VueCountdown>
+    </div>
+    <div class="progress" style="margin-bottom: 15px">
+      <div
+        class="progress-bar progress-bar-bg"
+        role="progressbar"
+        v-bind:style="{ width: (totalDeposit * 100) / maxVolume + '%' }"
+        :aria-valuenow="(totalDeposit * 100) / maxVolume"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        {{ ((totalDeposit * 100) / maxVolume).toFixed(0) }}%
+      </div>
+    </div>
+
+    <div class="round-info">
+      <div class="title-info">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-info-circle"
+          viewBox="0 0 16 16"
         >
-          <h3>&raquo; First 50 deposits</h3>
-        </button>
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path
+            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+          />
+        </svg>
+        Round Information
+      </div>
+      <div class="info-box row">
+        <div class="col-lg-4">
+          <div class="info-item">
+            <div class="item-title">Your Deposit</div>
+            <div class="item-value">{{ yourDeposit }} BNB</div>
+          </div>
+          <div class="info-item">
+            <div class="item-title">Total Deposit</div>
+            <div class="item-value">{{ totalDeposit }} BNB</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="info-item">
+            <div class="item-title">Min Deposit</div>
+            <div class="item-value">{{ minDeposit }} BNB</div>
+          </div>
+          <div class="info-item">
+            <div class="item-title">Max Deposit</div>
+            <div class="item-value">{{ maxDeposit }} BNB</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="info-item">
+            <div class="item-title">xBlade Price</div>
+            <div class="item-value">{{ price }} BNB</div>
+          </div>
+          <div class="info-item">
+            <div class="item-title">Total xBlade</div>
+            <div class="item-value">{{ amountTokenSale }} xBlade</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <div v-show="isOpen">
-          <table>
-            <tr v-for="order in orders" :key="order.id">
-              <td>
-                <a
-                  :href="'https://bscscan.com/address/' + order.account"
-                  target="_blank"
-                >
-                  {{ order.account }}
-                </a>
-              </td>
-              <td style="padding-left: 15px">{{ order.depositValue }} BNB</td>
-            </tr>
-          </table>
+    <button
+      class="orders-button"
+      v-if="orders.length > 0"
+      @click="isOpen = !isOpen"
+    >
+      <span>&raquo; First 50 deposits</span>
+    </button>
+
+    <div v-show="isOpen">
+      <div class="row holder-item" v-for="order in orders" :key="order.id">
+        <div class="col-md-9 wallet-address">
+          <a
+            :href="'https://bscscan.com/address/' + order.account"
+            target="_blank"
+          >
+            {{ order.account }}
+          </a>
+        </div>
+        <div class="col-md-3 wallet-value">
+          {{ order.depositValue }} BNB
         </div>
       </div>
     </div>
@@ -261,8 +278,9 @@ export default {
 }
 
 .round-number {
-  font-size: 68px;
-  font-weight: 900;
+  font-size: 60px;
+  color: #fff;
+  line-height: 1;
 }
 .amount-input {
   border-radius: 8px;
@@ -274,11 +292,55 @@ export default {
   outline: none;
   background-color: transparent;
   color: #fff;
-  font-size: 16px;
   margin: 16px 0;
 }
 
 .progress-bar-bg {
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border-radius: 0.5rem;
 }
+.input-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.input-group {
+  background: #fff;
+  border-radius: 5px;
+  padding: 2px;
+}
+.input-group input {
+  border: none;
+}
+.input-group .input-group-append button {
+  border-radius: 4px;
+  background-color: #23d3ee;
+  border-color: #23d3ee;
+}
+.info-item {
+  border: 1px solid #555555;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+.info-item .item-title {
+  color: #fff;
+  font-size: 0.8rem;
+}
+.info-item .item-value {
+  color: #23d3ee;
+  font-size: 1.3rem;
+}
+
+.title-info {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.title-info svg {
+  color: #ea9040;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
 </style>

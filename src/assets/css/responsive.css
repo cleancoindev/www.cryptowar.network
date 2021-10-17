@@ -458,7 +458,15 @@
     margin-top: 10px;
   }
 
-
+  .banner{
+    width: 100%;
+  }
+  .current-box{
+    flex-direction: column-reverse;
+  }
+  .current-box .col-lg-4{
+    margin-bottom: 25px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -612,7 +620,46 @@
   .games-details .details-wrapper {
     padding: 60px 30px 60px;
   }
+  .buy.breadcrumb-area{
+    padding-top: 150px;
+  }
 
+  .banner{
+    width: 90%;
+  }
+  .buy.breadcrumb-area h2{
+    font-size: 2.8rem;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  .current-round{
+    padding-top: 4rem;
+  }
+
+  .round-number{
+    text-align: center;
+  }
+  .input-box{
+    text-align: center;
+  }
+  .input-group{
+    margin-bottom: 10px;
+  }
+  .wallet-address{
+    width: 66.667%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+  .wallet-value{
+    width: 33.333%;
+  }
+  .nav-pills{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  
 }
 
 

@@ -7740,6 +7740,9 @@ select:focus {
   background: #270854;
   margin-bottom: 25px;
 }
+.progress{
+  border-radius: 0.5rem;
+}
 .commission-section .progress-bar-wrapper .persentage {
   position: absolute;
   top: 50%;
@@ -7799,3 +7802,85 @@ select:focus {
 }
 
 /* Reffer Section  End */
+
+.current-round{
+  padding-top: 5rem;
+}
+.buy.breadcrumb-area h2{
+  font-size: 3.75rem;
+  font-weight: normal;
+}
+
+.buy .mybtn1{
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: normal;
+  padding: 5px 30px;
+  box-shadow: inset 0px 0px 10px 3px #fea036;
+  color: #fff !important;
+}
+
+.buy .mybtn1:hover, .buy .mybtn1:active{
+  box-shadow:inset 0px 0px 10px 7px #00a2ff;
+  cursor: pointer;
+}
+
+.buy.breadcrumb-area {
+  padding-top: 200px;
+  padding-bottom: 10px;
+}
+.banner {
+  max-width: 100%;
+  width: 75%;
+}
+.wallet-value,
+.wallet-address {
+  border: 1px solid #555;
+  border-bottom: 0px;
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 5px 15px;
+}
+
+.wallet-value {
+  text-align: center;
+  color: #23d3ee;
+  padding: 5px 0;
+}
+
+.holder-item:last-child .wallet-value,
+.holder-item:last-child .wallet-address {
+  border-bottom: 1px solid #555;
+}
+
+
+.nav-pills {
+  margin-bottom: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.nav-pills .nav-item .nav-link {
+  cursor: pointer;
+  border: 1px solid #23d3ee;
+  margin: 0 5px;
+  color: #23d3ee;
+}
+
+.nav-pills .nav-item .nav-link.active,
+.nav-pills .nav-item .nav-link:hover {
+  color: #0a112f;
+  background-color: #23d3ee;
+}
+.pagging-box{
+  display: flex;
+  justify-content: center;
+}
+.note-address{
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+.buy.breadcrumb-area{
+  background-image: radial-gradient(#460F6E, #0F0021);
+}
