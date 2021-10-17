@@ -467,6 +467,17 @@
   .current-box .col-lg-4{
     margin-bottom: 25px;
   }
+
+  .header{
+    position: fixed;
+    background: #460F6Edd;
+  }
+  .sticky-top{
+    z-index: 0;
+  }
+  .round-number{
+    text-align: center;
+  }
 }
 
 @media (max-width: 767px) {
@@ -738,7 +749,7 @@
     -moz-text-stroke: 2px #fb3ab4;
     margin-bottom: 25px;
   }
-
+  
 
 }
 

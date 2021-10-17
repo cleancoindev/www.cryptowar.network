@@ -6,7 +6,7 @@ html {
   font-family: "Open Sans", sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   font-size: 18px;
   margin: 0;
   color: #a1aed4;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   background-color: #1f0644;
   background: #1f0644;
 }
@@ -637,7 +637,7 @@ select:focus {
   width: 100%;
   height: 1px;
   background: #54068f;
-  box-shadow: 0px 0px 10px 2px #8938af86;
+  /* box-shadow: 0px 0px 10px 2px #8938af86; */
 }
 .header .overlay {
   position: absolute;
@@ -648,6 +648,14 @@ select:focus {
   background-image: linear-gradient(89deg, #54068f 0%, #7a1bb4 100%);
   opacity: 0.5;
 }
+
+.header{
+  position: relative;
+}
+.header .overlay{
+  display: none;
+}
+
 .header.nav-fixed {
   background: #252f5a;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
@@ -7811,6 +7819,20 @@ select:focus {
   font-weight: normal;
 }
 
+.buy.breadcrumb-area h2.center-content{
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+
+.connect-wallet{
+  text-align: center;
+}
+
+.connect-wallet .center-content{
+  display: flex;
+  justify-content: center;
+}
+
 .buy .mybtn1{
   background: transparent;
   border: none;
@@ -7828,7 +7850,7 @@ select:focus {
 }
 
 .buy.breadcrumb-area {
-  padding-top: 200px;
+  padding-top: 80px;
   padding-bottom: 10px;
 }
 .banner {
@@ -7882,5 +7904,9 @@ select:focus {
   text-overflow: ellipsis;
 }
 .buy.breadcrumb-area{
-  background-image: radial-gradient(#460F6E, #0F0021);
+  background-image: radial-gradient(ellipse at top, #460F6E, #0F0021);
+}
+
+.not-sticky .sticky-top{
+  z-index: 1;
 }
