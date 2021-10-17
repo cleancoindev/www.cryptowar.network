@@ -67,9 +67,9 @@
               <div class="row" v-if="tokenDistributionContract">
                 <a
                   style="font-size: 12px"
-                  v-bind:href="`https://bscscan.com/token/${tokenDistributionContract?.options?.address}`"
+                  v-bind:href="`https://bscscan.com/token/0x27a339d9b59b21390d7209b78a839868e319301b`"
                   target="_blank"
-                  >{{ tokenDistributionContract?.options?.address }}</a
+                  >0x27a339d9b59b21390d7209b78a839868e319301b</a
                 >
               </div>
               <div class="row">
