@@ -79,11 +79,13 @@
                       📖 Rules
                     </li>
                     <li style="list-style: disc">
-                      You can only deposit once per round, you can deposit future rounds.
+                      You can only deposit once per round, you can deposit
+                      future rounds.
                     </li>
                     <li style="list-style: disc">
                       You can only claim xBlade when claim is available for that
-                      round in below finished tab. If the pool > round max volume, you will get back BNB.
+                      round in below finished tab. If the pool > round max
+                      volume, you will get back BNB.
                     </li>
                     <li style="list-style: disc">
                       Read more at
@@ -106,71 +108,83 @@
                 <wallet-not-connect @connect-wallet="connectWallet" />
               </div>
             </div>
-
-            <content-loader
-              v-if="activeRounds.length == 0"
-              style="margin-bottom: 20px"
-            ></content-loader>
-            <ul class="nav nav-pills nav-fill">
-              <li class="nav-item" @click="currentTab = 'active'">
-                <a
-                  :class="`nav-link ${currentTab === 'active' ? 'active' : ''}`"
-                  >Active</a
-                >
-              </li>
-              <li class="nav-item" @click="currentTab = 'finished'">
-                <a
-                  :class="`nav-link ${
-                    currentTab === 'finished' ? 'active' : ''
-                  }`"
-                  >Finished</a
-                >
-              </li>
-            </ul>
-            <div v-if="currentTab === 'active'">
-              <div v-for="round in activeRounds" :key="round.round">
-                <Round
-                  :canClaim="round.canClaim"
-                  :maxVolume="round.maxVolume"
-                  :round="round.round"
-                  :totalDeposit="round.totalDeposit"
-                  :orders="round.orders"
-                  :maxDeposit="round.maxDeposit"
-                  :claimAt="round.claimAt"
-                  :yourDeposit="round.yourDeposit"
-                  :amountTokenSale="round.amountTokenSale"
-                  :price="round.price"
-                  :minDeposit="round.minDeposit"
-                  :isFinished="false"
-                />
-              </div>
+            <div style="margin: 15px 0" v-if="timeLeftToStart > 0">
+              <VueCountdown
+                :time="timeLeftToStart"
+                v-slot="{ days, hours, minutes, seconds }"
+              >
+                ⏰ Fair distribution will be available in {{ days }} days
+                {{ hours }} hours, {{ minutes }} minutes, {{ seconds }} seconds.
+              </VueCountdown>
             </div>
-            <div v-if="currentTab === 'finished'">
-              <div v-for="round in finishedRounds" :key="round.round">
-                <Round
-                  :canClaim="round.canClaim"
-                  :maxVolume="round.maxVolume"
-                  :round="round.round"
-                  :totalDeposit="round.totalDeposit"
-                  :orders="round.orders"
-                  :maxDeposit="round.maxDeposit"
-                  :claimAt="round.claimAt"
-                  :yourDeposit="round.yourDeposit"
-                  :amountTokenSale="round.amountTokenSale"
-                  :price="round.price"
-                  :minDeposit="round.minDeposit"
-                  :isFinished="true"
-                />
+            <div v-if="timeLeftToStart < 0">
+              <content-loader
+                v-if="activeRounds.length == 0 && timeLeftToStart < 0"
+                style="margin-bottom: 20px"
+              ></content-loader>
+              <ul class="nav nav-pills nav-fill">
+                <li class="nav-item" @click="currentTab = 'active'">
+                  <a
+                    :class="`nav-link ${
+                      currentTab === 'active' ? 'active' : ''
+                    }`"
+                    >Active</a
+                  >
+                </li>
+                <li class="nav-item" @click="currentTab = 'finished'">
+                  <a
+                    :class="`nav-link ${
+                      currentTab === 'finished' ? 'active' : ''
+                    }`"
+                    >Finished</a
+                  >
+                </li>
+              </ul>
+              <div v-if="currentTab === 'active'">
+                <div v-for="round in activeRounds" :key="round.round">
+                  <Round
+                    :canClaim="round.canClaim"
+                    :maxVolume="round.maxVolume"
+                    :round="round.round"
+                    :totalDeposit="round.totalDeposit"
+                    :orders="round.orders"
+                    :maxDeposit="round.maxDeposit"
+                    :claimAt="round.claimAt"
+                    :yourDeposit="round.yourDeposit"
+                    :amountTokenSale="round.amountTokenSale"
+                    :price="round.price"
+                    :minDeposit="round.minDeposit"
+                    :isFinished="false"
+                  />
+                </div>
               </div>
-            </div>
+              <div v-if="currentTab === 'finished'">
+                <div v-for="round in finishedRounds" :key="round.round">
+                  <Round
+                    :canClaim="round.canClaim"
+                    :maxVolume="round.maxVolume"
+                    :round="round.round"
+                    :totalDeposit="round.totalDeposit"
+                    :orders="round.orders"
+                    :maxDeposit="round.maxDeposit"
+                    :claimAt="round.claimAt"
+                    :yourDeposit="round.yourDeposit"
+                    :amountTokenSale="round.amountTokenSale"
+                    :price="round.price"
+                    :minDeposit="round.minDeposit"
+                    :isFinished="true"
+                  />
+                </div>
+              </div>
 
-            <VPagination
-              v-model="page"
-              :pages="5"
-              :range-size="1"
-              active-color="#DCEDFF"
-              @update:modelValue="updateHandler"
-            />
+              <VPagination
+                v-model="page"
+                :pages="5"
+                :range-size="1"
+                active-color="#DCEDFF"
+                @update:modelValue="updateHandler"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -186,8 +200,17 @@ import VPagination from "@hennge/vue3-pagination";
 import "../assets/css/vue3-pagination.css";
 import { ContentLoader } from "vue-content-loader";
 import WalletNotConnect from "../components/WalletNotConnect.vue";
+import VueCountdown from "@chenfengyuan/vue-countdown";
+import fromUnixTime from "date-fns/fromUnixTime";
+
 export default {
-  components: { Round, VPagination, ContentLoader, WalletNotConnect },
+  components: {
+    Round,
+    VPagination,
+    ContentLoader,
+    WalletNotConnect,
+    VueCountdown,
+  },
   data() {
     return {
       isOpen: false,
@@ -202,7 +225,12 @@ export default {
       "tokenDistributionContract",
       "activeRounds",
       "finishedRounds",
+      "saleStartTime",
     ]),
+    timeLeftToStart() {
+      // @ts-ignore
+      return fromUnixTime(this.saleStartTime) - new Date();
+    },
   },
   methods: {
     ...mapActions([
@@ -225,6 +253,7 @@ export default {
   },
   async mounted() {
     await this.initialize();
+    console.log(this.saleStartTime);
   },
 };
 </script>

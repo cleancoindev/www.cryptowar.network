@@ -43,4 +43,5 @@ export interface IState {
   activeRounds: Round[];
   finishedRounds: Round[];
   web3: Web3;
+  saleStartTime: number;
 }
