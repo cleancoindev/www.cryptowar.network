@@ -116,7 +116,7 @@
               </div>
             </div>
           </div>
-          <div :class="[defaultAccount ? 'col-lg-4' : 'col-lg-12']" class="">
+          <div :class="[defaultAccount ? 'col-lg-4' : 'col-lg-12 not-sticky']" class="">
             <div class=""><h2 class="heading-title" > &nbsp; </h2></div>
             <div class="note-box sticky-top">
               <div class="">
