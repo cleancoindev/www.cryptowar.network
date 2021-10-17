@@ -23,6 +23,9 @@
                 </button>
               </div>
             </div>
+            <small class="form-text error-text" v-if="!!error">
+              {{ error }}
+            </small>
           </div>
           <div class="col-lg-5 col-md-4">
             <a
@@ -139,9 +142,7 @@
             {{ order.account }}
           </a>
         </div>
-        <div class="col-md-3 wallet-value">
-          {{ order.depositValue }} BNB
-        </div>
+        <div class="col-md-3 wallet-value">{{ order.depositValue }} BNB</div>
       </div>
     </div>
   </div>
@@ -154,6 +155,7 @@ import VueCountdown from "@chenfengyuan/vue-countdown";
 interface Data {
   isOpen: boolean;
   amount: number;
+  error: string;
 }
 
 export default {
@@ -179,11 +181,22 @@ export default {
     return {
       isOpen: false,
       amount: 0.1,
+      error: "",
     } as Data;
   },
   methods: {
     ...mapActions(["depositBnbToRound", "withdrawRound"]),
     handleDeposit(round: number) {
+      this.error = "";
+      if (this.amount > this.maxDeposit) {
+        this.error = `You can only deposit max ${this.maxDeposit} BNB`;
+        return;
+      }
+
+      if (this.amount < this.minDeposit) {
+        this.error = `You must deposit minimum ${this.minDeposit} BNB`;
+        return;
+      }
       // @ts-ignore
       this.$store.dispatch({
         type: "depositBnbToRound",
@@ -342,5 +355,11 @@ export default {
   font-size: 0.8rem;
   margin-right: 0.5rem;
 }
-
+.error-text {
+  color: red;
+}
+.btn-primary {
+  background-color: #5b42f3 !important;
+  border-color: #5b42f3 !important;
+}
 </style>

@@ -43,9 +43,9 @@
               <div class="note-address" v-if="tokenDistributionContract">
                 <a
                   style="font-size: 12px; color: #febc2c"
-                  v-bind:href="`https://bscscan.com/token/${tokenDistributionContract?.options?.address}`"
+                  v-bind:href="`https://bscscan.com/token/0x27a339d9b59b21390d7209b78a839868e319301b`"
                   target="_blank"
-                  >{{ tokenDistributionContract?.options?.address }}</a
+                  >0x27a339d9b59b21390d7209b78a839868e319301b</a
                 >
               </div>
               <div class="">
@@ -160,7 +160,7 @@
                       <a target="_blank" href="https://t.me/elasticbitcoinxbt"
                         >Telegram</a
                       >,
-                      <a target="_blank" href="https://discord.gg/tWhbWySwCK"
+                      <a target="_blank" href="https://discord.gg/zS2khZ4F7K"
                         >Discord</a
                       >
                     </li>
@@ -205,13 +205,22 @@
       <div class="row">
         <div class="col-lg-8">
           <div class="help-content">
-            <div class="h-inner-content">
+            <div style="margin: 15px 0" v-if="timeLeftToStart > 0">
+              <VueCountdown
+                :time="timeLeftToStart"
+                v-slot="{ days, hours, minutes, seconds }"
+              >
+                ⏰ Fair distribution will be available in {{ days }} days
+                {{ hours }} hours, {{ minutes }} minutes, {{ seconds }} seconds.
+              </VueCountdown>
+            </div>
+            <div class="h-inner-content" v-if="timeLeftToStart < 0">
               <content-loader
-                v-if="activeRounds.length == 0"
+                v-if="activeRounds.length == 0 && timeLeftToStart < 0"
                 style="margin-bottom: 20px"
               ></content-loader>
               <ul class="nav nav-pills nav-fill">
-                <li class="nav-item" @click="currentTab = 'active'">
+                <li class="nav-item tab-item" @click="currentTab = 'active'">
                   <a
                     :class="`nav-link ${
                       currentTab === 'active' ? 'active' : ''
@@ -219,7 +228,7 @@
                     >Active</a
                   >
                 </li>
-                <li class="nav-item" @click="currentTab = 'finished'">
+                <li class="nav-item tab-item" @click="currentTab = 'finished'">
                   <a
                     :class="`nav-link ${
                       currentTab === 'finished' ? 'active' : ''
@@ -289,8 +298,17 @@ import VPagination from "@hennge/vue3-pagination";
 import "../assets/css/vue3-pagination.css";
 import { ContentLoader } from "vue-content-loader";
 import WalletNotConnect from "../components/WalletNotConnect.vue";
+import VueCountdown from "@chenfengyuan/vue-countdown";
+import fromUnixTime from "date-fns/fromUnixTime";
+
 export default {
-  components: { Round, VPagination, ContentLoader, WalletNotConnect },
+  components: {
+    Round,
+    VPagination,
+    ContentLoader,
+    WalletNotConnect,
+    VueCountdown,
+  },
   data() {
     return {
       isOpen: false,
@@ -305,7 +323,15 @@ export default {
       "tokenDistributionContract",
       "activeRounds",
       "finishedRounds",
+      "saleStartTime",
     ]),
+    timeLeftToStart() {
+      // var a = fromUnixTime(this.saleStartTime) - new Date();
+      // @ts-ignore
+      console.log("abccc", (fromUnixTime(this.saleStartTime) - new Date()));
+      // @ts-ignore
+      return fromUnixTime(this.saleStartTime) - new Date();
+    },
   },
   methods: {
     ...mapActions([
@@ -328,6 +354,7 @@ export default {
   },
   async mounted() {
     await this.initialize();
+    console.log(this.saleStartTime);
   },
 };
 </script>
@@ -412,5 +439,11 @@ export default {
 .help-content {
   margin-left: -15px;
   margin-right: -15px;
+}
+.tab-item {
+  cursor: pointer;
+}
+.active {
+  /* background-color: #5b42f3!important; */
 }
 </style>

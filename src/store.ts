@@ -6,7 +6,7 @@ import { abi as tokenDistributionAbi } from "./contracts/TokenDistribution.json"
 import Web3 from "web3";
 import { getWeb3Client } from "./libs/web3";
 import { IState, Round } from "./types";
-import { getUnixTime } from "date-fns";
+import { fromUnixTime, getUnixTime, isBefore } from "date-fns";
 import fetchRoundDetail from "./utils/fetchRoundDetail";
 
 const defaultCallOptions = (state: IState) => ({ from: state.defaultAccount });
@@ -22,7 +22,8 @@ export const store = createStore<IState>({
     walletClient: {},
     activeRounds: [],
     finishedRounds: [],
-    web3: null!
+    web3: null!,
+    saleStartTime: 0,
   },
   getters: {
     currentRound(state: IState) {
@@ -57,7 +58,11 @@ export const store = createStore<IState>({
     },
     updateWeb3(state: IState) {
       state.web3 = web3;
-    }
+    },
+    updateSaleStartTime(state: IState, payload) {
+      console.log(payload.saleStartTime);
+      state.saleStartTime = payload.saleStartTime;
+    },
   },
   actions: {
     async initialize({ commit, dispatch }) {
@@ -70,6 +75,7 @@ export const store = createStore<IState>({
       commit("updateContract", { contract });
       commit("updateWeb3");
       dispatch("pollAccountsAndNetwork");
+      dispatch("fetchSaleStartTime");
       dispatch("fetchCurrentRound");
     },
     async depositBnbToRound(
@@ -154,7 +160,6 @@ export const store = createStore<IState>({
 
       const activeCursor =
         (page === 1 ? 1 : (page - 1) * roundPerPage) + currentRound.round;
-      console.log({ activeCursor });
       const activeRounds: any[] = await contract.methods
         .getRounds(roundPerPage, activeCursor)
         .call(defaultCallOptions(state));
@@ -184,6 +189,13 @@ export const store = createStore<IState>({
       payload: { type: string; cursor?: number }
     ) {
       const contract = state.tokenDistributionContract;
+      const saleStartTime = fromUnixTime(
+        await contract.methods.saleStartTime().call(defaultCallOptions(state))
+      );
+      if (isBefore(new Date(), saleStartTime)) {
+        return;
+      }
+
       const roundPerPage = 5;
       const cursor = payload?.cursor || 1;
       const rounds: any[] = await contract.methods
@@ -201,12 +213,23 @@ export const store = createStore<IState>({
         const now = getUnixTime(new Date());
         return totalDeposit < maxVolume && now > endAt;
       });
-      if (activeRounds?.length === 0) {
-        dispatch("fetchCurrentRound", { cursor: cursor + 1 });
+      if (activeRounds?.length === 0 && cursor < 96) {
+        dispatch("fetchCurrentRound", { cursor: cursor + 5 });
         return;
       }
-      commit("updateCurrentRound", { round: activeRounds[0] });
+      if (activeRounds?.length > 0) {
+        commit("updateCurrentRound", { round: activeRounds[0] });
+      }
       dispatch("fetchRounds");
+    },
+    async fetchSaleStartTime({ state, commit }) {
+      const contract = state.tokenDistributionContract;
+      const saleStartTime = await contract.methods
+        .saleStartTime()
+        .call(defaultCallOptions(state));
+      commit("updateSaleStartTime", {
+        saleStartTime,
+      });
     },
     async updatePageAndFetch(
       { commit },
