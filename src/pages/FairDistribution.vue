@@ -97,7 +97,7 @@
                       <a target="_blank" href="https://t.me/elasticbitcoinxbt"
                         >Telegram</a
                       >,
-                      <a target="_blank" href="https://discord.gg/tWhbWySwCK"
+                      <a target="_blank" href="https://discord.gg/zS2khZ4F7K"
                         >Discord</a
                       >
                     </li>

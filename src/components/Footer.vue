@@ -61,7 +61,7 @@
                 </a>
               </li>
               <li>
-                <a href="https://discord.gg/tWhbWySwCK">
+                <a href="https://discord.gg/zS2khZ4F7K">
                   <i class="fab fa-discord"></i>
                 </a>
               </li>
@@ -105,7 +105,7 @@
                 </a>
               </li>
               <li>
-                <a href="https://discord.gg/tWhbWySwCK">
+                <a href="https://discord.gg/zS2khZ4F7K">
                   Discord
                 </a>
               </li>
