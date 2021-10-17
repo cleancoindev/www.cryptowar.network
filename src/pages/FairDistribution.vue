@@ -9,7 +9,7 @@
       </div>
       <div class="current-round">
         <div class="row current-box">
-          <div class="col-lg-8">
+          <div class="col-lg-8" v-if="defaultAccount">
             <div class="">
               <h2 class="heading-title" v-if="this.currentRound">
                 Round {{ this.currentRound?.round }} / 96
@@ -117,6 +117,7 @@
             </div>
           </div>
           <div :class="[defaultAccount ? 'col-lg-4' : 'col-lg-12']" class="">
+            <div class=""><h2 class="heading-title" > &nbsp; </h2></div>
             <div class="note-box sticky-top">
               <div class="">
                 <h5>xBlade Contract address</h5>
