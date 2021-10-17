@@ -1,1 +1,1 @@
-# cryptowar.xbn.finance
+# www.cryptowar.network
