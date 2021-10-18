@@ -8,6 +8,7 @@ import { getWeb3Client } from "./libs/web3";
 import { IState, Round } from "./types";
 import { fromUnixTime, getUnixTime, isBefore } from "date-fns";
 import fetchRoundDetail from "./utils/fetchRoundDetail";
+import closestIndexTo from "date-fns/closestIndexTo/index";
 
 const defaultCallOptions = (state: IState) => ({ from: state.defaultAccount });
 const web3 = new Web3(Web3.givenProvider);
@@ -181,7 +182,7 @@ export const store = createStore<IState>({
           fetchRoundDetail({ r, defaultCallOptions, contract, state, web3 })
         )
       );
-      console.log(transformedRound);
+      // console.log(transformedRound);
       commit("updateFinishedRounds", { rounds: transformedRound });
     },
     async fetchCurrentRound(
@@ -206,13 +207,15 @@ export const store = createStore<IState>({
           fetchRoundDetail({ r, defaultCallOptions, contract, state, web3 })
         )
       );
+
       const activeRounds = transformedRound.filter((round) => {
         const maxVolume = Number(round.maxVolume);
         const totalDeposit = Number(round.totalDeposit);
         const { endAt } = round;
         const now = getUnixTime(new Date());
-        return totalDeposit < maxVolume && now > endAt;
+        return totalDeposit < maxVolume;
       });
+      console.log(activeRounds)
       if (activeRounds?.length === 0 && cursor < 96) {
         dispatch("fetchCurrentRound", { cursor: cursor + 5 });
         return;
