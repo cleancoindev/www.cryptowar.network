@@ -55,7 +55,7 @@
         v-slot="{ days, hours, minutes, seconds }"
       >
         ⏰ Claim will be available in {{ days }} days, {{ hours }} hours,
-        {{ minutes }} minutes, {{ seconds }} seconds. {{ claimAt }}
+        {{ minutes }} minutes, {{ seconds }} seconds.
       </VueCountdown>
     </div>
     <div class="progress" style="margin-bottom: 15px">
