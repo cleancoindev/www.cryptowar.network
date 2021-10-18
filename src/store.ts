@@ -173,6 +173,7 @@ export const store = createStore<IState>({
       commit("updateActiveRounds", {
         rounds: transformedActiveRound.filter((r) => r.round <= 96),
       });
+      // Comment
 
       const rounds: any[] = await contract.methods
         .getRounds(currentRound.round > 1 ? currentRound.round - 1 : 0, 1)
