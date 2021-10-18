@@ -214,9 +214,9 @@ export const store = createStore<IState>({
         const totalDeposit = Number(round.totalDeposit);
         const { endAt } = round;
         const now = getUnixTime(new Date());
-        return totalDeposit < maxVolume;
+        return totalDeposit < maxVolume || endAt > now;
       });
-      console.log(activeRounds)
+
       if (activeRounds?.length === 0 && cursor < 96) {
         dispatch("fetchCurrentRound", { cursor: cursor + 5 });
         return;
