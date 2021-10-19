@@ -136,6 +136,7 @@ export interface TokenDistribution {
   MAX_ROUND(): Web3JsAbiCall<string>;
   MIN_BUY(): Web3JsAbiCall<string>;
   MIN_ROUND(): Web3JsAbiCall<string>;
+  ROUND_TIME(): Web3JsAbiCall<string>;
   owner(): Web3JsAbiCall<string>;
   pancakeRouter(): Web3JsAbiCall<string>;
   pancakeRouter1(): Web3JsAbiCall<string>;
@@ -148,10 +149,12 @@ export interface TokenDistribution {
   transferOwnership(newOwner: string): Web3JsAbiCall<void>;
   initialize(_pancakeRouter: string, _token: string): Web3JsAbiCall<void>;
   setPancakeRouters(_pancakeRouter1: string, _pancakeRouter2: string): Web3JsAbiCall<void>;
+  setToken(_token: string): Web3JsAbiCall<void>;
   currentRound(): Web3JsAbiCall<string>;
   endRoundTime(round: string | number): Web3JsAbiCall<string>;
   withdrawTimeLeft(round: string | number): Web3JsAbiCall<string>;
   canWithdraw(round: string | number, account: string): Web3JsAbiCall<boolean>;
+  getAmountTokenSalePerRound(round: string | number): Web3JsAbiCall<string>;
   getTokenAmountLeftInRound(round: string | number): Web3JsAbiCall<string>;
   canDeposit(round: string | number): Web3JsAbiCall<boolean>;
   getOrderByRound(round: string | number, cursor: string | number, size: string | number): Web3JsAbiCall<undefined>;
@@ -168,14 +171,22 @@ export interface TokenDistribution {
   setSaleStartTime(startTime: string | number): Web3JsAbiCall<void>;
   setFirstRoundPrice(price: string | number): Web3JsAbiCall<void>;
   setLastRoundPrice(price: string | number): Web3JsAbiCall<void>;
+  getLastRoundPrice(): Web3JsAbiCall<string>;
   setBonusRate(_bonusRate: string | number): Web3JsAbiCall<void>;
   setRoundTime(_time: string | number): Web3JsAbiCall<void>;
   setMessage(_message: string): Web3JsAbiCall<void>;
   emergencyWithdraw(): Web3JsAbiCall<void>;
   initialPriceInRound(round: string | number): Web3JsAbiCall<string>;
+  oldInitialPriceInRound(round: string | number): Web3JsAbiCall<string>;
   maxVolumeInRound(round: string | number): Web3JsAbiCall<string>;
   calculateExactTokenAmount(round: string | number, amountBnb: string | number): Web3JsAbiCall<string>;
   getMessageHash(_to: string, _message: string): Web3JsAbiCall<string>;
+  swapTokensForEth(tokenAmount: string | number): Web3JsAbiCall<void>;
+  swapBNBForToken(tokenAddress: string, recipient: string, bnbAmount: string | number): Web3JsAbiCall<void>;
+  swapETHForTokens(recipient: string, ethAmount: string | number): Web3JsAbiCall<void>;
+  addLiquidityForTokens(_tokenAddress: string, _to: string, _bnbAmount: string | number): Web3JsAbiCall<void>;
+  addLiquidity(owner: string, tokenAmount: string | number, ethAmount: string | number): Web3JsAbiCall<void>;
+  getReturnAmount(_amount: string | number, _token: string): Web3JsAbiCall<string>;
 }
 
 export interface Utils {

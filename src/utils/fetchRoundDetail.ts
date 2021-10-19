@@ -44,12 +44,17 @@ function fetchRoundDetail(params: Params): Promise<Round> {
         .call(defaultCallOptions(state));
     }
     const amountTokenSale: string = await contract.methods
-      .AMOUNT_TOKEN_SALE_PER_ROUND()
+      .getAmountTokenSalePerRound(id)
       .call(defaultCallOptions(state));
 
-    const price: string = await contract.methods
-      .initialPriceInRound(id)
-      .call(defaultCallOptions(state));
+    const price: string =
+      id < 4
+        ? await contract.methods
+            .oldInitialPriceInRound(id)
+            .call(defaultCallOptions(state))
+        : await contract.methods
+            .initialPriceInRound(id)
+            .call(defaultCallOptions(state));
 
     const minDeposit: string = await contract.methods
       .MIN_BUY()
