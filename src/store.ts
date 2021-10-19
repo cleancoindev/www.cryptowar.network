@@ -61,8 +61,14 @@ export const store = createStore<IState>({
       state.web3 = web3;
     },
     updateSaleStartTime(state: IState, payload) {
-      console.log(payload.saleStartTime);
       state.saleStartTime = payload.saleStartTime;
+    },
+    updateYourDeposit(state: IState, payload) {
+      const { round, amount } = payload;
+      const roundIndex = state.activeRounds.findIndex((r) => r.round === round);
+      if (roundIndex !== -1) {
+        state.activeRounds[roundIndex].yourDeposit = amount;
+      }
     },
   },
   actions: {
@@ -80,7 +86,7 @@ export const store = createStore<IState>({
       dispatch("fetchCurrentRound");
     },
     async depositBnbToRound(
-      { state, dispatch },
+      { state, dispatch, commit },
       payload: { type: string; round: number; amount: number }
     ) {
       if (!state.defaultAccount || !payload.round) {
@@ -113,14 +119,18 @@ export const store = createStore<IState>({
           ),
         })
         .on("transactionHash", (hash) => {
+          commit("updateYourDeposit", { round, amount });
+
           // @ts-ignore
           this.$app.config.globalProperties.$swal.fire({
             icon: "success",
             title: `You've deposited ${amount} BNB`,
             html: `<a href="${process.env.VUE_APP_EXPLORER_URL}tx/${hash}" target="_blank" style="color: #6f42c1">Transaction</a>`,
           });
+        })
+        .on("confirmation", () => {
+          dispatch("fetchRounds");
         });
-      dispatch("fetchRounds");
     },
     async withdrawRound(
       { state, dispatch },
