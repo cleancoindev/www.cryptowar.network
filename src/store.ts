@@ -193,8 +193,10 @@ export const store = createStore<IState>({
           fetchRoundDetail({ r, defaultCallOptions, contract, state, web3 })
         )
       );
-      // console.log(transformedRound);
-      commit("updateFinishedRounds", { rounds: transformedRound });
+      const sortedRounds = transformedRound.sort((a, b) =>
+        a.round <= b.round ? 1 : -1
+      );
+      commit("updateFinishedRounds", { rounds: sortedRounds });
     },
     async fetchCurrentRound(
       { state, commit, dispatch },
