@@ -10,11 +10,17 @@
       <div class="current-round">
         <div class="row current-box">
           <div class="col-lg-8" v-if="defaultAccount">
-            <div class="">
-              <h2 class="heading-title" v-if="this.currentRound">
-                Round {{ this.currentRound?.round }} / 96
-              </h2>
-            </div>
+            <!-- <div class="">
+              <h3 class="heading-title" v-if="this.currentRound">
+                <VueCountdown
+                  :time="this.currentRound.claimAt"
+                  v-slot="{ hours, minutes, seconds }"
+                >
+                  ⏰  End in
+                  {{ hours }}:{{ minutes }}:{{ seconds }}.
+                </VueCountdown>
+              </h3>
+            </div> -->
             <div v-if="this.currentRound" class="current-buy">
               <Round
                 :canClaim="this.currentRound.canClaim"
@@ -103,15 +109,6 @@
                       :isFinished="true"
                     />
                   </div>
-                </div>
-                <div class="pagging-box">
-                  <VPagination
-                    v-model="page"
-                    :pages="5"
-                    :range-size="1"
-                    active-color="#DCEDFF"
-                    @update:modelValue="updateHandler"
-                  />
                 </div>
               </div>
             </div>
@@ -264,7 +261,6 @@
 <script lang="ts">
 import { mapActions, mapState } from "vuex";
 import Round from "../components/Round.vue";
-import VPagination from "@hennge/vue3-pagination";
 import "../assets/css/vue3-pagination.css";
 import { ContentLoader } from "vue-content-loader";
 import WalletNotConnect from "../components/WalletNotConnect.vue";
@@ -274,7 +270,6 @@ import fromUnixTime from "date-fns/fromUnixTime";
 export default {
   components: {
     Round,
-    VPagination,
     ContentLoader,
     WalletNotConnect,
     VueCountdown,
