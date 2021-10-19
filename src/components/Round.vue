@@ -35,6 +35,7 @@
             >
               <span class="text">Deposit</span>
             </a>
+
             <a
               v-if="canClaim"
               class="action-button"
