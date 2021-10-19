@@ -2,7 +2,6 @@
   <div class="round-container">
     <div class="head-box">
       <div class="row">
-        <div class="col-lg-1 round-number">{{ round }}</div>
         <div class="col-lg-11 input-box">
           <div class="col-lg-7 col-md-8">
             <div class="input-group" v-if="yourDeposit == 0 && !isFinished">
@@ -91,7 +90,7 @@
         </svg>
         Round Information
       </div>
-      <div class="info-box row">
+      <div class="info-box row" v-if="!isFinished">
         <div class="col-lg-4">
           <div class="info-item">
             <div class="item-title">Your Deposit</div>
@@ -123,11 +122,32 @@
           </div>
         </div>
       </div>
+
+      <div class="info-box row" v-if="isFinished">
+        <div class="col-lg-4">
+          <div class="info-item">
+            <div class="item-title">Your Deposit</div>
+            <div class="item-value">{{ yourDeposit }} BNB</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="info-item">
+            <div class="item-title">Total Deposit</div>
+            <div class="item-value">{{ totalDeposit }} BNB</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="info-item">
+            <div class="item-title">Total xBlade</div>
+            <div class="item-value">{{ amountTokenSale }} xBlade</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <button
       class="orders-button"
-      v-if="orders.length > 0"
+      v-if="orders.length > 0 && !isFinished"
       @click="isOpen = !isOpen"
     >
       <span>&raquo; First 50 deposits</span>

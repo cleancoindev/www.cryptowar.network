@@ -179,9 +179,11 @@ export const store = createStore<IState>({
           fetchRoundDetail({ r, defaultCallOptions, contract, state, web3 })
         )
       );
-
+      const displayActiveRounds = transformedActiveRound
+        .filter((r) => r.round <= 96)
+        .splice(0, 2);
       commit("updateActiveRounds", {
-        rounds: transformedActiveRound.filter((r) => r.round <= 96),
+        rounds: displayActiveRounds,
       });
       // Comment
 
@@ -195,7 +197,7 @@ export const store = createStore<IState>({
       );
       const sortedRounds = transformedRound.sort((a, b) =>
         a.round <= b.round ? 1 : -1
-      );
+      ).splice(0, 6);
       commit("updateFinishedRounds", { rounds: sortedRounds });
     },
     async fetchCurrentRound(
