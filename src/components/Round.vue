@@ -106,6 +106,7 @@
           <div class="info-item">
             <div class="item-title">xBlade Price</div>
             <div class="item-value">{{ price }} BNB</div>
+            <div class="item-value-usd">~ ${{ (price * bnbPrice).toFixed(6) }}</div>
           </div>
           <div class="info-item">
             <div class="item-title">Total xBlade</div>
@@ -199,7 +200,7 @@ export default {
     "isFinished",
   ],
   computed: {
-    ...mapState(["web3", "defaultAccount"]),
+    ...mapState(["web3", "defaultAccount", "bnbPrice"]),
   },
   data() {
     return {
@@ -359,6 +360,7 @@ export default {
   border: 1px solid #555555;
   padding: 5px 10px;
   margin: 10px 0;
+  min-height: 80px;
 }
 .info-item .item-title {
   color: #fff;
@@ -367,6 +369,12 @@ export default {
 .info-item .item-value {
   color: #23d3ee;
   font-size: 1.3rem;
+}
+
+.info-item .item-value-usd {
+  color: #23d3ee;
+  font-size: 0.8rem;
+  font-style: italic;
 }
 
 .title-info {
