@@ -25,6 +25,7 @@ export const store = createStore<IState>({
     finishedRounds: [],
     web3: null!,
     saleStartTime: 0,
+    bnbPrice: 0,
   },
   getters: {
     currentRound(state: IState) {
@@ -70,6 +71,9 @@ export const store = createStore<IState>({
         state.activeRounds[roundIndex].yourDeposit = amount;
       }
     },
+    updateBNBPrice(state: IState, payload) {
+      state.bnbPrice = payload.price;
+    },
   },
   actions: {
     async initialize({ commit, dispatch }) {
@@ -81,9 +85,17 @@ export const store = createStore<IState>({
       );
       commit("updateContract", { contract });
       commit("updateWeb3");
+      dispatch("fetchBNBPrice");
       dispatch("pollAccountsAndNetwork");
       dispatch("fetchSaleStartTime");
       dispatch("fetchCurrentRound");
+    },
+    async fetchBNBPrice({ commit }) {
+      const response = await fetch(
+        "https://api.coingecko.com/api/v3/simple/price?ids=binancecoin&vs_currencies=usd"
+      );
+      const result = await response.json();
+      commit("updateBNBPrice", { price: result?.binancecoin?.usd ?? 0 });
     },
     async depositBnbToRound(
       { state, dispatch, commit },
@@ -195,9 +207,9 @@ export const store = createStore<IState>({
           fetchRoundDetail({ r, defaultCallOptions, contract, state, web3 })
         )
       );
-      const sortedRounds = transformedRound.sort((a, b) =>
-        a.round <= b.round ? 1 : -1
-      ).splice(0, 6);
+      const sortedRounds = transformedRound
+        .sort((a, b) => (a.round <= b.round ? 1 : -1))
+        .splice(0, 6);
       commit("updateFinishedRounds", { rounds: sortedRounds });
     },
     async fetchCurrentRound(

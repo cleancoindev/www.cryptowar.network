@@ -49,11 +49,21 @@
                 </VueCountdown>
               </div>
               <div class="h-inner-content" v-if="timeLeftToStart < 0">
-                <content-loader
-                  v-if="activeRounds.length == 0 && timeLeftToStart < 0"
-                  style="margin-bottom: 20px"
-                ></content-loader>
-                <ul class="nav nav-pills nav-fill">
+                <div class="container spinner">
+                  <div
+                    class="spinner-grow text-primary"
+                    role="status"
+                    v-if="activeRounds.length == 0 && timeLeftToStart < 0"
+                    style="margin-bottom: 20px"
+                  >
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
+
+                <ul
+                  class="nav nav-pills nav-fill"
+                  v-if="activeRounds.length > 0"
+                >
                   <li class="nav-item tab-item" @click="currentTab = 'active'">
                     <a
                       :class="`nav-link ${
@@ -113,8 +123,11 @@
               </div>
             </div>
           </div>
-          <div :class="[defaultAccount ? 'col-lg-4' : 'col-lg-12 not-sticky']" class="">
-            <div class=""><h2 class="heading-title" > &nbsp; </h2></div>
+          <div
+            :class="[defaultAccount ? 'col-lg-4' : 'col-lg-12 not-sticky']"
+            class=""
+          >
+            <div class=""><h2 class="heading-title">&nbsp;</h2></div>
             <div class="note-box sticky-top">
               <div class="">
                 <h5>xBlade Contract address</h5>
@@ -261,8 +274,6 @@
 <script lang="ts">
 import { mapActions, mapState } from "vuex";
 import Round from "../components/Round.vue";
-import "../assets/css/vue3-pagination.css";
-import { ContentLoader } from "vue-content-loader";
 import WalletNotConnect from "../components/WalletNotConnect.vue";
 import VueCountdown from "@chenfengyuan/vue-countdown";
 import fromUnixTime from "date-fns/fromUnixTime";
@@ -270,7 +281,6 @@ import fromUnixTime from "date-fns/fromUnixTime";
 export default {
   components: {
     Round,
-    ContentLoader,
     WalletNotConnect,
     VueCountdown,
   },
@@ -316,7 +326,6 @@ export default {
   },
   async mounted() {
     await this.initialize();
-    console.log(this.saleStartTime);
   },
 };
 </script>
@@ -407,5 +416,10 @@ export default {
 }
 .active {
   /* background-color: #5b42f3!important; */
+}
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

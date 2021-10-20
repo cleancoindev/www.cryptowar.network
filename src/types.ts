@@ -44,4 +44,5 @@ export interface IState {
   finishedRounds: Round[];
   web3: Web3;
   saleStartTime: number;
+  bnbPrice: number;
 }
