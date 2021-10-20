@@ -34,15 +34,6 @@
             >
               <span class="text">Deposit</span>
             </a>
-
-            <a
-              v-if="canClaim"
-              class="action-button"
-              v-bind:disabled="!canClaim"
-              @click="this.handleWithdraw(round)"
-            >
-              <span class="text">Claim</span>
-            </a>
           </div>
         </div>
       </div>
@@ -143,6 +134,18 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="container">
+      <a
+        v-if="canClaim"
+        class="action-button"
+        v-bind:disabled="!canClaim"
+        @click="this.handleWithdraw(round)"
+      >
+        <span class="text claim-text">
+          <div>Claim</div>
+        </span>
+      </a>
     </div>
 
     <button
@@ -382,5 +385,9 @@ export default {
 .btn-primary {
   background-color: #5b42f3 !important;
   border-color: #5b42f3 !important;
+}
+.claim-text {
+  display: flex;
+  justify-content: center;
 }
 </style>
