@@ -60,7 +60,10 @@
                   </div>
                 </div>
 
-                <ul class="nav nav-pills nav-fill">
+                <ul
+                  class="nav nav-pills nav-fill"
+                  v-if="activeRounds.length > 0"
+                >
                   <li class="nav-item tab-item" @click="currentTab = 'active'">
                     <a
                       :class="`nav-link ${
