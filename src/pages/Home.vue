@@ -34,7 +34,7 @@ export default {
                 <img  loading="lazy" v-lazysizes :data-src="'../assets/images/text.webp'" alt="">
               </h1>
               <div class="links">
-                <a href="https://discord.gg/BdZSHsR9U9" class="mybtn1">Play Now</a>
+                <a href="https://play.cryptowar.network/#/" class="mybtn1">Play Now</a>
                 <!-- <a href="https://www.youtube.com/watch?v=jssO8-5qmag" class="video_btn play-video mfp-iframe">
                   <i class="fas fa-play"></i>
                 </a> -->
