@@ -162,7 +162,7 @@
                     </li> -->
 
                     <li>
-                      <a href="https://discord.gg/BdZSHsR9U9"
+                      <a href="https://play.cryptowar.network/#/"
                       class="mybtn1"
                       > Play now!</a>
                     </li>
