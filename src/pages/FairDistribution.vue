@@ -206,6 +206,25 @@
                           fill="#fff"
                         />
                       </svg>
+                      You can trade xBlade on
+                      <a href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9b59b21390d7209b78a839868e319301b">PancakeSwap</a>,
+                      <a href="https://app.1inch.io/#/56/swap/BNB/0x27a339d9b59b21390d7209b78a839868e319301b/import-token">1inch</a>
+                    </li>
+                    <li>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12.66"
+                        height="11.928"
+                        viewBox="0 0 12.66 11.928"
+                      >
+                        <path
+                          id="Polygon_3"
+                          data-name="Polygon 3"
+                          d="M5,0l5,8H0Z"
+                          transform="translate(8.66 11.928) rotate(-150)"
+                          fill="#fff"
+                        />
+                      </svg>
                       You can only deposit once per round, you can deposit
                       future rounds.
                     </li>

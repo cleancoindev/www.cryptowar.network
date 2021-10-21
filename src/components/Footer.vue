@@ -80,6 +80,11 @@
           <div class="footer-menu">
             <ul>
               <li>
+                <router-link class="nav-link" to="/buy">
+                  Buy xBlade
+                </router-link>
+              </li>
+              <li>
                 <router-link class="nav-link" to="/about">
                   About
                 </router-link>
