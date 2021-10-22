@@ -144,7 +144,7 @@
         @click="this.handleWithdraw(round)"
       >
         <span class="text claim-text">
-          <div>Claim</div>
+          <div>Claim xBlade</div>
         </span>
       </a>
     </div>
