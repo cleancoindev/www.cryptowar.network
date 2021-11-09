@@ -70,6 +70,21 @@
                   <i class="fab fa-telegram"></i>
                 </a>
               </li>
+              <li>
+                <a href="https://bscscan.com/token/0x27a339d9b59b21390d7209b78a839868e319301b">
+                  <img loading="lazy"  src="https://i.imgur.com/6LX1f1i.png" width="24px">
+                </a>
+              </li>
+              <li>
+                <a href="https://coinmarketcap.com/currencies/cryptowar-xblade/">
+                  <img loading="lazy"  src="https://i.imgur.com/VNRTUMc.png" width="24px">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.coingecko.com/en/coins/cryptowar-xblade">
+                  <img loading="lazy"  src="https://i.imgur.com/E0sUP9D.png" width="24px">
+                </a>
+              </li>
               <!-- <li>
                 <a href="#">
                   <i class="fab fa-instagram"></i>

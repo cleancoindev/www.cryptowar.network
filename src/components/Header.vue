@@ -152,6 +152,9 @@
                       </ul>
                     </li> -->
                     <li class="nav-item">
+                      <a class="nav-link" href="https://wiki.cryptowar.network/backers-and-partners">Partners</a>
+                    </li>
+                    <li class="nav-item">
                       <router-link class="nav-link" to="/help">Help</router-link>
                     </li>
                     <li class="nav-item">
