@@ -56,6 +56,11 @@
                 </a>
               </li> -->
               <li>
+                <a href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B">
+                   <img loading="lazy"  src="https://i.imgur.com/3ju4Bbo.png" width="24px">
+                </a>
+              </li>
+              <li>
                 <a href="https://twitter.com/elasticbitcoin">
                   <i class="fab fa-twitter"></i>
                 </a>
@@ -95,14 +100,9 @@
           <div class="footer-menu">
             <ul>
               <li>
-                <router-link class="nav-link" to="/buy">
+                <a href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B">
                   Buy xBlade
-                </router-link>
-              </li>
-              <li>
-                <router-link class="nav-link" to="/about">
-                  About
-                </router-link>
+                </a>
               </li>
               <li>
                 <a href="https://wiki.cryptowar.network/information/faq">

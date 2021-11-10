@@ -115,7 +115,7 @@
                       <router-link class="nav-link" to="/buy">Buy xBlade</router-link>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="https://wiki.cryptowar.network">Game Wiki</a>
+                      <a class="nav-link" href="https://wiki.cryptowar.network">WhitePaper/a>
                     </li>
 
                   </ul>
