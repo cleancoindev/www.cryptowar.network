@@ -28,7 +28,7 @@ export default {
           <div class="content">
             <div class="content">
               <h5 class="subtitle">
-                PLAY GAMES WIN
+                BE A CRYPTO GAMER
               </h5>
               <h1 class="title">
                 <img  loading="lazy" v-lazysizes :data-src="'../assets/images/text.webp'" alt="">
@@ -55,13 +55,13 @@ export default {
         <div class="col-lg-12">
           <div class="section-heading">
             <h5 class="subtitle">
-              The Games You Love
+              Recruit Your Hero
             </h5>
             <h2 class="title ">
-              PLAY AND WIN
+              PLAY AND EARN
             </h2>
             <h6 class="text">
-              Where skill is rewarded.Join millions of players worldwide!
+              Where gamers are rewarded. Join millions of players worldwide!
             </h6>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default {
               <img  loading="lazy" src="../assets/images/game-play/1.webp" alt="">
             </div>
             <div class="contant">
-              <a href="https://discord.gg/BdZSHsR9U9/" class="mybtn1">Play</a>
+              <a href="https://play.cryptowar.network/#/" class="mybtn1">Play</a>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default {
               <img  loading="lazy" v-lazysizes src="../assets/images/game-play/2.webp" alt="">
             </div>
             <div class="contant">
-              <a href="https://discord.gg/BdZSHsR9U9/" class="mybtn1">Play</a>
+              <a href="https://play.cryptowar.network/#/" class="mybtn1">Play</a>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default {
               <img  loading="lazy" v-lazysizes src="../assets/images/game-play/3.webp" alt="">
             </div>
             <div class="contant">
-              <a href="https://discord.gg/BdZSHsR9U9/" class="mybtn1">Play</a>
+              <a href="https://play.cryptowar.network/#/" class="mybtn1">Play</a>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default {
               <img  loading="lazy" v-lazysizes src="../assets/images/game-play/4.webp" alt="">
             </div>
             <div class="contant">
-              <a href="https://discord.gg/BdZSHsR9U9/" class="mybtn1">Play</a>
+              <a href="https://play.cryptowar.network/#/" class="mybtn1">Play</a>
             </div>
           </div>
         </div>
@@ -129,15 +129,15 @@ export default {
         <div class="col-xl-7">
           <div class="section-heading content-left">
             <h5 class="subtitle">
-              Every day lots of wins
+              Battle Your Way To Wealth
             </h5>
             <h2 class="title ">
-              Be One of Them
+              EARN BY GAMING
             </h2>
             <h6 class="text">
               Get started in less than 5 min and experience crypto game like never before.
             </h6>
-            <a href="https://discord.gg/BdZSHsR9U9" class="mybtn1">Play Now</a>
+            <a href="https://play.cryptowar.network/#/" class="mybtn1">Play Now</a>
           </div>
         </div>
       </div>
