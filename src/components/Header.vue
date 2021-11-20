@@ -95,27 +95,11 @@
               <div class="collapse navbar-collapse fixed-height" id="main_menu">
                 <div class="main-menu-inner">
                   <ul class="navbar-nav mr-auto">
-                    <!-- <li class="nav-item dropdown">
-                      <a class="nav-link active dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true"
-                         aria-expanded="false">
-                        Home
-                      </a>
-                      <ul class="dropdown-menu" >
-                        <li><a class="dropdown-item" href="index.html"> <i class="fa fa-angle-double-right"></i>Home 1</a></li>
-                        <li><a class="dropdown-item" href="index2.html"> <i class="fa fa-angle-double-right"></i> Home 2</a></li>
-                        <li><a class="dropdown-item" href="index3.html"> <i class="fa fa-angle-double-right"></i> Home 3</a></li>
-                        <li><a class="dropdown-item" href="index4.html"> <i class="fa fa-angle-double-right"></i> Home 4</a></li>
-                        <li><a class="dropdown-item" href="index5.html"> <i class="fa fa-angle-double-right"></i> Home 5</a></li>
-                      </ul>
-                    </li> -->
-                    <!-- <li class="nav-item">
-                      <a class="nav-link" href="/">Home</a>
-                    </li> -->
                     <li class="nav-item">
                       <router-link class="nav-link" to="/buy">Buy xBlade</router-link>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="https://wiki.cryptowar.network">WhitePaper/a>
+                      <a class="nav-link" href="https://wiki.cryptowar.network">WhitePaper</a>
                     </li>
 
                   </ul>
