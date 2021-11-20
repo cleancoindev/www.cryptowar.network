@@ -32,11 +32,11 @@ const routes = [
     name: 'landing-page',
     component: () => import("./pages/Home.vue")
   },
-  {
-    path: '/buy',
-    name: 'buy-xblade',
-    component: () => import("./pages/FairDistribution.vue")
-  }
+  // {
+  //   path: '/buy',
+  //   name: 'buy-xblade',
+  //   component: () => import("./pages/FairDistribution.vue")
+  // }
 ];
 const router = createRouter({ history, routes });
 export default router;
