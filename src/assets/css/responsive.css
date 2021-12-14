@@ -478,6 +478,23 @@
   .round-number{
     text-align: center;
   }
+
+  .backers-and-partners {
+    margin-top: 0;
+  }
+
+  .marquee-content {
+    width: 400%;
+  }
+
+  .marquee-item {
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: inset 0px 0px 12px 7px #9a13d2;
+    padding: 20px 20px;
+    margin: 0 10px;
+    box-sizing: content-box;
+  }
 }
 
 @media (max-width: 767px) {

@@ -1029,6 +1029,74 @@ select:focus {
 }
 
 /* Footer Area Start */
+.backers-and-partners {
+  margin-top: 200px;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.backers-and-partners .bnp-title {
+  color: #fa009f;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.marquee-list {
+  width: 100vw;
+}
+
+.marquee-content {
+  width: 200%;
+  display: flex;
+}
+
+.marquee-list {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  will-change: transform;
+  animation: marquee 14s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-list {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: inset 0px 0px 12px 7px #9a13d2;
+  padding: 20px 40px;
+  margin: 0 20px;
+  will-change: transform, box-shadow;
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+
+.marquee-item:hover {
+  box-shadow: inset 0px 0px 12px 7px #fea036;
+  transform: translateY(-5px);
+  will-change: transform, box-shadow;
+  transition: all 0.5s;
+}
+
+
+.bnp-logo {
+  width: 230px;
+  max-height: 70px;
+}
+
+@keyframes marquee {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
 .subscribe-area.subscribe-area2 {
   background: #1f0644;
 }
