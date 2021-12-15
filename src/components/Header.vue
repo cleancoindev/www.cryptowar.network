@@ -94,7 +94,7 @@
               </button>
               <div class="collapse navbar-collapse fixed-height" id="main_menu">
                 <div class="main-menu-inner">
-                  <ul class="navbar-nav mr-auto">
+                  <ul class="navbar-nav">
                     <!-- <li class="nav-item dropdown">
                       <a class="nav-link active dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true"
                          aria-expanded="false">
@@ -118,14 +118,18 @@
                       <a class="nav-link" href="https://wiki.cryptowar.network">WhitePaper</a>
                     </li>
 
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://wiki.cryptowar.network/backers-and-partners">Partners</a>
+                    </li>
+
                   </ul>
-                  <router-link class="navbar-brand  d-none d-lg-block" :to="{name: 'landing-page'}">
-                    <img loading="lazy" class="l2" src="../assets/images/cryptowar/xBlade-logo-02.webp" alt="" style="">
+                  <router-link class="navbar-brand d-none d-lg-block m-auto" :to="{name: 'landing-page'}">
+                    <img loading="lazy" class="l2 ml-5" src="../assets/images/cryptowar/xBlade-logo-02.webp" alt="" style="">
 
                   </router-link>
 
 
-                  <ul class="navbar-nav ml-auto">
+                  <ul class="navbar-nav">
 
                     <!-- <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -151,9 +155,6 @@
                         <li><a class="dropdown-item" href="404.html"> <i class="fa fa-angle-double-right"></i>404</a></li>
                       </ul>
                     </li> -->
-                    <li class="nav-item">
-                      <a class="nav-link" href="https://wiki.cryptowar.network/backers-and-partners">Partners</a>
-                    </li>
                     <li class="nav-item">
                       <router-link class="nav-link" to="/help">Help</router-link>
                     </li>

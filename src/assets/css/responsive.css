@@ -134,6 +134,9 @@
     margin-top: 40px;
   }
 
+  .backers-and-partners {
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 991px) {
@@ -477,6 +480,19 @@
   }
   .round-number{
     text-align: center;
+  }
+
+  .marquee-content {
+    width: 400%;
+  }
+  .marquee-item {
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: inset 0px 0px 12px 7px #9a13d2;
+    padding: 20px 20px;
+    margin: 0 10px;
+    box-sizing: content-box;
+    min-width: 151px;
   }
 }
 
@@ -908,7 +924,10 @@
     width: 45px;
     height: 45px;
     line-height: 45px;
-}
+  }
+  .bnp-logo-text {
+    font-size: 20px;
+  }
 }
 
 

@@ -1,4 +1,55 @@
 <template>
+  <!-- Backers and Partners -->
+  <div class="backers-and-partners">
+    <h5 class="bnp-title">
+      Backers &#38; Partners
+    </h5>
+
+    <div class="marquee-wrapper">
+      <div class="marquee-content">
+        <div class="marquee-list">
+          <!-- Backers -->
+          <a href="https://xbn.finance/" class="marquee-item">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/XBN.png"  alt="XBN logo">
+          </a>
+          <a href="https://www.cloudjetsolutions.com/" class="marquee-item">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/cloudjet.png"  alt="Cloudjet logo">
+          </a>
+          <a href="https://altair-alpha.com/" class="marquee-item">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/altair-alpha.png"  alt="Altair Alpha logo">
+          </a>
+
+          <!-- Partners -->
+          <a href="https://shop.ccfound.com/" class="marquee-item">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/ccfound.png"  alt="CCFound logo">
+          </a>
+          <a href="https://quarashi.network/" class="marquee-item">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/Quarashi.png"  alt="Quarashi logo">
+          </a>
+        </div>
+        <div class="marquee-list">
+          <!-- Backers -->
+          <a href="https://xbn.finance/" class="marquee-item">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/XBN.png"  alt="XBN logo">
+          </a>
+          <a href="https://www.cloudjetsolutions.com/" class="marquee-item">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/cloudjet.png"  alt="Cloudjet logo">
+          </a>
+          <a href="https://altair-alpha.com/" class="marquee-item">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/altair-alpha.png"  alt="Altair Alpha logo">
+          </a>
+
+          <!-- Partners -->
+          <a href="https://shop.ccfound.com/" class="marquee-item">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/ccfound.png"  alt="CCFound logo">
+          </a>
+          <a href="https://quarashi.network/" class="marquee-item">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/Quarashi.png"  alt="Quarashi logo">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="subscribe-area subscribe-area2">
     <div class="container">
@@ -20,9 +71,9 @@
               </div>
 
               <div class="col-lg-12 col-12" style="text-align:center;">
-                <a href="https://discord.gg/BdZSHsR9U9"
+                <a href="https://discord.gg/zS2khZ4F7K"
                       class="mybtn1"
-                      > Play CryptoWar</a>
+                      > Join our Discord</a>
 
 
 
@@ -57,7 +108,7 @@
               </li> -->
               <li>
                 <a href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B">
-                   <img loading="lazy"  src="https://i.imgur.com/3ju4Bbo.png" width="24px">
+                   <img loading="lazy" src="https://i.imgur.com/3ju4Bbo.png" width="24px">
                 </a>
               </li>
               <li>
