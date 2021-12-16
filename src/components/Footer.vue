@@ -9,47 +9,47 @@
       <div class="marquee-content">
         <div class="marquee-list">
           <!-- Backers -->
-          <a href="https://xbn.finance/" class="marquee-item">
+          <a href="https://xbn.finance/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/XBN.png"  alt="XBN logo">
           </a>
-          <a href="https://www.cloudjetsolutions.com/" class="marquee-item">
+          <a href="https://www.cloudjetsolutions.com/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/cloudjet.png"  alt="Cloudjet logo">
           </a>
-          <a href="https://altair-alpha.com/" class="marquee-item">
+          <a href="https://altair-alpha.com/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/altair-alpha.png"  alt="Altair Alpha logo">
           </a>
-          <a href="https://www.altair-cliff.com/" class="marquee-item">
+          <a href="https://www.altair-cliff.com/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/altair-cliff.png"  alt="Altair Cliff logo">
           </a>
 
           <!-- Partners -->
-          <a href="https://shop.ccfound.com/" class="marquee-item">
+          <a href="https://shop.ccfound.com/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/ccfound.png"  alt="CCFound logo">
           </a>
-          <a href="https://quarashi.network/" class="marquee-item">
+          <a href="https://quarashi.network/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/Quarashi.png"  alt="Quarashi logo">
           </a>
         </div>
         <div class="marquee-list">
           <!-- Backers -->
-          <a href="https://xbn.finance/" class="marquee-item">
+          <a href="https://xbn.finance/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/XBN.png"  alt="XBN logo">
           </a>
-          <a href="https://www.cloudjetsolutions.com/" class="marquee-item">
+          <a href="https://www.cloudjetsolutions.com/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/cloudjet.png"  alt="Cloudjet logo">
           </a>
-          <a href="https://altair-alpha.com/" class="marquee-item">
+          <a href="https://altair-alpha.com/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/altair-alpha.png"  alt="Altair Alpha logo">
           </a>
-          <a href="https://www.altair-cliff.com/" class="marquee-item">
+          <a href="https://www.altair-cliff.com/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/altair-cliff.png"  alt="Altair Cliff logo">
           </a>
 
           <!-- Partners -->
-          <a href="https://shop.ccfound.com/" class="marquee-item">
+          <a href="https://shop.ccfound.com/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/ccfound.png"  alt="CCFound logo">
           </a>
-          <a href="https://quarashi.network/" class="marquee-item">
+          <a href="https://quarashi.network/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/Quarashi.png"  alt="Quarashi logo">
           </a>
         </div>
