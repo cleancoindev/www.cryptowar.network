@@ -1990,7 +1990,7 @@ select:focus {
   transform: translateY(-50%);
 }
 .join_us.join_us2.join_us3 {
-  padding-top: 120px;
+  padding-top: 200px;
 }
 
 /* join us area end */
@@ -2118,7 +2118,7 @@ select:focus {
 /* Recent Winner Area Start */
 .recent-winners {
   background: #1f0644;
-  padding: 377px 0px 100px;
+  /* padding: 377px 0px 100px; */
 }
 .recent-winners .top-section {
   display: flex;
