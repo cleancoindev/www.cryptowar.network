@@ -18,6 +18,9 @@
           <a href="https://altair-alpha.com/" class="marquee-item">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/altair-alpha.png"  alt="Altair Alpha logo">
           </a>
+          <a href="https://www.altair-cliff.com/" class="marquee-item">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/altair-cliff.png"  alt="Altair Cliff logo">
+          </a>
 
           <!-- Partners -->
           <a href="https://shop.ccfound.com/" class="marquee-item">
@@ -37,6 +40,9 @@
           </a>
           <a href="https://altair-alpha.com/" class="marquee-item">
             <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/altair-alpha.png"  alt="Altair Alpha logo">
+          </a>
+          <a href="https://www.altair-cliff.com/" class="marquee-item">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/backers/altair-cliff.png"  alt="Altair Cliff logo">
           </a>
 
           <!-- Partners -->
