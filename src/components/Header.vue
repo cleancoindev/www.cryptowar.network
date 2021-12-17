@@ -22,12 +22,12 @@
                     </a>
                   </li> -->
                   <li>
-                    <a href="https://twitter.com/elasticbitcoin">
+                    <a href="https://twitter.com/xbladecryptowar">
                       <i class="fab fa-twitter"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://t.me/elasticbitcoinxbt">
+                    <a href="https://t.me/cryptowarxblade">
                       <i class="fab fa-telegram"></i>
                     </a>
                   </li>
