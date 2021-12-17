@@ -34,7 +34,7 @@ export default {
                 <img  loading="lazy" v-lazysizes :data-src="'../assets/images/text.webp'" alt="">
               </h1>
               <div class="links">
-                <a href="https://play.cryptowar.network/#/" class="mybtn1">Play Now</a>
+                <a href="https://play.cryptowar.network/#/" class="mybtn1" target="_blank" rel="noopener noreferrer">Play Now</a>
                 <!-- <a href="https://www.youtube.com/watch?v=jssO8-5qmag" class="video_btn play-video mfp-iframe">
                   <i class="fas fa-play"></i>
                 </a> -->
@@ -73,7 +73,7 @@ export default {
               <img  loading="lazy" src="../assets/images/game-play/1.webp" alt="">
             </div>
             <div class="contant">
-              <a href="https://play.cryptowar.network/#/" class="mybtn1">Play</a>
+              <a href="https://play.cryptowar.network/#/" class="mybtn1" target="_blank" rel="noopener noreferrer">Play</a>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default {
               <img  loading="lazy" v-lazysizes src="../assets/images/game-play/2.webp" alt="">
             </div>
             <div class="contant">
-              <a href="https://play.cryptowar.network/#/" class="mybtn1">Play</a>
+              <a href="https://play.cryptowar.network/#/" class="mybtn1" target="_blank" rel="noopener noreferrer">Play</a>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default {
               <img  loading="lazy" v-lazysizes src="../assets/images/game-play/3.webp" alt="">
             </div>
             <div class="contant">
-              <a href="https://play.cryptowar.network/#/" class="mybtn1">Play</a>
+              <a href="https://play.cryptowar.network/#/" class="mybtn1" target="_blank" rel="noopener noreferrer">Play</a>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default {
               <img  loading="lazy" v-lazysizes src="../assets/images/game-play/4.webp" alt="">
             </div>
             <div class="contant">
-              <a href="https://play.cryptowar.network/#/" class="mybtn1">Play</a>
+              <a href="https://play.cryptowar.network/#/" class="mybtn1" target="_blank" rel="noopener noreferrer">Play</a>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ export default {
             <h6 class="text">
               Get started in less than 5 min and experience crypto game like never before.
             </h6>
-            <a href="https://play.cryptowar.network/#/" class="mybtn1">Play Now</a>
+            <a href="https://play.cryptowar.network/#/" class="mybtn1" target="_blank" rel="noopener noreferrer">Play Now</a>
           </div>
         </div>
       </div>
