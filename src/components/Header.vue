@@ -22,17 +22,17 @@
                     </a>
                   </li> -->
                   <li>
-                    <a href="https://twitter.com/xbladecryptowar">
+                    <a href="https://twitter.com/xbladecryptowar" target="_blank" rel="noopener noreferrer">
                       <i class="fab fa-twitter"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://t.me/cryptowarxblade">
+                    <a href="https://t.me/cryptowarxblade" target="_blank" rel="noopener noreferrer">
                       <i class="fab fa-telegram"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://discord.gg/zS2khZ4F7K">
+                    <a href="https://discord.gg/zS2khZ4F7K" target="_blank" rel="noopener noreferrer">
                       <i class="fab fa-discord"></i>
                     </a>
                   </li>
@@ -115,11 +115,11 @@
                       <router-link class="nav-link" to="/buy">Buy xBlade</router-link>
                     </li> -->
                     <li class="nav-item">
-                      <a class="nav-link" href="https://wiki.cryptowar.network">WhitePaper</a>
+                      <a class="nav-link" href="https://wiki.cryptowar.network" target="_blank" rel="noopener noreferrer">WhitePaper</a>
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link" href="https://wiki.cryptowar.network/backers-and-partners">Partners</a>
+                      <a class="nav-link" href="https://wiki.cryptowar.network/backers-and-partners" target="_blank" rel="noopener noreferrer">Partners</a>
                     </li>
 
                   </ul>
@@ -167,7 +167,7 @@
 
                     <li>
                       <a href="https://play.cryptowar.network/#/"
-                      class="mybtn1"
+                      class="mybtn1" target="_blank" rel="noopener noreferrer"
                       > Play now!</a>
                     </li>
                   </ul>

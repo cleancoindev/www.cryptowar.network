@@ -241,7 +241,7 @@
             <h6 class="text">
               Find answers, support, and inspiration from other gamers
             </h6>
-            <a href="https://discord.gg/zS2khZ4F7K" class="mybtn1">Join US</a>
+            <a href="https://discord.gg/zS2khZ4F7K" class="mybtn1" target="_blank" rel="noopener noreferrer">Join US</a>
           </div>
         </div>
       </div>

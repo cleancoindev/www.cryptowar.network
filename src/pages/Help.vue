@@ -34,23 +34,23 @@
                 <a href="/help" class="active"><i class="fas fa-chevron-right"></i>User Agreement</a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/information/privacy-policy" ><i class="fas fa-chevron-right"></i>Privacy Policy</a>
+                <a href="https://wiki.cryptowar.network/information/privacy-policy" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i>Privacy Policy</a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/information/terms-of-use" ><i class="fas fa-chevron-right"></i>Terms</a>
+                <a href="https://wiki.cryptowar.network/information/terms-of-use" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i>Terms</a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/information/faq"><i class="fas fa-chevron-right"></i>FAQ</a>
+                <a href="https://wiki.cryptowar.network/information/faq" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i>FAQ</a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/xblade/what-is-xblade"><i class="fas fa-chevron-right"></i>xBlade Token</a>
+                <a href="https://wiki.cryptowar.network/xblade/what-is-xblade" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i>xBlade Token</a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/getting-started/gas-fees"><i class="fas fa-chevron-right"></i>Fee</a>
+                <a href="https://wiki.cryptowar.network/getting-started/gas-fees" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i>Fee</a>
               </li>
 
               <li>
-                <a href="https://wiki.cryptowar.network/getting-started/common-issues-and-solutions"><i class="fas fa-chevron-right"></i>Technical issues</a>
+                <a href="https://wiki.cryptowar.network/getting-started/common-issues-and-solutions" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i>Technical issues</a>
               </li>
             </ul>
           </aside>
