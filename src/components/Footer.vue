@@ -78,7 +78,7 @@
 
               <div class="col-lg-12 col-12" style="text-align:center;">
                 <a href="https://discord.gg/zS2khZ4F7K"
-                      class="mybtn1"
+                      class="mybtn1" target="_blank" rel="noopener noreferrer"
                       > Join our Discord</a>
 
 
@@ -113,37 +113,37 @@
                 </a>
               </li> -->
               <li>
-                <a href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B">
+                <a href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B" target="_blank" rel="noopener noreferrer">
                    <img loading="lazy" src="https://i.imgur.com/3ju4Bbo.png" width="24px">
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com/elasticbitcoin">
+                <a href="https://twitter.com/xbladecryptowar" target="_blank" rel="noopener noreferrer">
                   <i class="fab fa-twitter"></i>
                 </a>
               </li>
               <li>
-                <a href="https://discord.gg/zS2khZ4F7K">
+                <a href="https://discord.gg/zS2khZ4F7K" target="_blank" rel="noopener noreferrer">
                   <i class="fab fa-discord"></i>
                 </a>
               </li>
               <li>
-                <a href="https://t.me/elasticbitcoinxbt">
+                <a href="https://t.me/cryptowarxblade" target="_blank" rel="noopener noreferrer">
                   <i class="fab fa-telegram"></i>
                 </a>
               </li>
               <li>
-                <a href="https://bscscan.com/token/0x27a339d9b59b21390d7209b78a839868e319301b">
+                <a href="https://bscscan.com/token/0x27a339d9b59b21390d7209b78a839868e319301b" target="_blank" rel="noopener noreferrer">
                   <img loading="lazy"  src="https://i.imgur.com/6LX1f1i.png" width="24px">
                 </a>
               </li>
               <li>
-                <a href="https://coinmarketcap.com/currencies/cryptowar-xblade/">
+                <a href="https://coinmarketcap.com/currencies/cryptowar-xblade/" target="_blank" rel="noopener noreferrer">
                   <img loading="lazy"  src="https://i.imgur.com/VNRTUMc.png" width="24px">
                 </a>
               </li>
               <li>
-                <a href="https://www.coingecko.com/en/coins/cryptowar-xblade">
+                <a href="https://www.coingecko.com/en/coins/cryptowar-xblade" target="_blank" rel="noopener noreferrer">
                   <img loading="lazy"  src="https://i.imgur.com/E0sUP9D.png" width="24px">
                 </a>
               </li>
@@ -157,32 +157,32 @@
           <div class="footer-menu">
             <ul>
               <li>
-                <a href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B">
+                <a href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B" target="_blank" rel="noopener noreferrer">
                   Buy xBlade
                 </a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/information/faq">
+                <a href="https://wiki.cryptowar.network/information/faq" target="_blank" rel="noopener noreferrer">
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="mailto:hi@cryptowar.network">
+                <a href="mailto:hi@cryptowar.network" target="_blank" rel="noopener noreferrer">
                   Contact
                 </a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/information/terms-of-use">
+                <a href="https://wiki.cryptowar.network/information/terms-of-use" target="_blank" rel="noopener noreferrer">
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="https://wiki.cryptowar.network/information/privacy-policy">
+                <a href="https://wiki.cryptowar.network/information/privacy-policy" target="_blank" rel="noopener noreferrer">
                   Privacy
                 </a>
               </li>
               <li>
-                <a href="https://discord.gg/zS2khZ4F7K">
+                <a href="https://discord.gg/zS2khZ4F7K" target="_blank" rel="noopener noreferrer">
                   Discord
                 </a>
               </li>

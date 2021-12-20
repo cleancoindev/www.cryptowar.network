@@ -207,8 +207,8 @@
                         />
                       </svg>
                       You can trade xBlade on
-                      <a href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9b59b21390d7209b78a839868e319301b">PancakeSwap</a>,
-                      <a href="https://app.1inch.io/#/56/swap/BNB/0x27a339d9b59b21390d7209b78a839868e319301b/import-token">1inch</a>
+                      <a href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9b59b21390d7209b78a839868e319301b" target="_blank" rel="noopener noreferrer">PancakeSwap</a>,
+                      <a href="https://app.1inch.io/#/56/swap/BNB/0x27a339d9b59b21390d7209b78a839868e319301b/import-token" target="_blank" rel="noopener noreferrer">1inch</a>
                     </li>
                     <li>
                       <svg
