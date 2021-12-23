@@ -165,9 +165,12 @@
                     </li> -->
 
                     <li>
+                      <a href="https://bond.cryptowar.network/"
+                      class="mybtn1">Buy</a>
+                    </li>
+                    <li>
                       <a href="https://play.cryptowar.network/#/"
-                      class="mybtn1"
-                      > Play now!</a>
+                      class="mybtn1">Play</a>
                     </li>
                   </ul>
                 </div>

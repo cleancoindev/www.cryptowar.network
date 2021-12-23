@@ -100,6 +100,11 @@
           <div class="footer-menu">
             <ul>
               <li>
+                <a href="https://bond.cryptowar.network">
+                  Mint Bond
+                </a>
+              </li>
+              <li>
                 <a href="https://pancakeswap.finance/swap?outputCurrency=0x27a339d9B59b21390d7209b78a839868E319301B">
                   Buy xBlade
                 </a>
