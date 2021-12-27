@@ -106,7 +106,9 @@
                     <li class="nav-item">
                       <a class="nav-link" href="https://wiki.cryptowar.network/backers-and-partners" target="_blank" rel="noopener noreferrer">Partners</a>
                     </li>
-
+                    <li class="nav-item">
+                      <router-link class="nav-link" to="/airdrop">Airdrop</router-link>
+                    </li>
                   </ul>
                   <router-link class="navbar-brand d-none d-lg-block m-auto" :to="{name: 'landing-page'}">
                     <img loading="lazy" class="l2 ml-5" src="../assets/images/cryptowar/xBlade-logo-02.webp" alt="" style="">
