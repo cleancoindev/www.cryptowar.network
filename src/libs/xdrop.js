@@ -1,5 +1,5 @@
 export const AirdropLander = {
-    address: process.env.VUE_APP_AIRDROPV2_CONTRACT_ADDRESS || '0xA60Fb437b969c7E2d8c5927b9dCFE9A3cB597B5B',
+    address: process.env.VUE_APP_AIRDROPV2_CONTRACT_ADDRESS || '0xFE2B53904851C97e4a5d52DB69Abbdd526Fe6004',
     // jsonInterface: require('@/assets/contracts/AirdropLander.json')
     jsonInterface: require('@/assets/contracts/XDrop.json')
 }

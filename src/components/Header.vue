@@ -96,19 +96,18 @@
                 <div class="main-menu-inner">
                   <ul class="navbar-nav">
                     <li>
-                      <a href="https://bond.cryptowar.network/"
-                      class="mybtn1">Buy</a>
+                        <router-link class="mybtn1" to="/airdrop">Airdrop</router-link>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="https://wiki.cryptowar.network" target="_blank" rel="noopener noreferrer">Docs</a>
                     </li>
 
-                    <li class="nav-item">
-                      <a class="nav-link" href="https://wiki.cryptowar.network/backers-and-partners" target="_blank" rel="noopener noreferrer">Partners</a>
-                    </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="https://wiki.cryptowar.network/backers-and-partners" target="_blank" rel="noopener noreferrer">Backers</a>
+                    </li> -->
+                    <!-- <li class="nav-item">
                       <router-link class="nav-link" to="/airdrop">Airdrop</router-link>
-                    </li>
+                    </li> -->
                   </ul>
                   <router-link class="navbar-brand d-none d-lg-block m-auto" :to="{name: 'landing-page'}">
                     <img loading="lazy" class="l2 ml-5" src="../assets/images/cryptowar/xBlade-logo-02.webp" alt="" style="">
