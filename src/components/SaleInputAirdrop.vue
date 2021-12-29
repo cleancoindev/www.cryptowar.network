@@ -2,7 +2,7 @@
   <div>
     <div
       v-if="availableToClaim"
-      class="exchange-token single-box p-32 has-shadow text-center"
+      class="exchange-token p-32 has-shadow text-center"
     >
       <div>
         <div>

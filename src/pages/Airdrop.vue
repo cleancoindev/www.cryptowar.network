@@ -26,8 +26,8 @@
                     >tweet</a
                   >
                   & follow
-                  <a href="https://twitter.com/elasticbitcoin" target="_blank"
-                    >XBN Twitter</a
+                  <a href="https://twitter.com/xbladecryptowar" target="_blank"
+                    >xBlade Twitter</a
                   >
                   <br />
                   <a
@@ -63,7 +63,7 @@
                   </div>
                 </div>
 
-                <div v-else>
+                <div class="not-connect" v-else>
                   <wallet-not-connect @connect-wallet="connectWallet" />
                 </div>
               </div>
@@ -322,11 +322,21 @@ export default {
   color: #00a2ff;
   font-size: 28px;
 }
+.subscribe-box{
+  margin-bottom: 80px;
+}
 
 @media (max-width: 768px) {
   .subscribe-box {
     padding-left: 20px;
     padding-right: 20px;
   }
+  .not-connect{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .subscribe-box{
+  margin-bottom: 100px;
+}
 }
 </style>
