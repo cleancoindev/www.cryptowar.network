@@ -52,9 +52,10 @@ export default {
     }
   },
   methods: {
-    handleClick(e) {
-      this.$emit('click', e)
-    }
+    // handleClick(e) {
+    //   // console.log("click", e);
+    //   //this.$emit('click', e)
+    // }
   }
 }
 </script>
