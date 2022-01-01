@@ -62,7 +62,7 @@ export default {
 }
 
 .airdrop h2 {
-  font-size: 40px;
+  font-size: 20px;
 }
 
 .airdrop .center-content {

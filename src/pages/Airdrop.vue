@@ -198,7 +198,7 @@ export default {
     //   return minAvailableSale < this.minBidAmount;
     // },
     pageTitle() {
-      return "Join $xBlade public discounted sale here.";
+      return "Get $xBlade Airdrop";
     },
     pageUrl() {
       return "https://cryptowar.network/airdrop";
@@ -308,7 +308,7 @@ export default {
 }
 
 .airdrop h2 {
-  font-size: 40px;
+  font-size: 20px;
 }
 
 .breadcrumb-area.airdrop {
