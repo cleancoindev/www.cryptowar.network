@@ -52,6 +52,10 @@ export const getReturnAmount = async (web3Client, tokenAddress='0x27a339d9b59b21
 
     amount = web3Client.utils.toWei(amount.toString(), 'ether')
     const contract = await getAirdropContract(web3Client);
-    const result = await contract.methods.getReturnAmount(amount,tokenAddress).call();
+    let result = await contract.methods.getReturnAmount(amount,tokenAddress).call();
+    // eslint-disable-next-line no-debugger
+    // debugger;
+    console.log(`result ${result}`)
+    result = Math.round(web3Client.utils.fromWei(result.toString(), 'ether'));
     return result;
 }

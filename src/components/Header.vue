@@ -95,9 +95,9 @@
               <div class="collapse navbar-collapse fixed-height" id="main_menu">
                 <div class="main-menu-inner">
                   <ul class="navbar-nav">
-                    <!-- <li>
+                    <li>
                         <router-link class="mybtn1" to="/airdrop">Airdrop</router-link>
-                    </li> -->
+                    </li>
                     <li class="nav-item">
                       <a class="nav-link" href="https://wiki.cryptowar.network" target="_blank" rel="noopener noreferrer">Docs</a>
                     </li>

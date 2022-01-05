@@ -58,7 +58,7 @@
                       :min-bid-amount="minBidAmount"
                       :max-bid-amount="maxBidAmount"
                       :user-account="userAccount"
-                      :xbn-amounts="[XBNAmount1, XBNAmount2, XBNAmount3]"
+                      :xbn-amounts="xbladeAmounts"
                     />
                   </div>
                 </div>
@@ -183,12 +183,13 @@ export default {
         paragraph:
           "Fair $xBlade for everyone on a first-come-first-serve basis",
       },
-      contractFundBalance: 0,
+      // contractFundBalance: 0,
       xbtBalance: 0,
       waitingTime: 0,
       userAccount: null,
       walletClient: {},
       showModal: false,
+      xbladeAmounts: [20,50,100],
     };
   },
   mixins: [SectionProps],
@@ -252,6 +253,7 @@ export default {
         "0x27a339d9b59b21390d7209b78a839868e319301b",
         0.002
       );
+      // console.log(`XBN1 ${XBNAmount1}`)
       const XBNAmount2 = await getReturnAmount(
         walletClient.web3Client,
         "0x27a339d9b59b21390d7209b78a839868e319301b",
@@ -264,19 +266,21 @@ export default {
       );
 
       // console.info(XBNAmount1,XBNAmount2,XBNAmount3);
-      this.XBNAmount1 = Math.ceil((XBNAmount1 * 1.1) / 10 ** 18);
-      this.XBNAmount2 = Math.ceil((XBNAmount2 * 1.1) / 10 ** 18);
-      this.XBNAmount3 = Math.ceil((XBNAmount3 * 1.1) / 10 ** 18);
-      // this.$set(this, "XBNAmount1", Math.ceil((XBNAmount1 * 1.1) / 10 ** 18));
-      // this.$set(this, "XBNAmount2", Math.ceil((XBNAmount2 * 1.1) / 10 ** 18));
-      // this.$set(this, "XBNAmount3", Math.ceil((XBNAmount3 * 1.1) / 10 ** 18));
+      this.xbladeAmounts[0]= XBNAmount1;
+      this.xbladeAmounts[1]= XBNAmount2;
+      this.xbladeAmounts[2]= XBNAmount3;
+      console.log(`xbladeAmounts ${this.xbladeAmounts}`);
     },
 
     async fetchStatus() {
       // const walletClient = this.walletClient;
 
       this.getSaleInfo();
-      // this.getOrderBook();
+      // const v = this;
+      // // this.getOrderBook();
+      // setInterval(function() {
+      //   v.fetchStatus();
+      // }, 5000);
 
       // // Get balance
       // const xbtBalance = await getXBNBalance(walletClient.web3Client);
