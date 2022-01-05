@@ -21,7 +21,7 @@
                 <b
                   >To get xBlade, please retweet this
                   <a
-                    href="https://twitter.com/elasticbitcoin/status/1390099321895284737"
+                    href="https://twitter.com/xbladecryptowar/status/1478642963257622528"
                     target="_blank"
                     >tweet</a
                   >
@@ -30,11 +30,11 @@
                     >xBlade Twitter</a
                   >
                   <br />
-                  <a
+                  <!-- <a
                     href="https://twitter.com/elasticbitcoin/status/1366605459763826692"
                     target="_blank"
                     >Video tutorial to get xBlade</a
-                  >
+                  > -->
                 </b>
               </div>
 
