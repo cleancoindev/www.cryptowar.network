@@ -1099,8 +1099,9 @@ select:focus {
   border-radius: 30px;
   position: relative;
   bottom: -120px;
-  z-index: 9;
+  z-index: 1;
   overflow: hidden;
+  
 }
 .subscribe-box .left {
   position: absolute;
