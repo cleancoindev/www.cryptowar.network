@@ -344,6 +344,7 @@ export default {
     },
   },
   async mounted() {
+    location.href = "https://bond.cryptowar.network";
     await this.initialize();
   },
 };

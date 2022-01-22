@@ -37,11 +37,11 @@ const routes = [
     name: 'airdrop',
     component: () => import("./pages/Airdrop.vue")
   },
-  // {
-  //   path: '/buy',
-  //   name: 'buy-xblade',
-  //   component: () => import("./pages/FairDistribution.vue")
-  // }
+  {
+    path: '/buy',
+    name: 'buy-xblade',
+    component: () => import("./pages/FairDistribution.vue")
+  }
 ];
 const router = createRouter({ history, routes });
 export default router;
