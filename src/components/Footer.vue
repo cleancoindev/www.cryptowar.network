@@ -35,7 +35,14 @@
           <a href="https://www.owl.games/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo owl" loading="lazy" src="../assets/images/backers-and-partners/partners/owl-game.png"  alt="Owl Games logo">
           </a>
+          <a href="http://Sandboxcasino.io" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/sandboxcasino.png"  alt="Sanbox casino">
+          </a>
+          <a href="https://play.hyperjump.app/" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/hyperjump.png"  alt="Hyperjump">
+          </a>
         </div>
+
         <div class="marquee-list">
           <!-- Backers -->
           <a href="https://xbn.finance/" class="marquee-item" target="_blank" rel="noopener noreferrer">
@@ -63,6 +70,12 @@
           </a>
           <a href="https://www.owl.games/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo owl" loading="lazy" src="../assets/images/backers-and-partners/partners/owl-game.png"  alt="Owl Games logo">
+          </a>
+          <a href="http://Sandboxcasino.io" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/sandboxcasino.png"  alt="Sanbox casino">
+          </a>
+          <a href="https://play.hyperjump.app/" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/hyperjump.png"  alt="Hyperjump">
           </a>
         </div>
       </div>
