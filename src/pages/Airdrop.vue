@@ -135,7 +135,7 @@ import VueGoodshareTwitter from "vue-goodshare/src/providers/Twitter.vue";
 import SaleInputAirdrop from "@/components/SaleInputAirdrop";
 import WalletNotConnect from "@/components/WalletNotConnect";
 import { getWeb3Client } from "@/libs/web3";
-import { claimAirdrop, getReturnAmount } from "@/libs/xdrop";
+import { claimAirdrop } from "@/libs/xdrop";
 import { SectionProps } from "@/utils/SectionProps.js";
 import emitter from "tiny-emitter/instance";
 import { ref, onMounted } from "vue";
@@ -246,30 +246,30 @@ export default {
       }
     },
     async getSaleInfo() {
-      const walletClient = this.walletClient;
+      // const walletClient = this.walletClient;
 
-      const XBNAmount1 = await getReturnAmount(
-        walletClient.web3Client,
-        "0x27a339d9b59b21390d7209b78a839868e319301b",
-        0.002
-      );
-      // console.log(`XBN1 ${XBNAmount1}`)
-      const XBNAmount2 = await getReturnAmount(
-        walletClient.web3Client,
-        "0x27a339d9b59b21390d7209b78a839868e319301b",
-        0.007
-      );
-      const XBNAmount3 = await getReturnAmount(
-        walletClient.web3Client,
-        "0x27a339d9b59b21390d7209b78a839868e319301b",
-        0.011
-      );
+      // const XBNAmount1 = await getReturnAmount(
+      //   walletClient.web3Client,
+      //   "0x27a339d9b59b21390d7209b78a839868e319301b",
+      //   0.002
+      // );
+      // // console.log(`XBN1 ${XBNAmount1}`)
+      // const XBNAmount2 = await getReturnAmount(
+      //   walletClient.web3Client,
+      //   "0x27a339d9b59b21390d7209b78a839868e319301b",
+      //   0.007
+      // );
+      // const XBNAmount3 = await getReturnAmount(
+      //   walletClient.web3Client,
+      //   "0x27a339d9b59b21390d7209b78a839868e319301b",
+      //   0.011
+      // );
 
-      // console.info(XBNAmount1,XBNAmount2,XBNAmount3);
-      this.xbladeAmounts[0]= XBNAmount1;
-      this.xbladeAmounts[1]= XBNAmount2;
-      this.xbladeAmounts[2]= XBNAmount3;
-      console.log(`xbladeAmounts ${this.xbladeAmounts}`);
+      // // console.info(XBNAmount1,XBNAmount2,XBNAmount3);
+      // this.xbladeAmounts[0]= XBNAmount1;
+      // this.xbladeAmounts[1]= XBNAmount2;
+      // this.xbladeAmounts[2]= XBNAmount3;
+      // console.log(`xbladeAmounts ${this.xbladeAmounts}`);
     },
 
     async fetchStatus() {
