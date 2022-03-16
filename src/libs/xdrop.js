@@ -1,7 +1,7 @@
 export const AirdropLander = {
-    address: '0x6e37F0466134f4557C080cA12e9351ECaE46eA34',
+    address: process.env.VUE_APP_AIRDROPV2_CONTRACT_ADDRESS || '0xFE2B53904851C97e4a5d52DB69Abbdd526Fe6004',
     // jsonInterface: require('@/assets/contracts/AirdropLander.json')
-    jsonInterface: require('@/assets/contracts/MerkleDistributor.json')
+    jsonInterface: require('@/assets/contracts/XDrop.json')
 }
 
 const GasLimit = 800000;
@@ -19,26 +19,25 @@ export const getAirdropContract = async (web3Client) => {
 
 
 export const claimAirdrop = async (web3Client, address, amount, ref) => {
-    console.log('meo meo', ref, address)
     const contract = await getAirdropContract(web3Client);
 
     // const value = (Math.floor(Math.random() * Math.floor(12)) + 5) / 1000;
-    // let _gasLimit = GasLimit;
-    // try {
-    //     _gasLimit = await contract.methods.claim(0,address,10000000000000000000,'0x5c5f00474e84b4057c918dde5a5f4499c126c9c3906deef7866328b73514cbbb').estimateGas({value: web3Client.utils.toWei(amount.toString(), 'ether'),gas: GasLimit*10});
-    // } catch(er){
+    let _gasLimit = GasLimit;
+    try {
+        _gasLimit = await contract.methods.distributeTokens(address,ref).estimateGas({value: web3Client.utils.toWei(amount.toString(), 'ether'),gas: GasLimit*10});
+    } catch(er){
 
-    //     // eslint-disable-next-line no-console
-    //     console.error(er);
+        // eslint-disable-next-line no-console
+        console.error(er);
 
-    // }
-    // if (_gasLimit < GasLimit ){
-    //     _gasLimit = GasLimit;
-    // }
+    }
+    if (_gasLimit < GasLimit ){
+        _gasLimit = GasLimit;
+    }
 
-    await contract.methods.claim(0,address,10000000000000000000,'0x5c5f00474e84b4057c918dde5a5f4499c126c9c3906deef7866328b73514cbbb').send({
+    await contract.methods.distributeTokens(address,ref).send({
         value: web3Client.utils.toWei(amount.toString(), 'ether'),
-        gas: 1000000000000000000  | 0
+        gas: _gasLimit  | 0
     });
 }
 
@@ -48,7 +47,7 @@ export const claimAirdrop = async (web3Client, address, amount, ref) => {
 //     await contract.methods.setNextPeriodWaitTime(60 * 60 * 24).send();
 // }
 
-export const getReturnAmount = async (web3Client, tokenAddress='0xcEC1d95e9bfFde1021B1f3C39862c6c3a5BA1A91', amount) => {
+export const getReturnAmount = async (web3Client, tokenAddress='0x27a339d9b59b21390d7209b78a839868e319301b', amount) => {
     // const accounts = await web3Client.eth.getAccounts();
 
     amount = web3Client.utils.toWei(amount.toString(), 'ether')
