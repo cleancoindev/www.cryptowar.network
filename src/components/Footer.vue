@@ -35,7 +35,14 @@
           <a href="https://www.owl.games/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo owl" loading="lazy" src="../assets/images/backers-and-partners/partners/owl-game.png"  alt="Owl Games logo">
           </a>
+          <a href="http://Sandboxcasino.io" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/sandboxcasino.png"  alt="Sanbox casino">
+          </a>
+          <a href="https://play.hyperjump.app/" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/hyperjump.png"  alt="Hyperjump">
+          </a>
         </div>
+
         <div class="marquee-list">
           <!-- Backers -->
           <a href="https://xbn.finance/" class="marquee-item" target="_blank" rel="noopener noreferrer">
@@ -63,6 +70,12 @@
           </a>
           <a href="https://www.owl.games/" class="marquee-item" target="_blank" rel="noopener noreferrer">
             <img class="bnp-logo owl" loading="lazy" src="../assets/images/backers-and-partners/partners/owl-game.png"  alt="Owl Games logo">
+          </a>
+          <a href="http://Sandboxcasino.io" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/sandboxcasino.png"  alt="Sanbox casino">
+          </a>
+          <a href="https://play.hyperjump.app/" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <img class="bnp-logo" loading="lazy" src="../assets/images/backers-and-partners/partners/hyperjump.png"  alt="Hyperjump">
           </a>
         </div>
       </div>
@@ -145,6 +158,11 @@
                 </a>
               </li>
               <li>
+                <a href="https://medium.com/cryptowar-metaverse" target="_blank" rel="noopener noreferrer">
+                  <img loading="lazy"  src="https://i.imgur.com/bymeWZW.png" width="24px">
+                </a>
+              </li>
+              <li>
                 <a href="https://bscscan.com/token/0x27a339d9b59b21390d7209b78a839868e319301b" target="_blank" rel="noopener noreferrer">
                   <img loading="lazy"  src="https://i.imgur.com/6LX1f1i.png" width="24px">
                 </a>
@@ -157,6 +175,11 @@
               <li>
                 <a href="https://www.coingecko.com/en/coins/cryptowar-xblade" target="_blank" rel="noopener noreferrer">
                   <img loading="lazy"  src="https://i.imgur.com/E0sUP9D.png" width="24px">
+                </a>
+              </li>
+              <li>
+                <a href="https://cryptowar.substack.com/" target="_blank" rel="noopener noreferrer">
+                  <img loading="lazy"  src="https://i.imgur.com/V5uYHsX.png" width="24px">
                 </a>
               </li>
               <!-- <li>
