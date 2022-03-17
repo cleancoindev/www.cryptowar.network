@@ -117,4 +117,4 @@ dist
 package-lock.json
 
 #lib
-src/libs/allocation_merkle_output.json
+# src/libs/allocation_merkle_output.json
