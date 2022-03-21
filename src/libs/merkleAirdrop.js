@@ -1,5 +1,5 @@
 export const merkleAirdrop = {
-    address: '0x6e37F0466134f4557C080cA12e9351ECaE46eA34',
+    address: '0x3c882355aaAd0f9644546B93dc3BaC03005d6c5b',
     // jsonInterface: require('@/assets/contracts/AirdropLander.json')
     jsonInterface: require('@/assets/contracts/MerkleDistributor.json')
 }
