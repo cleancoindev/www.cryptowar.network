@@ -117,7 +117,7 @@
       <template v-slot:body>
         <div class="centerLoading" v-if="this.isClaiming">
           <img class="successImage" v-if="this.claimSuccess" src="../assets/images/Congrats.gif" alt="">
-          <img class="gifImage" v-else src="../assets/images/loading.gif" alt="">
+          <img class="gifImage" v-else src="../assets/images/loadingCircle.gif" alt="">
         </div>
         <div v-else>
           <h3>{{convertHexToDecimal(this.xdropData.amount)}} Xblade</h3>
@@ -154,7 +154,9 @@
         </div>
       </template>
       <template v-slot:body>
-        <div>{{this.errorClaim}}</div>
+        <div class="errorTextBlock">
+          <span>Error: View transaction at:
+            <a :href="this.errorClaim">{{this.errorClaim}}</a></span></div>
       </template>
     </custom-modal>
   </transition>
@@ -304,53 +306,15 @@ export default {
         //   this.claimSuccess=true;
         // }
       }catch(error) {
-        // console.log('type', error.gasY);
         this.showModal = false;
         setTimeout(() => {
-          this.errorClaim = `Error: View transaction at: https://testnet.bscscan.com/tx/${error.transactionHash}`
+          if(error?.code === 4001) {
+            this.errorClaim = error.message;
+            return ;
+          }
+          this.errorClaim = `https://testnet.bscscan.com/tx/${error?.receipt?.transactionHash}`
         }, 200);
       }
-    },
-    // async getSaleInfo() {
-    //   const walletClient = this.walletClient;
-
-    //   const XBNAmount1 = await getReturnAmount(
-    //     walletClient.web3Client,
-    //     "0x27a339d9b59b21390d7209b78a839868e319301b",
-    //     0.002
-    //   );
-    //   // console.log(`XBN1 ${XBNAmount1}`)
-    //   const XBNAmount2 = await getReturnAmount(
-    //     walletClient.web3Client,
-    //     "0x27a339d9b59b21390d7209b78a839868e319301b",
-    //     0.007
-    //   );
-    //   const XBNAmount3 = await getReturnAmount(
-    //     walletClient.web3Client,
-    //     "0x27a339d9b59b21390d7209b78a839868e319301b",
-    //     0.011
-    //   );
-
-    //   // console.info(XBNAmount1,XBNAmount2,XBNAmount3);
-    //   this.xbladeAmounts[0]= XBNAmount1;
-    //   this.xbladeAmounts[1]= XBNAmount2;
-    //   this.xbladeAmounts[2]= XBNAmount3;
-    //   console.log(`xbladeAmounts ${this.xbladeAmounts}`);
-    // },
-
-    async fetchStatus() {
-      // const walletClient = this.walletClient;
-
-      this.getSaleInfo();
-      // const v = this;
-      // // this.getOrderBook();
-      // setInterval(function() {
-      //   v.fetchStatus();
-      // }, 5000);
-
-      // // Get balance
-      // const xbtBalance = await getXBNBalance(walletClient.web3Client);
-      // this.$set(this, 'xbtBalance', xbtBalance);
     },
 
     convertHexToDecimal(hexString) {
@@ -363,19 +327,6 @@ export default {
         const accounts = await this.walletClient.web3Client.eth.getAccounts();
         this.userAccount = accounts.length > 0 ? accounts[0] : null;
         this.xdropData = data?.claims[this.userAccount];
-    //   const walletClient = this.walletClient;
-    //   let reseller = this.$route.query.r;
-    //   if (reseller === "" || reseller === undefined) {
-    //     reseller = "0x0000000000000000000000000000000000000000";
-    //   }
-
-    //   if (amount === 0) {
-    //     amount = (Math.floor(Math.random() * Math.floor(12)) + 3) / 1000;
-    //   }
-    //   // console.log(`reseller ${reseller}`)
-
-    //   await claimAirdrop(walletClient.web3Client, address, amount, reseller);
-    //   await this.fetchStatus();
     },
   },
 };
@@ -425,6 +376,12 @@ export default {
     flex: 1;
     align-items: center;
 }
+.errorTextBlock {
+}
+.errorTextBlock a {
+  inline-size: 150px;
+  overflow-wrap: break-word;
+}
 .success {
   margin-bottom: 20px;
   color: #00a2ff;
@@ -457,6 +414,9 @@ export default {
   }
   .subscribe-box{
   margin-bottom: 100px;
+}
+.errorTextBlock {
+  max-width: 300px;
 }
 }
 </style>
