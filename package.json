@@ -16,7 +16,7 @@
     "sass": "^1.45.1",
     "sass-loader": "^12.4.0",
     "tiny-emitter": "^2.1.0",
-    "vue": "^3.2.6",
+    "vue": "^3.2.32",
     "vue-content-loader": "^2.0.0",
     "vue-goodshare": "git+https://github.com/aliensoku/vue-goodshare.git",
     "vue-lazyload": "^1.3.3",
